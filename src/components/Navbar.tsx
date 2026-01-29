@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
-import CrownLogo from './CrownLogo';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -25,10 +24,22 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   return (
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? 'glass-dark py-3' : 'bg-transparent py-6'
+        isScrolled ? 'glass-dark py-2 md:py-3' : 'bg-transparent py-3 md:py-6'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -36,48 +47,57 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <a href="#home">
-            <CrownLogo size="sm" showText={true} />
+          {/* Brand Name - Simple Text */}
+          <a href="#home" className="font-serif text-lg md:text-xl tracking-wider">
+            <span className="text-gradient-gold font-medium">ANANDA CROWN</span>
           </a>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-300 tracking-wide uppercase"
+                className="text-xs xl:text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-300 tracking-wide uppercase"
               >
                 {link.name}
               </a>
             ))}
           </div>
 
-          {/* CTA */}
+          {/* CTA - Desktop */}
           <div className="hidden lg:flex items-center gap-4">
             <a
               href="tel:+919779799705"
               className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
             >
               <Phone className="w-4 h-4" />
-              <span>+91 97797 99705</span>
+              <span className="hidden xl:inline">+91 97797 99705</span>
             </a>
             <a
               href="#contact"
-              className="btn-luxury text-xs px-6 py-3"
+              className="btn-luxury text-xs px-4 xl:px-6 py-2.5 xl:py-3"
             >
               Book Visit
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden text-foreground p-2"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile CTA + Menu */}
+          <div className="flex items-center gap-3 lg:hidden">
+            <a
+              href="tel:+919779799705"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary"
+            >
+              <Phone className="w-4 h-4" />
+            </a>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-foreground p-2 -mr-2"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -85,32 +105,54 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="lg:hidden fixed inset-0 top-[72px] bg-background/98 backdrop-blur-xl z-40"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            className="lg:hidden fixed inset-0 top-0 bg-background/98 backdrop-blur-xl z-40"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
           >
-            <div className="flex flex-col items-center justify-center h-full gap-8 p-8">
+            {/* Close button at top */}
+            <div className="flex justify-end p-4">
+              <button
+                onClick={() => setIsOpen(false)}
+                className="text-foreground p-2"
+                aria-label="Close menu"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            <div className="flex flex-col items-center justify-center h-[calc(100vh-80px)] gap-6 p-6">
               {navLinks.map((link, index) => (
                 <motion.a
                   key={link.name}
                   href={link.href}
-                  className="text-2xl font-serif text-foreground hover:text-primary transition-colors"
+                  className="text-xl font-serif text-foreground hover:text-primary transition-colors py-2"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ delay: index * 0.05 }}
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
                 </motion.a>
               ))}
-              <a
-                href="#contact"
-                className="btn-luxury mt-4"
-                onClick={() => setIsOpen(false)}
-              >
-                Book Site Visit
-              </a>
+              
+              <div className="flex flex-col gap-3 mt-4 w-full max-w-xs">
+                <a
+                  href="tel:+919779799705"
+                  className="flex items-center justify-center gap-2 py-3 border border-primary/50 rounded-sm text-primary"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Phone className="w-4 h-4" />
+                  <span>+91 97797 99705</span>
+                </a>
+                <a
+                  href="#contact"
+                  className="btn-luxury text-center"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Book Site Visit
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
