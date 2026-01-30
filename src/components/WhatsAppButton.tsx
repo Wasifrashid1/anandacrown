@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 
 const WhatsAppButton = () => {
-  const phoneNumber = '919779799705';
-  const message = encodeURIComponent('Hi, I am interested in Ananda Crown Mohali. Please share more details.');
+  const phoneNumber = '919779999705';
+  const message = encodeURIComponent('Hello, I am interested in Ananda Crown Mohali. Please share details.');
   
   // Direct WhatsApp link (no API needed)
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
@@ -12,7 +12,7 @@ const WhatsAppButton = () => {
       href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex items-center gap-3 group"
+      className="fixed bottom-16 right-4 md:bottom-6 md:right-6 z-50 flex items-center gap-3 group"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1.5, type: 'spring' }}

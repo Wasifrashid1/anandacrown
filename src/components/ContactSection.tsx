@@ -11,7 +11,7 @@ const budgetOptions = [
   'Above ₹3 Cr',
 ];
 
-const configOptions = ['3 BHK', '3+1 BHK', '4+1 BHK'];
+const configOptions = ['3 BHK', '3+1 BHK', '4+1 BHK', '5 BHK'];
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -20,26 +20,72 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    email: '',
     budget: '',
     configuration: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const phoneNumber = '919779999705';
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate required fields
+    if (!formData.name.trim() || !formData.phone.trim()) {
+      toast({
+        title: 'Please fill required fields',
+        description: 'Name and Phone are required.',
+        variant: 'destructive',
+      });
+      return;
+    }
+
+    // Validate phone (basic India validation)
+    const phoneRegex = /^[6-9]\d{9}$/;
+    const cleanPhone = formData.phone.replace(/\D/g, '').slice(-10);
+    if (!phoneRegex.test(cleanPhone)) {
+      toast({
+        title: 'Invalid Phone Number',
+        description: 'Please enter a valid 10-digit Indian mobile number.',
+        variant: 'destructive',
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    // Build WhatsApp message with form data
+    const message = `Hello, I am interested in Ananda Crown Mohali.
+
+Name: ${formData.name.trim()}
+Phone: ${formData.phone.trim()}
+Budget: ${formData.budget || 'Not specified'}
+Flat Type: ${formData.configuration || 'Not specified'}
+
+Please share details.`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
     toast({
       title: 'Enquiry Submitted!',
-      description: 'Our team will contact you shortly.',
+      description: 'Redirecting to WhatsApp...',
     });
-    setFormData({ name: '', phone: '', email: '', budget: '', configuration: '' });
+
+    // Clear form
+    setFormData({ name: '', phone: '', budget: '', configuration: '' });
+    
+    // Redirect to WhatsApp
+    setTimeout(() => {
+      window.open(whatsappLink, '_blank');
+      setIsSubmitting(false);
+    }, 500);
   };
 
-  const phoneNumber = '919779799705';
-  const message = encodeURIComponent('Hi, I am interested in Ananda Crown Mohali. Please share more details.');
-  const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
+  const directWhatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent('Hello, I am interested in Ananda Crown Mohali. Please share details.')}`;
 
   return (
-    <section id="contact" className="py-16 md:py-24 lg:py-32 bg-card/30 relative">
+    <section id="contact" className="py-16 md:py-24 lg:py-32 bg-card/30 relative pb-24 md:pb-32">
       <div className="container mx-auto px-4 md:px-8" ref={ref}>
         {/* Section Header */}
         <motion.div
@@ -56,6 +102,10 @@ const ContactSection = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">
             Take the first step towards owning your dream home at Ananda Crown.
           </p>
+          {/* Scarcity Text */}
+          <p className="text-primary font-medium text-sm mt-4 animate-pulse">
+            ⭐ Limited Inventory Available – Units Selling Fast
+          </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
@@ -71,7 +121,7 @@ const ContactSection = () => {
               
               <div className="space-y-4 md:space-y-6">
                 <a
-                  href="tel:+919779799705"
+                  href="tel:+919779999705"
                   className="flex items-center gap-3 md:gap-4 group"
                 >
                   <div className="w-10 h-10 md:w-12 md:h-12 rounded-sm bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
@@ -80,14 +130,14 @@ const ContactSection = () => {
                   <div>
                     <p className="text-xs md:text-sm text-muted-foreground">Call Us</p>
                     <p className="font-medium text-sm md:text-base group-hover:text-primary transition-colors">
-                      +91 97797 99705
+                      +91 97799 99705
                     </p>
                   </div>
                 </a>
 
                 {/* WhatsApp - Direct Link */}
                 <a
-                  href={whatsappLink}
+                  href={directWhatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 md:gap-4 group"
@@ -137,17 +187,20 @@ const ContactSection = () => {
               <div className="gold-line my-6 md:my-8" />
 
               {/* Download Brochure */}
-              <button className="btn-luxury-outline w-full flex items-center justify-center gap-2 text-sm py-3">
+              <a 
+                href="#contact"
+                className="btn-luxury-outline w-full flex items-center justify-center gap-2 text-sm py-3"
+              >
                 <Download className="w-4 h-4" />
                 Download Brochure
-              </button>
+              </a>
             </div>
 
             {/* Trust Badges */}
             <div className="grid grid-cols-3 gap-3 md:gap-4">
               {[
-                { value: '20+', label: 'Years' },
-                { value: '5000+', label: 'Families' },
+                { value: '20+', label: 'Years Excellence' },
+                { value: '5000+', label: 'Happy Families' },
                 { value: 'A+', label: 'Rating' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center p-3 md:p-4 glass rounded-sm">
@@ -155,6 +208,13 @@ const ContactSection = () => {
                   <p className="text-[10px] md:text-xs text-muted-foreground">{stat.label}</p>
                 </div>
               ))}
+            </div>
+
+            {/* Investment Angle */}
+            <div className="p-4 bg-primary/5 border border-primary/20 rounded-sm">
+              <p className="text-xs md:text-sm text-foreground/80 text-center">
+                📈 <span className="font-medium text-primary">High Appreciation Zone</span> – IT Growth Belt
+              </p>
             </div>
           </motion.div>
 
@@ -177,6 +237,7 @@ const ContactSection = () => {
                   <input
                     type="text"
                     required
+                    maxLength={100}
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-3 md:px-4 py-2.5 md:py-3 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors text-sm md:text-base"
@@ -185,40 +246,28 @@ const ContactSection = () => {
                 </div>
 
                 {/* Phone */}
-                <div>
+                <div className="md:col-span-2">
                   <label className="block text-xs md:text-sm text-muted-foreground mb-1.5 md:mb-2">
                     Phone Number *
                   </label>
                   <input
                     type="tel"
                     required
+                    maxLength={15}
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full px-3 md:px-4 py-2.5 md:py-3 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors text-sm md:text-base"
-                    placeholder="+91 XXXXX XXXXX"
-                  />
-                </div>
-
-                {/* Email */}
-                <div>
-                  <label className="block text-xs md:text-sm text-muted-foreground mb-1.5 md:mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-3 md:px-4 py-2.5 md:py-3 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors text-sm md:text-base"
-                    placeholder="your@email.com"
+                    placeholder="Enter 10-digit mobile number"
                   />
                 </div>
 
                 {/* Budget */}
                 <div>
                   <label className="block text-xs md:text-sm text-muted-foreground mb-1.5 md:mb-2">
-                    Budget Range
+                    Budget Range *
                   </label>
                   <select
+                    required
                     value={formData.budget}
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                     className="w-full px-3 md:px-4 py-2.5 md:py-3 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors appearance-none text-sm md:text-base"
@@ -233,14 +282,15 @@ const ContactSection = () => {
                 {/* Configuration */}
                 <div>
                   <label className="block text-xs md:text-sm text-muted-foreground mb-1.5 md:mb-2">
-                    Preferred Configuration
+                    Flat Type *
                   </label>
                   <select
+                    required
                     value={formData.configuration}
                     onChange={(e) => setFormData({ ...formData, configuration: e.target.value })}
                     className="w-full px-3 md:px-4 py-2.5 md:py-3 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors appearance-none text-sm md:text-base"
                   >
-                    <option value="">Select configuration</option>
+                    <option value="">Select flat type</option>
                     {configOptions.map((opt) => (
                       <option key={opt} value={opt}>{opt}</option>
                     ))}
@@ -251,10 +301,11 @@ const ContactSection = () => {
               {/* Submit */}
               <button
                 type="submit"
-                className="btn-luxury w-full mt-6 md:mt-8 flex items-center justify-center gap-2 py-3 md:py-4"
+                disabled={isSubmitting}
+                className="btn-luxury w-full mt-6 md:mt-8 flex items-center justify-center gap-2 py-3 md:py-4 disabled:opacity-50"
               >
                 <Send className="w-4 h-4" />
-                Submit Enquiry
+                {isSubmitting ? 'Submitting...' : 'Submit Enquiry'}
               </button>
 
               <p className="text-[10px] md:text-xs text-muted-foreground text-center mt-3 md:mt-4">

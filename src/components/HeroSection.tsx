@@ -5,8 +5,8 @@ import heroImage from '@/assets/hero-building.jpg';
 import CrownLogo from './CrownLogo';
 
 const HeroSection = () => {
-  const phoneNumber = '919779799705';
-  const message = encodeURIComponent('Hi, I am interested in Ananda Crown Mohali. Please share more details.');
+  const phoneNumber = '919779999705';
+  const message = encodeURIComponent('Hello, I am interested in Ananda Crown Mohali. Please share details.');
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
 
   return (
@@ -64,19 +64,19 @@ const HeroSection = () => {
             High Rise Luxury Living
           </motion.p>
 
-          {/* Main Heading */}
+          {/* Main Heading - H1 for SEO */}
           <motion.h1
             className="section-heading text-3xl sm:text-5xl md:text-7xl lg:text-8xl mb-4 md:mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
           >
-            Experience
+            Ananda Crown
             <br />
-            <span className="text-gradient-gold">Elevated Living</span>
+            <span className="text-gradient-gold">Mohali</span>
           </motion.h1>
 
-          {/* Subheading */}
+          {/* Subheading - H2 for SEO */}
           <motion.p
             className="text-muted-foreground text-base md:text-xl max-w-2xl mx-auto mb-2 md:mb-4"
             initial={{ opacity: 0 }}
@@ -92,7 +92,7 @@ const HeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.1 }}
           >
-            Sector 78, Mohali
+            Sector 78, Mohali • 20+ Years Excellence
           </motion.p>
 
           {/* CTA Buttons - Stack on mobile */}

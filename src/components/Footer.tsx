@@ -1,22 +1,24 @@
 import { Phone, Mail, MapPin, Instagram, Facebook, Youtube } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const quickLinks = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Residences', href: '#configurations' },
-  { name: 'Amenities', href: '#amenities' },
-  { name: 'Gallery', href: '#gallery' },
-  { name: 'Location', href: '#location' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Home', href: '/#home' },
+  { name: 'About', href: '/#about' },
+  { name: 'Residences', href: '/#configurations' },
+  { name: 'Amenities', href: '/#amenities' },
+  { name: 'Gallery', href: '/#gallery' },
+  { name: 'Location', href: '/#location' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Contact', href: '/#contact' },
 ];
 
 const Footer = () => {
-  const phoneNumber = '919779799705';
-  const message = encodeURIComponent('Hi, I am interested in Ananda Crown Mohali. Please share more details.');
+  const phoneNumber = '919779999705';
+  const message = encodeURIComponent('Hello, I am interested in Ananda Crown Mohali. Please share details.');
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
 
   return (
-    <footer className="bg-card/50 border-t border-border">
+    <footer className="bg-card/50 border-t border-border pb-16 md:pb-0">
       <div className="container mx-auto px-4 md:px-8 py-10 md:py-16">
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Logo & Description */}
@@ -26,7 +28,7 @@ const Footer = () => {
             </div>
             <p className="text-xs md:text-sm text-muted-foreground leading-relaxed mb-4 md:mb-6">
               Ultra Luxury High-Rise Residences in the heart of Mohali. 
-              Experience a lifestyle crafted for the finest.
+              20+ Years of Construction Excellence.
             </p>
             <div className="flex gap-3">
               <a
@@ -76,12 +78,21 @@ const Footer = () => {
             <ul className="space-y-2 md:space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-xs md:text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {link.name}
-                  </a>
+                  {link.href === '/blog' ? (
+                    <Link
+                      to={link.href}
+                      className="text-xs md:text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-xs md:text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -93,11 +104,11 @@ const Footer = () => {
             <ul className="space-y-3 md:space-y-4">
               <li>
                 <a
-                  href="tel:+919779799705"
+                  href="tel:+919779999705"
                   className="flex items-center gap-2 md:gap-3 text-xs md:text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Phone className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary flex-shrink-0" />
-                  +91 97797 99705
+                  +91 97799 99705
                 </a>
               </li>
               <li>
