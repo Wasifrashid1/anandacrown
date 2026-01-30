@@ -56,8 +56,9 @@ const GallerySection = () => {
               <div className={`overflow-hidden ${index === 0 ? 'aspect-[4/3]' : 'aspect-square'}`}>
                 <img
                   src={image.src}
-                  alt={image.title}
+                  alt={`${image.title} - Ananda Crown Mohali ${image.category}`}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  loading="lazy"
                 />
               </div>
 
@@ -102,7 +103,7 @@ const GallerySection = () => {
           >
             <img
               src={selectedImage.src}
-              alt={selectedImage.title}
+              alt={`${selectedImage.title} - Ananda Crown Mohali Luxury Apartments`}
               className="max-w-full max-h-[80vh] object-contain rounded-sm"
             />
             <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background/90 to-transparent">
