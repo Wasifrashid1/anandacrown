@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
 
 const WhatsAppButton = () => {
-  const phoneNumber = '919779999705';
+  // Correct phone number as specified
+  const phoneNumber = '9779799705';
   const message = encodeURIComponent('Hello, I am interested in Ananda Crown Mohali. Please share details.');
   
-  // Direct WhatsApp link (no API needed)
+  // Direct WhatsApp link - wa.me format works on all devices, no API needed
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
 
   return (

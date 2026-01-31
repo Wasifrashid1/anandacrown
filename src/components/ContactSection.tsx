@@ -1,31 +1,56 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Phone, Mail, MapPin, Send, Download } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const budgetOptions = [
-  'Under ₹1.5 Cr',
-  '₹1.5 Cr - ₹2 Cr',
-  '₹2 Cr - ₹3 Cr',
-  'Above ₹3 Cr',
+  '₹1-2 Cr',
+  '₹2-3 Cr',
+  '₹3-4 Cr',
+  '₹4 Cr+',
 ];
 
-const configOptions = ['3 BHK', '3+1 BHK', '4+1 BHK', '5 BHK'];
+const configOptions = [
+  '3 BHK – 2425 sq.ft. (SOLD OUT)',
+  '3+1 BHK – 2750 sq.ft. (SOLD OUT)',
+  '4 BHK – 3250 sq.ft.',
+  '5 BHK – 4100 sq.ft.',
+];
 
 const ContactSection = () => {
   const ref = useRef(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    city: '',
+    flatType: '',
     budget: '',
-    configuration: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const phoneNumber = '919779999705';
+  const phoneNumber = '9779799705';
+
+  // Listen for scroll-to-contact event (for Book Site Visit, Download Brochure, etc.)
+  useEffect(() => {
+    const handleScrollToContact = () => {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+        // Focus on first input after scroll
+        setTimeout(() => {
+          const nameInput = document.getElementById('contact-name');
+          nameInput?.focus();
+        }, 800);
+      }
+    };
+
+    window.addEventListener('scrollToContact', handleScrollToContact);
+    return () => window.removeEventListener('scrollToContact', handleScrollToContact);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -54,32 +79,27 @@ const ContactSection = () => {
 
     setIsSubmitting(true);
 
-    // Build WhatsApp message with form data
-    const message = `Hello, I am interested in Ananda Crown Mohali.
+    // Build WhatsApp message with form data - using specified format
+    const message = `Hello, I want to book a site visit.
 
 Name: ${formData.name.trim()}
 Phone: ${formData.phone.trim()}
-Budget: ${formData.budget || 'Not specified'}
-Flat Type: ${formData.configuration || 'Not specified'}
-
-Please share details.`;
+City: ${formData.city.trim() || 'Not specified'}
+Flat Type: ${formData.flatType || 'Not specified'}
+Budget: ${formData.budget || 'Not specified'}`;
 
     const encodedMessage = encodeURIComponent(message);
+    // Direct wa.me link - no API, works everywhere
     const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
-    toast({
-      title: 'Enquiry Submitted!',
-      description: 'Redirecting to WhatsApp...',
-    });
-
     // Clear form
-    setFormData({ name: '', phone: '', budget: '', configuration: '' });
+    setFormData({ name: '', phone: '', city: '', flatType: '', budget: '' });
     
-    // Redirect to WhatsApp
+    // Redirect to WhatsApp silently
     setTimeout(() => {
       window.open(whatsappLink, '_blank');
       setIsSubmitting(false);
-    }, 500);
+    }, 300);
   };
 
   const directWhatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent('Hello, I am interested in Ananda Crown Mohali. Please share details.')}`;
@@ -121,7 +141,7 @@ Please share details.`;
               
               <div className="space-y-4 md:space-y-6">
                 <a
-                  href="tel:+919779999705"
+                  href="tel:+919779799705"
                   className="flex items-center gap-3 md:gap-4 group"
                 >
                   <div className="w-10 h-10 md:w-12 md:h-12 rounded-sm bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
@@ -130,7 +150,7 @@ Please share details.`;
                   <div>
                     <p className="text-xs md:text-sm text-muted-foreground">Call Us</p>
                     <p className="font-medium text-sm md:text-base group-hover:text-primary transition-colors">
-                      +91 97799 99705
+                      +91 97797 99705
                     </p>
                   </div>
                 </a>
@@ -187,13 +207,19 @@ Please share details.`;
               <div className="gold-line my-6 md:my-8" />
 
               {/* Download Brochure */}
-              <a 
-                href="#contact"
+              <button 
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  contactSection?.scrollIntoView({ behavior: 'smooth' });
+                  setTimeout(() => {
+                    document.getElementById('contact-name')?.focus();
+                  }, 500);
+                }}
                 className="btn-luxury-outline w-full flex items-center justify-center gap-2 text-sm py-3"
               >
                 <Download className="w-4 h-4" />
                 Download Brochure
-              </a>
+              </button>
             </div>
 
             {/* Trust Badges */}
@@ -225,16 +251,17 @@ Please share details.`;
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <form onSubmit={handleSubmit} className="luxury-card p-5 md:p-8">
+            <form ref={formRef} onSubmit={handleSubmit} className="luxury-card p-5 md:p-8">
               <h3 className="font-serif text-xl md:text-2xl mb-4 md:mb-6">Schedule a Visit</h3>
 
               <div className="grid gap-4 md:grid-cols-2 md:gap-6">
                 {/* Name */}
                 <div className="md:col-span-2">
-                  <label className="block text-xs md:text-sm text-muted-foreground mb-1.5 md:mb-2">
+                  <label htmlFor="contact-name" className="block text-xs md:text-sm text-muted-foreground mb-1.5 md:mb-2">
                     Full Name *
                   </label>
                   <input
+                    id="contact-name"
                     type="text"
                     required
                     maxLength={100}
@@ -246,11 +273,12 @@ Please share details.`;
                 </div>
 
                 {/* Phone */}
-                <div className="md:col-span-2">
-                  <label className="block text-xs md:text-sm text-muted-foreground mb-1.5 md:mb-2">
+                <div>
+                  <label htmlFor="contact-phone" className="block text-xs md:text-sm text-muted-foreground mb-1.5 md:mb-2">
                     Phone Number *
                   </label>
                   <input
+                    id="contact-phone"
                     type="tel"
                     required
                     maxLength={15}
@@ -261,12 +289,49 @@ Please share details.`;
                   />
                 </div>
 
+                {/* City */}
+                <div>
+                  <label htmlFor="contact-city" className="block text-xs md:text-sm text-muted-foreground mb-1.5 md:mb-2">
+                    City *
+                  </label>
+                  <input
+                    id="contact-city"
+                    type="text"
+                    required
+                    maxLength={50}
+                    value={formData.city}
+                    onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                    className="w-full px-3 md:px-4 py-2.5 md:py-3 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors text-sm md:text-base"
+                    placeholder="Enter your city"
+                  />
+                </div>
+
+                {/* Flat Type */}
+                <div>
+                  <label htmlFor="contact-flat" className="block text-xs md:text-sm text-muted-foreground mb-1.5 md:mb-2">
+                    Flat Type *
+                  </label>
+                  <select
+                    id="contact-flat"
+                    required
+                    value={formData.flatType}
+                    onChange={(e) => setFormData({ ...formData, flatType: e.target.value })}
+                    className="w-full px-3 md:px-4 py-2.5 md:py-3 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors appearance-none text-sm md:text-base"
+                  >
+                    <option value="">Select flat type</option>
+                    {configOptions.map((opt) => (
+                      <option key={opt} value={opt}>{opt}</option>
+                    ))}
+                  </select>
+                </div>
+
                 {/* Budget */}
                 <div>
-                  <label className="block text-xs md:text-sm text-muted-foreground mb-1.5 md:mb-2">
+                  <label htmlFor="contact-budget" className="block text-xs md:text-sm text-muted-foreground mb-1.5 md:mb-2">
                     Budget Range *
                   </label>
                   <select
+                    id="contact-budget"
                     required
                     value={formData.budget}
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
@@ -274,24 +339,6 @@ Please share details.`;
                   >
                     <option value="">Select budget</option>
                     {budgetOptions.map((opt) => (
-                      <option key={opt} value={opt}>{opt}</option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Configuration */}
-                <div>
-                  <label className="block text-xs md:text-sm text-muted-foreground mb-1.5 md:mb-2">
-                    Flat Type *
-                  </label>
-                  <select
-                    required
-                    value={formData.configuration}
-                    onChange={(e) => setFormData({ ...formData, configuration: e.target.value })}
-                    className="w-full px-3 md:px-4 py-2.5 md:py-3 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors appearance-none text-sm md:text-base"
-                  >
-                    <option value="">Select flat type</option>
-                    {configOptions.map((opt) => (
                       <option key={opt} value={opt}>{opt}</option>
                     ))}
                   </select>

@@ -1,6 +1,6 @@
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, ArrowLeft, Share2 } from 'lucide-react';
+import { Calendar, Clock, ArrowLeft } from 'lucide-react';
 import { getBlogBySlug, blogPosts } from '@/data/blogPosts';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -10,6 +10,7 @@ import { Helmet } from 'react-helmet-async';
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
   const post = slug ? getBlogBySlug(slug) : undefined;
 
   if (!post) {
@@ -17,6 +18,17 @@ const BlogPost = () => {
   }
 
   const relatedPosts = blogPosts.filter(p => p.id !== post.id).slice(0, 3);
+
+  const handleBookVisit = () => {
+    navigate('/');
+    setTimeout(() => {
+      const contactSection = document.getElementById('contact');
+      contactSection?.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        document.getElementById('contact-name')?.focus();
+      }, 800);
+    }, 100);
+  };
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -121,11 +133,11 @@ const BlogPost = () => {
                 Schedule a site visit or download our brochure for complete details.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Link to="/#contact" className="btn-luxury">
+                <button onClick={handleBookVisit} className="btn-luxury">
                   Book Site Visit
-                </Link>
+                </button>
                 <a 
-                  href="https://wa.me/919779999705?text=Hello%2C%20I%20am%20interested%20in%20Ananda%20Crown%20Mohali.%20Please%20share%20details."
+                  href="https://wa.me/9779799705?text=Hello%2C%20I%20am%20interested%20in%20Ananda%20Crown%20Mohali.%20Please%20share%20details."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-luxury-outline flex items-center justify-center gap-2"
