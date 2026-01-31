@@ -1,13 +1,36 @@
 import { motion } from 'framer-motion';
 import { ChevronDown, Download, Calendar } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import heroVideo from '@/assets/hero-video.mp4';
 import heroImage from '@/assets/hero-building.jpg';
 import CrownLogo from './CrownLogo';
 
 const HeroSection = () => {
-  const phoneNumber = '919779999705';
+  const navigate = useNavigate();
+  const location = useLocation();
+  const phoneNumber = '9779799705';
   const message = encodeURIComponent('Hello, I am interested in Ananda Crown Mohali. Please share details.');
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
+
+  const handleBookVisit = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const contactSection = document.getElementById('contact');
+        contactSection?.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+          document.getElementById('contact-name')?.focus();
+        }, 800);
+      }, 100);
+    } else {
+      const contactSection = document.getElementById('contact');
+      contactSection?.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        document.getElementById('contact-name')?.focus();
+      }, 800);
+    }
+  };
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -83,7 +106,7 @@ const HeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
           >
-            Ultra Luxury 3, 3+1 & 4+1 BHK Residences
+            Ultra Luxury 3, 3+1, 4 & 5 BHK Residences
           </motion.p>
 
           <motion.p
@@ -102,17 +125,20 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 }}
           >
-            <a href="#contact" className="btn-luxury flex items-center justify-center gap-2 py-3 md:py-4">
+            <button 
+              onClick={handleBookVisit}
+              className="btn-luxury flex items-center justify-center gap-2 py-3 md:py-4"
+            >
               <Calendar className="w-4 h-4" />
               Book Site Visit
-            </a>
-            <a
-              href="#contact"
+            </button>
+            <button
+              onClick={handleBookVisit}
               className="btn-luxury-outline flex items-center justify-center gap-2 py-3 md:py-4"
             >
               <Download className="w-4 h-4" />
               Download Brochure
-            </a>
+            </button>
             <a
               href={whatsappLink}
               target="_blank"

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const navLinks = [
   { name: 'Home', href: '/#home' },
@@ -18,6 +18,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,7 +49,34 @@ const Navbar = () => {
         // Same page, just scroll
         const element = document.querySelector(href.replace('/', ''));
         element?.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // Navigate to home then scroll
+        navigate('/');
+        setTimeout(() => {
+          const element = document.querySelector(href.replace('/', ''));
+          element?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
       }
+    }
+  };
+
+  const handleBookVisit = () => {
+    setIsOpen(false);
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const contactSection = document.getElementById('contact');
+        contactSection?.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+          document.getElementById('contact-name')?.focus();
+        }, 800);
+      }, 100);
+    } else {
+      const contactSection = document.getElementById('contact');
+      contactSection?.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        document.getElementById('contact-name')?.focus();
+      }, 800);
     }
   };
 
@@ -84,7 +112,10 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   className="text-xs xl:text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-300 tracking-wide uppercase"
-                  onClick={() => handleNavClick(link.href)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(link.href);
+                  }}
                 >
                   {link.name}
                 </a>
@@ -95,24 +126,24 @@ const Navbar = () => {
           {/* CTA - Desktop */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="tel:+919779999705"
+              href="tel:+919779799705"
               className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
             >
               <Phone className="w-4 h-4" />
-              <span className="hidden xl:inline">+91 97799 99705</span>
+              <span className="hidden xl:inline">+91 97797 99705</span>
             </a>
-            <a
-              href="/#contact"
+            <button
+              onClick={handleBookVisit}
               className="btn-luxury text-xs px-4 xl:px-6 py-2.5 xl:py-3"
             >
               Book Visit
-            </a>
+            </button>
           </div>
 
           {/* Mobile CTA + Menu */}
           <div className="flex items-center gap-3 lg:hidden">
             <a
-              href="tel:+919779999705"
+              href="tel:+919779799705"
               className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary"
             >
               <Phone className="w-4 h-4" />
@@ -128,72 +159,89 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Slide from Right */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            className="lg:hidden fixed inset-0 top-0 bg-background/98 backdrop-blur-xl z-40"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            {/* Close button at top */}
-            <div className="flex justify-end p-4">
-              <button
-                onClick={() => setIsOpen(false)}
-                className="text-foreground p-2"
-                aria-label="Close menu"
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
+          <>
+            {/* Backdrop */}
+            <motion.div
+              className="lg:hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-40"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+            />
 
-            <div className="flex flex-col items-center justify-center h-[calc(100vh-80px)] gap-6 p-6">
-              {navLinks.map((link, index) => (
-                link.href === '/blog' ? (
-                  <motion.div key={link.name}>
-                    <Link
-                      to={link.href}
-                      className="text-xl font-serif text-foreground hover:text-primary transition-colors py-2"
-                      onClick={() => setIsOpen(false)}
+            {/* Slide-in Menu */}
+            <motion.div
+              className="lg:hidden fixed top-0 right-0 bottom-0 w-[280px] max-w-[80vw] bg-background border-l border-border z-50 overflow-y-auto"
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'tween', duration: 0.3 }}
+            >
+              {/* Close button at top */}
+              <div className="flex justify-between items-center p-4 border-b border-border">
+                <span className="font-serif text-lg text-gradient-gold">Menu</span>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="text-foreground p-2"
+                  aria-label="Close menu"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+
+              {/* Nav Links - Vertical List */}
+              <nav className="p-4">
+                <ul className="space-y-1">
+                  {navLinks.map((link, index) => (
+                    <motion.li 
+                      key={link.name}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05 }}
                     >
-                      {link.name}
-                    </Link>
-                  </motion.div>
-                ) : (
-                  <motion.a
-                    key={link.name}
-                    href={link.href}
-                    className="text-xl font-serif text-foreground hover:text-primary transition-colors py-2"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.05 }}
-                    onClick={() => handleNavClick(link.href)}
-                  >
-                    {link.name}
-                  </motion.a>
-                )
-              ))}
-              
-              <div className="flex flex-col gap-3 mt-4 w-full max-w-xs">
+                      {link.href === '/blog' ? (
+                        <Link
+                          to={link.href}
+                          className="block py-3 px-4 text-base font-medium text-foreground hover:text-primary hover:bg-primary/5 rounded-sm transition-colors"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {link.name}
+                        </Link>
+                      ) : (
+                        <button
+                          className="block w-full text-left py-3 px-4 text-base font-medium text-foreground hover:text-primary hover:bg-primary/5 rounded-sm transition-colors"
+                          onClick={() => handleNavClick(link.href)}
+                        >
+                          {link.name}
+                        </button>
+                      )}
+                    </motion.li>
+                  ))}
+                </ul>
+              </nav>
+
+              {/* CTA Buttons */}
+              <div className="p-4 border-t border-border space-y-3">
                 <a
-                  href="tel:+919779999705"
+                  href="tel:+919779799705"
                   className="flex items-center justify-center gap-2 py-3 border border-primary/50 rounded-sm text-primary"
                   onClick={() => setIsOpen(false)}
                 >
                   <Phone className="w-4 h-4" />
-                  <span>+91 97799 99705</span>
+                  <span>+91 97797 99705</span>
                 </a>
-                <a
-                  href="/#contact"
-                  className="btn-luxury text-center"
-                  onClick={() => setIsOpen(false)}
+                <button
+                  onClick={handleBookVisit}
+                  className="btn-luxury w-full text-center"
                 >
                   Book Site Visit
-                </a>
+                </button>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </motion.nav>

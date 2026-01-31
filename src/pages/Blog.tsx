@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { blogPosts } from '@/data/blogPosts';
@@ -8,6 +8,12 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 import MobileStickyBar from '@/components/MobileStickyBar';
 
 const Blog = () => {
+  const navigate = useNavigate();
+
+  const handleReadMore = (slug: string) => {
+    navigate(`/blog/${slug}`);
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
@@ -35,12 +41,13 @@ const Blog = () => {
             {blogPosts.map((post, index) => (
               <motion.article
                 key={post.id}
-                className="luxury-card group overflow-hidden"
+                className="luxury-card group overflow-hidden cursor-pointer"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
+                onClick={() => handleReadMore(post.slug)}
               >
-                <Link to={`/blog/${post.slug}`} className="block p-5 md:p-6">
+                <div className="block p-5 md:p-6">
                   <div className="flex items-center gap-4 text-xs text-muted-foreground mb-3">
                     <span className="flex items-center gap-1">
                       <Calendar className="w-3.5 h-3.5" />
@@ -67,7 +74,7 @@ const Blog = () => {
                   <span className="inline-flex items-center gap-2 text-primary text-sm font-medium group-hover:gap-3 transition-all">
                     Read More <ArrowRight className="w-4 h-4" />
                   </span>
-                </Link>
+                </div>
               </motion.article>
             ))}
           </div>
