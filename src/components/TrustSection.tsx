@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Star, Quote } from 'lucide-react';
+import { useRef, useState } from 'react';
+import { Star, Quote, ChevronDown } from 'lucide-react';
 
 const testimonials = [
   {
@@ -26,29 +26,38 @@ const testimonials = [
 
 const faqs = [
   {
-    question: 'What are the available configurations?',
-    answer: 'Ananda Crown offers 3 BHK, 3+1 BHK, and 4+1 BHK ultra-luxury residences ranging from 1,850 to 3,500 sq. ft.',
+    question: 'What are the available configurations at Ananda Crown Mohali?',
+    answer: 'Ananda Crown offers 3 BHK, 3+1 BHK, 4 BHK, and 5 BHK ultra-luxury residences ranging from 2,425 to 4,100 sq. ft. in Sector 78, Mohali.',
   },
   {
-    question: 'What is the project location?',
-    answer: 'Ananda Crown is strategically located in Sector 78, Mohali, with excellent connectivity to Chandigarh, IT Hub, Airport, and major schools.',
+    question: 'Where is Ananda Crown located in Mohali?',
+    answer: 'Ananda Crown is strategically located in Sector 78, Mohali, with excellent connectivity to Chandigarh, IT Hub, Airport Road, and major schools and hospitals.',
   },
   {
-    question: 'When is the expected possession?',
-    answer: 'Please contact our sales team for the latest possession timeline and construction updates.',
+    question: 'What is the booking amount for luxury apartments at Ananda Crown?',
+    answer: 'Booking amounts start from ₹20L for 3 BHK, ₹25L for 3+1 BHK and 4 BHK, and ₹40L for 5 BHK luxury apartments. Contact our sales team for current offers.',
   },
   {
-    question: 'What are the key amenities?',
-    answer: 'The project features a grand clubhouse, infinity pool, landscaped gardens, premium gym, kids play zone, and 24/7 security among other world-class amenities.',
+    question: 'What are the key amenities at Ananda Crown Sector 78?',
+    answer: 'The project features a grand clubhouse, swimming pool, landscaped gardens, premium gym, kids play zone, and 24/7 security among other world-class amenities designed for luxury living.',
+  },
+  {
+    question: 'What is the payment plan for Ananda Crown Mohali?',
+    answer: 'We offer a flexible payment plan with 25% on RERA Approval and 75% on Construction-Linked or Time-Linked basis. Contact us for personalized payment options.',
   },
 ];
 
 const TrustSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
 
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden">
+    <section className="py-24 md:py-32 relative overflow-hidden" itemScope itemType="https://schema.org/FAQPage">
       <div className="container mx-auto px-4 md:px-8" ref={ref}>
         {/* Testimonials */}
         <motion.div
@@ -107,21 +116,43 @@ const TrustSection = () => {
 
         <div className="max-w-3xl mx-auto space-y-4">
           {faqs.map((faq, index) => (
-            <motion.details
+            <motion.div
               key={faq.question}
-              className="luxury-card group"
+              className="luxury-card overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4 + index * 0.1 }}
+              itemScope
+              itemProp="mainEntity"
+              itemType="https://schema.org/Question"
             >
-              <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
-                <span className="font-serif text-lg">{faq.question}</span>
-                <span className="text-primary text-2xl group-open:rotate-45 transition-transform">+</span>
-              </summary>
-              <div className="px-6 pb-6 text-muted-foreground">
-                {faq.answer}
+              <button
+                onClick={() => toggleFaq(index)}
+                className="flex items-center justify-between w-full p-6 text-left cursor-pointer"
+                aria-expanded={openFaq === index}
+                aria-controls={`faq-answer-${index}`}
+              >
+                <span className="font-serif text-lg pr-4" itemProp="name">{faq.question}</span>
+                <ChevronDown 
+                  className={`w-5 h-5 text-primary flex-shrink-0 transition-transform duration-300 ${
+                    openFaq === index ? 'rotate-180' : ''
+                  }`} 
+                />
+              </button>
+              <div
+                id={`faq-answer-${index}`}
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  openFaq === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                }`}
+                itemScope
+                itemProp="acceptedAnswer"
+                itemType="https://schema.org/Answer"
+              >
+                <div className="px-6 pb-6 text-muted-foreground" itemProp="text">
+                  {faq.answer}
+                </div>
               </div>
-            </motion.details>
+            </motion.div>
           ))}
         </div>
       </div>

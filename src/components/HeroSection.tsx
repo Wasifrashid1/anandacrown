@@ -1,35 +1,29 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Download, Calendar } from 'lucide-react';
-import { useNavigate, useLocation } from 'react-router-dom';
 import heroVideo from '@/assets/hero-video.mp4';
 import heroImage from '@/assets/hero-building.jpg';
 import CrownLogo from './CrownLogo';
+import LeadFormModal from './LeadFormModal';
 
 const HeroSection = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalType, setModalType] = useState<'book-visit' | 'download-brochure'>('book-visit');
+  
   const phoneNumber = '9779799705';
   const message = encodeURIComponent('Hello, I am interested in Ananda Crown Mohali. Please share details.');
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
 
   const handleBookVisit = (e: React.MouseEvent) => {
     e.preventDefault();
-    if (location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => {
-        const contactSection = document.getElementById('contact');
-        contactSection?.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(() => {
-          document.getElementById('contact-name')?.focus();
-        }, 800);
-      }, 100);
-    } else {
-      const contactSection = document.getElementById('contact');
-      contactSection?.scrollIntoView({ behavior: 'smooth' });
-      setTimeout(() => {
-        document.getElementById('contact-name')?.focus();
-      }, 800);
-    }
+    setModalType('book-visit');
+    setModalOpen(true);
+  };
+
+  const handleDownloadBrochure = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setModalType('download-brochure');
+    setModalOpen(true);
   };
 
   return (
@@ -133,7 +127,7 @@ const HeroSection = () => {
               Book Site Visit
             </button>
             <button
-              onClick={handleBookVisit}
+              onClick={handleDownloadBrochure}
               className="btn-luxury-outline flex items-center justify-center gap-2 py-3 md:py-4"
             >
               <Download className="w-4 h-4" />
@@ -172,6 +166,13 @@ const HeroSection = () => {
 
       {/* Decorative Elements */}
       <div className="absolute bottom-0 left-0 right-0 h-20 md:h-32 bg-gradient-to-t from-background to-transparent" />
+      
+      {/* Lead Form Modal */}
+      <LeadFormModal 
+        isOpen={modalOpen} 
+        onClose={() => setModalOpen(false)} 
+        type={modalType}
+      />
     </section>
   );
 };
