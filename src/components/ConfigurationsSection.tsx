@@ -5,8 +5,8 @@ import { Maximize, X, CreditCard, Building2 } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 // Import floor plans
-import floorPlan3Plus1_2750 from '@/assets/floor-plan-3plus1-2750.jpeg';
-import floorPlan3Plus1_2875 from '@/assets/floor-plan-3plus1-2875.jpeg';
+import floorPlan3BHK from '@/assets/floor-plan-3plus1-2875.jpeg';
+import floorPlan3Plus1 from '@/assets/floor-plan-3plus1-2750.jpeg';
 import floorPlan4BHK from '@/assets/floor-plan-4bhk.jpeg';
 import floorPlan5BHK from '@/assets/floor-plan-5bhk.jpeg';
 
@@ -16,21 +16,23 @@ const configurations = [
     title: 'Luxury Residences',
     size: '2425 Sq. Ft.',
     booking: '₹20L Booking',
-    status: 'SOLD OUT',
+    status: 'AVAILABLE',
     features: ['3 Bedrooms', '3 Bathrooms', 'Living & Dining', 'Modular Kitchen', 'Utility Balcony', '1 Parking'],
     highlight: 'Perfect for Growing Families',
-    floorPlan: null,
+    floorPlan: floorPlan3BHK,
+    altText: 'Ananda Crown Mohali 3 BHK Floor Plan Sector 78 Luxury Apartment Layout',
   },
   {
     type: '3+1 BHK',
     title: 'Premium Residences',
     size: '2750 Sq. Ft.',
     booking: '₹25L Booking',
-    status: 'SOLD OUT',
+    status: 'AVAILABLE',
     features: ['3 Bedrooms + Study', '4 Bathrooms', 'Large Living Area', 'Premium Kitchen', 'Servant Quarter', '2 Parking'],
     highlight: 'Ideal for Professionals',
     featured: true,
-    floorPlan: floorPlan3Plus1_2750,
+    floorPlan: floorPlan3Plus1,
+    altText: 'Ananda Crown Mohali 3+1 BHK Floor Plan 2750 Sq Ft Luxury Apartment',
   },
   {
     type: '4 BHK',
@@ -41,6 +43,7 @@ const configurations = [
     features: ['4 Bedrooms', '4 Bathrooms', 'Private Lounge', 'Italian Kitchen', 'Servant Quarter', '2 Parking'],
     highlight: 'The Pinnacle of Luxury',
     floorPlan: floorPlan4BHK,
+    altText: 'Ananda Crown Mohali 4 BHK Floor Plan 3250 Sq Ft Premium Apartment',
   },
   {
     type: '5 BHK',
@@ -51,6 +54,7 @@ const configurations = [
     features: ['5 Bedrooms', '5 Bathrooms', 'Family Lounge', 'Premium Kitchen', 'Multiple Balconies', '2 Parking'],
     highlight: 'Ultimate Family Residence',
     floorPlan: floorPlan5BHK,
+    altText: 'Ananda Crown Mohali 5 BHK Floor Plan 4100 Sq Ft Penthouse Layout',
   },
 ];
 
@@ -116,12 +120,12 @@ const ConfigurationsSection = () => {
               <div className="p-3 md:p-4 bg-primary/5 border border-primary/20 rounded-sm">
                 <p className="text-xs md:text-sm text-muted-foreground">3 BHK | 2425 sq.ft.</p>
                 <p className="text-primary font-medium text-sm md:text-base">₹20L Booking</p>
-                <span className="text-[10px] md:text-xs text-red-400">SOLD OUT</span>
+                <span className="text-[10px] md:text-xs text-green-400">AVAILABLE</span>
               </div>
               <div className="p-3 md:p-4 bg-primary/5 border border-primary/20 rounded-sm">
                 <p className="text-xs md:text-sm text-muted-foreground">3+1 BHK | 2750 sq.ft.</p>
                 <p className="text-primary font-medium text-sm md:text-base">₹25L Booking</p>
-                <span className="text-[10px] md:text-xs text-red-400">SOLD OUT</span>
+                <span className="text-[10px] md:text-xs text-green-400">AVAILABLE</span>
               </div>
               <div className="p-3 md:p-4 bg-primary/5 border border-primary/20 rounded-sm">
                 <p className="text-xs md:text-sm text-muted-foreground">4 BHK | 3250 sq.ft.</p>
@@ -188,9 +192,7 @@ const ConfigurationsSection = () => {
                 </div>
 
                 {/* Status Badge */}
-                <div className={`inline-block ml-2 px-2 py-0.5 rounded-sm text-[10px] md:text-xs font-medium ${
-                  config.status === 'SOLD OUT' ? 'bg-red-500/20 text-red-400' : 'bg-green-500/20 text-green-400'
-                }`}>
+                <div className="inline-block ml-2 px-2 py-0.5 rounded-sm text-[10px] md:text-xs font-medium bg-green-500/20 text-green-400">
                   {config.status}
                 </div>
 
@@ -276,8 +278,10 @@ const ConfigurationsSection = () => {
             </button>
             <img
               src={selectedFloorPlan}
-              alt="Floor Plan"
+              alt={configurations.find(c => c.floorPlan === selectedFloorPlan)?.altText || 'Ananda Crown Mohali Luxury Apartment Floor Plan Sector 78'}
+              title={configurations.find(c => c.floorPlan === selectedFloorPlan)?.altText || 'Ananda Crown Mohali Floor Plan'}
               className="w-full h-auto rounded-sm"
+              loading="lazy"
             />
           </motion.div>
         </motion.div>

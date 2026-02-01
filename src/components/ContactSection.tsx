@@ -1,8 +1,9 @@
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
 import { Phone, Mail, MapPin, Send, Download } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import LeadFormModal from './LeadFormModal';
 
 const budgetOptions = [
   '₹1-2 Cr',
@@ -12,8 +13,8 @@ const budgetOptions = [
 ];
 
 const configOptions = [
-  '3 BHK – 2425 sq.ft. (SOLD OUT)',
-  '3+1 BHK – 2750 sq.ft. (SOLD OUT)',
+  '3 BHK – 2425 sq.ft.',
+  '3+1 BHK – 2750 sq.ft.',
   '4 BHK – 3250 sq.ft.',
   '5 BHK – 4100 sq.ft.',
 ];
@@ -23,6 +24,7 @@ const ContactSection = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
   const { toast } = useToast();
+  const [brochureModalOpen, setBrochureModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -208,13 +210,7 @@ Budget: ${formData.budget || 'Not specified'}`;
 
               {/* Download Brochure */}
               <button 
-                onClick={() => {
-                  const contactSection = document.getElementById('contact');
-                  contactSection?.scrollIntoView({ behavior: 'smooth' });
-                  setTimeout(() => {
-                    document.getElementById('contact-name')?.focus();
-                  }, 500);
-                }}
+                onClick={() => setBrochureModalOpen(true)}
                 className="btn-luxury-outline w-full flex items-center justify-center gap-2 text-sm py-3"
               >
                 <Download className="w-4 h-4" />
@@ -362,6 +358,13 @@ Budget: ${formData.budget || 'Not specified'}`;
           </motion.div>
         </div>
       </div>
+      
+      {/* Download Brochure Modal */}
+      <LeadFormModal 
+        isOpen={brochureModalOpen} 
+        onClose={() => setBrochureModalOpen(false)} 
+        type="download-brochure"
+      />
     </section>
   );
 };
