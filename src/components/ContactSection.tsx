@@ -6,10 +6,10 @@ import { useToast } from '@/hooks/use-toast';
 import LeadFormModal from './LeadFormModal';
 
 const budgetOptions = [
-  '₹1-2 Cr',
-  '₹2-3 Cr',
-  '₹3-4 Cr',
-  '₹4 Cr+',
+  '1 to 2 Crore',
+  '2 to 3 Crore',
+  '3 to 4 Crore',
+  '4 to 5 Crore',
 ];
 
 const configOptions = [
@@ -82,26 +82,34 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     // Build WhatsApp message with form data - using specified format
-    const message = `Hello, I want to book a site visit.
+    const message = `Hello, I want to schedule a site visit.
 
 Name: ${formData.name.trim()}
 Phone: ${formData.phone.trim()}
 City: ${formData.city.trim() || 'Not specified'}
 Flat Type: ${formData.flatType || 'Not specified'}
-Budget: ${formData.budget || 'Not specified'}`;
+Budget: ${formData.budget || 'Not specified'}
+
+Please share details.`;
 
     const encodedMessage = encodeURIComponent(message);
     // Direct wa.me link - no API, works everywhere
     const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
+    // Show confirmation
+    toast({
+      title: 'Request Submitted!',
+      description: 'Redirecting you to WhatsApp...',
+    });
+
     // Clear form
     setFormData({ name: '', phone: '', city: '', flatType: '', budget: '' });
     
-    // Redirect to WhatsApp silently
+    // Redirect to WhatsApp after brief delay
     setTimeout(() => {
       window.open(whatsappLink, '_blank');
       setIsSubmitting(false);
-    }, 300);
+    }, 500);
   };
 
   const directWhatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent('Hello, I am interested in Ananda Crown Mohali. Please share details.')}`;

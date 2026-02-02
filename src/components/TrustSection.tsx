@@ -1,25 +1,37 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { Star, Quote, ChevronDown } from 'lucide-react';
+import { Star, Quote, ChevronDown, AlertCircle } from 'lucide-react';
 
 const testimonials = [
   {
     name: 'Rajesh Sharma',
     role: 'Business Owner',
-    content: 'The quality of construction and attention to detail at Ananda Crown is exceptional. We are proud to call this our home.',
+    content: 'The payment plan options at Ananda Crown are incredibly flexible. With only 25% on RERA approval and the rest construction-linked, it\'s perfect for smart investors looking at pre-launch opportunities.',
     rating: 5,
   },
   {
     name: 'Dr. Priya Malhotra',
     role: 'Healthcare Professional',
-    content: 'From the grand entrance to the stunning amenities, every aspect speaks luxury. The location is perfect for our family.',
+    content: 'The prime location near Airport Road is what attracted us. Easy connectivity to Chandigarh and excellent infrastructure development in Sector 78 makes this a perfect family home.',
     rating: 5,
   },
   {
     name: 'Vikram Singh',
     role: 'IT Executive',
-    content: 'The spacious layouts and premium finishes exceeded our expectations. Ananda Crown truly delivers on its promise of elevated living.',
+    content: 'Being close to Amity University and the IT corridor was crucial for our family. The spacious layouts and luxury amenities at Ananda Crown exceeded all our expectations.',
+    rating: 5,
+  },
+  {
+    name: 'Amandeep Kaur',
+    role: 'NRI Investor',
+    content: 'Investing during the pre-launch phase was a smart decision. The location near Chandigarh Group of Colleges and the premium specifications promise great appreciation potential.',
+    rating: 5,
+  },
+  {
+    name: 'Harpreet Gill',
+    role: 'Entrepreneur',
+    content: 'What convinced us was the proximity to Chandigarh University and the excellent payment plan. The pre-development phase pricing gives early investors significant advantages.',
     rating: 5,
   },
 ];
@@ -45,6 +57,10 @@ const faqs = [
     question: 'What is the payment plan for Ananda Crown Mohali?',
     answer: 'We offer a flexible payment plan with 25% on RERA Approval and 75% on Construction-Linked or Time-Linked basis. Contact us for personalized payment options.',
   },
+  {
+    question: 'What is the current project status of Ananda Crown?',
+    answer: 'Ananda Crown is currently in pre-launch / pre-development phase. This is an excellent opportunity for early investors to benefit from pre-launch pricing and flexible payment options.',
+  },
 ];
 
 const TrustSection = () => {
@@ -59,6 +75,21 @@ const TrustSection = () => {
   return (
     <section className="py-24 md:py-32 relative overflow-hidden" itemScope itemType="https://schema.org/FAQPage">
       <div className="container mx-auto px-4 md:px-8" ref={ref}>
+        {/* Pre-Launch Notice */}
+        <motion.div
+          className="mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="flex items-center justify-center gap-2 p-4 bg-primary/10 border border-primary/30 rounded-sm max-w-2xl mx-auto">
+            <AlertCircle className="w-5 h-5 text-primary flex-shrink-0" />
+            <p className="text-sm md:text-base text-foreground/90 text-center">
+              <span className="font-medium text-primary">Pre-Launch Phase</span> – This project is currently in pre-development. Secure your unit with early booking advantages.
+            </p>
+          </div>
+        </motion.div>
+
         {/* Testimonials */}
         <motion.div
           className="text-center mb-16"
@@ -73,7 +104,7 @@ const TrustSection = () => {
           <div className="gold-line max-w-md mx-auto" />
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-24">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
@@ -90,7 +121,7 @@ const TrustSection = () => {
                 ))}
               </div>
 
-              <p className="text-muted-foreground mb-6 italic">"{testimonial.content}"</p>
+              <p className="text-muted-foreground mb-6 italic text-sm md:text-base">"{testimonial.content}"</p>
 
               <div>
                 <p className="font-serif text-lg">{testimonial.name}</p>
@@ -128,11 +159,11 @@ const TrustSection = () => {
             >
               <button
                 onClick={() => toggleFaq(index)}
-                className="flex items-center justify-between w-full p-6 text-left cursor-pointer"
+                className="flex items-center justify-between w-full p-6 text-left cursor-pointer hover:bg-accent/30 transition-colors"
                 aria-expanded={openFaq === index}
                 aria-controls={`faq-answer-${index}`}
               >
-                <span className="font-serif text-lg pr-4" itemProp="name">{faq.question}</span>
+                <span className="font-serif text-base md:text-lg pr-4" itemProp="name">{faq.question}</span>
                 <ChevronDown 
                   className={`w-5 h-5 text-primary flex-shrink-0 transition-transform duration-300 ${
                     openFaq === index ? 'rotate-180' : ''
@@ -141,15 +172,17 @@ const TrustSection = () => {
               </button>
               <div
                 id={`faq-answer-${index}`}
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  openFaq === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                className={`grid transition-all duration-300 ease-in-out ${
+                  openFaq === index ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
                 }`}
                 itemScope
                 itemProp="acceptedAnswer"
                 itemType="https://schema.org/Answer"
               >
-                <div className="px-6 pb-6 text-muted-foreground" itemProp="text">
-                  {faq.answer}
+                <div className="overflow-hidden">
+                  <div className="px-6 pb-6 text-muted-foreground text-sm md:text-base" itemProp="text">
+                    {faq.answer}
+                  </div>
                 </div>
               </div>
             </motion.div>
