@@ -17,9 +17,10 @@ const flatTypeOptions = [
 ];
 
 const budgetOptions = [
-  '₹1–2 Crore',
-  '₹2–3 Crore',
-  '₹3 Crore+',
+  '1 to 2 Crore',
+  '2 to 3 Crore',
+  '3 to 4 Crore',
+  '4 to 5 Crore',
 ];
 
 const LeadFormModal = ({ isOpen, onClose, type }: LeadFormModalProps) => {

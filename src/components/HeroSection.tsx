@@ -81,16 +81,14 @@ const HeroSection = () => {
             High Rise Luxury Living
           </motion.p>
 
-          {/* Main Heading - H1 for SEO */}
+          {/* Main Heading - H1 for SEO - Project location only */}
           <motion.h1
-            className="section-heading text-3xl sm:text-5xl md:text-7xl lg:text-8xl mb-4 md:mb-6"
+            className="section-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl mb-4 md:mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
           >
-            Ananda Crown
-            <br />
-            <span className="text-gradient-gold">Mohali</span>
+            Sector 78, <span className="text-gradient-gold">Mohali</span>
           </motion.h1>
 
           {/* Subheading - H2 for SEO */}

@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { Maximize, X, CreditCard, Building2 } from 'lucide-react';
+import { Maximize, CreditCard, Building2, AlertCircle } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import FloorPlanModal from './FloorPlanModal';
 
 // Import floor plans
 import floorPlan3BHK from '@/assets/floor-plan-3plus1-2875.jpeg';
@@ -20,6 +21,7 @@ const configurations = [
     features: ['3 Bedrooms', '3 Bathrooms', 'Living & Dining', 'Modular Kitchen', 'Utility Balcony', '1 Parking'],
     highlight: 'Perfect for Growing Families',
     floorPlan: floorPlan3BHK,
+    planIndex: 0,
     altText: 'Ananda Crown Mohali 3 BHK Floor Plan Sector 78 Luxury Apartment Layout',
   },
   {
@@ -32,6 +34,7 @@ const configurations = [
     highlight: 'Ideal for Professionals',
     featured: true,
     floorPlan: floorPlan3Plus1,
+    planIndex: 1,
     altText: 'Ananda Crown Mohali 3+1 BHK Floor Plan 2750 Sq Ft Luxury Apartment',
   },
   {
@@ -43,6 +46,7 @@ const configurations = [
     features: ['4 Bedrooms', '4 Bathrooms', 'Private Lounge', 'Italian Kitchen', 'Servant Quarter', '2 Parking'],
     highlight: 'The Pinnacle of Luxury',
     floorPlan: floorPlan4BHK,
+    planIndex: 2,
     altText: 'Ananda Crown Mohali 4 BHK Floor Plan 3250 Sq Ft Premium Apartment',
   },
   {
@@ -54,6 +58,7 @@ const configurations = [
     features: ['5 Bedrooms', '5 Bathrooms', 'Family Lounge', 'Premium Kitchen', 'Multiple Balconies', '2 Parking'],
     highlight: 'Ultimate Family Residence',
     floorPlan: floorPlan5BHK,
+    planIndex: 3,
     altText: 'Ananda Crown Mohali 5 BHK Floor Plan 4100 Sq Ft Penthouse Layout',
   },
 ];
@@ -61,27 +66,23 @@ const configurations = [
 const ConfigurationsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
-  const [selectedFloorPlan, setSelectedFloorPlan] = useState<string | null>(null);
+  const [floorPlanModalOpen, setFloorPlanModalOpen] = useState(false);
+  const [selectedPlanIndex, setSelectedPlanIndex] = useState(0);
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleBookVisit = () => {
-    if (location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => {
-        const contactSection = document.getElementById('contact');
-        contactSection?.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(() => {
-          document.getElementById('contact-name')?.focus();
-        }, 800);
-      }, 100);
-    } else {
-      const contactSection = document.getElementById('contact');
-      contactSection?.scrollIntoView({ behavior: 'smooth' });
-      setTimeout(() => {
-        document.getElementById('contact-name')?.focus();
-      }, 800);
-    }
+  const phoneNumber = '9779799705';
+
+  const handleViewFloorPlan = (planIndex: number) => {
+    setSelectedPlanIndex(planIndex);
+    setFloorPlanModalOpen(true);
+  };
+
+  const handleRequestDetails = (configType: string) => {
+    const message = `Hello, I want to request details for ${configType} at Ananda Crown Mohali. Please share more information.`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.open(whatsappLink, '_blank');
   };
 
   return (
@@ -102,6 +103,21 @@ const ConfigurationsSection = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">
             Each residence is meticulously designed to offer spacious layouts and premium finishes.
           </p>
+        </motion.div>
+
+        {/* Pre-Launch Status Notice */}
+        <motion.div
+          className="mb-8 md:mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <div className="flex items-center justify-center gap-2 p-4 bg-primary/10 border border-primary/30 rounded-sm">
+            <AlertCircle className="w-5 h-5 text-primary flex-shrink-0" />
+            <p className="text-sm md:text-base text-foreground/90 text-center">
+              <span className="font-medium text-primary">Pre-Launch Phase</span> – This project is currently in pre-launch / pre-development phase. Early booking benefits available.
+            </p>
+          </div>
         </motion.div>
 
         {/* Units Selling Fast Section */}
@@ -219,16 +235,14 @@ const ConfigurationsSection = () => {
 
                 {/* Buttons */}
                 <div className="space-y-2">
-                  {config.floorPlan && (
-                    <button
-                      onClick={() => setSelectedFloorPlan(config.floorPlan)}
-                      className="block w-full text-center py-2 md:py-2.5 rounded-sm font-medium text-xs md:text-sm uppercase tracking-wider transition-all duration-300 border border-primary/50 text-primary hover:bg-primary/10"
-                    >
-                      View Floor Plan
-                    </button>
-                  )}
                   <button
-                    onClick={handleBookVisit}
+                    onClick={() => handleViewFloorPlan(config.planIndex)}
+                    className="block w-full text-center py-2 md:py-2.5 rounded-sm font-medium text-xs md:text-sm uppercase tracking-wider transition-all duration-300 border border-primary/50 text-primary hover:bg-primary/10"
+                  >
+                    View Floor Plan
+                  </button>
+                  <button
+                    onClick={() => handleRequestDetails(config.type)}
                     className={`block w-full text-center py-2.5 md:py-3 rounded-sm font-medium text-xs md:text-sm uppercase tracking-wider transition-all duration-300 ${
                       config.featured
                         ? 'btn-luxury'
@@ -257,35 +271,11 @@ const ConfigurationsSection = () => {
       </div>
 
       {/* Floor Plan Modal */}
-      {selectedFloorPlan && (
-        <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-background/90 backdrop-blur-md p-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          onClick={() => setSelectedFloorPlan(null)}
-        >
-          <motion.div
-            className="relative max-w-4xl w-full max-h-[90vh] overflow-auto"
-            initial={{ scale: 0.9 }}
-            animate={{ scale: 1 }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setSelectedFloorPlan(null)}
-              className="absolute top-2 right-2 z-10 p-2 bg-background/80 rounded-full text-foreground hover:text-primary transition-colors"
-            >
-              <X className="w-6 h-6" />
-            </button>
-            <img
-              src={selectedFloorPlan}
-              alt={configurations.find(c => c.floorPlan === selectedFloorPlan)?.altText || 'Ananda Crown Mohali Luxury Apartment Floor Plan Sector 78'}
-              title={configurations.find(c => c.floorPlan === selectedFloorPlan)?.altText || 'Ananda Crown Mohali Floor Plan'}
-              className="w-full h-auto rounded-sm"
-              loading="lazy"
-            />
-          </motion.div>
-        </motion.div>
-      )}
+      <FloorPlanModal
+        isOpen={floorPlanModalOpen}
+        onClose={() => setFloorPlanModalOpen(false)}
+        initialPlanIndex={selectedPlanIndex}
+      />
     </section>
   );
 };
