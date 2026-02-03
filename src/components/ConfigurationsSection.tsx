@@ -2,14 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Maximize, CreditCard, Building2, AlertCircle } from 'lucide-react';
-import { useNavigate, useLocation } from 'react-router-dom';
 import FloorPlanModal from './FloorPlanModal';
-
-// Import floor plans
-import floorPlan3BHK from '@/assets/floor-plan-3plus1-2875.jpeg';
-import floorPlan3Plus1 from '@/assets/floor-plan-3plus1-2750.jpeg';
-import floorPlan4BHK from '@/assets/floor-plan-4bhk.jpeg';
-import floorPlan5BHK from '@/assets/floor-plan-5bhk.jpeg';
 
 const configurations = [
   {
@@ -20,7 +13,6 @@ const configurations = [
     status: 'AVAILABLE',
     features: ['3 Bedrooms', '3 Bathrooms', 'Living & Dining', 'Modular Kitchen', 'Utility Balcony', '1 Parking'],
     highlight: 'Perfect for Growing Families',
-    floorPlan: floorPlan3BHK,
     planIndex: 0,
     altText: 'Ananda Crown Mohali 3 BHK Floor Plan Sector 78 Luxury Apartment Layout',
   },
@@ -33,7 +25,6 @@ const configurations = [
     features: ['3 Bedrooms + Study', '4 Bathrooms', 'Large Living Area', 'Premium Kitchen', 'Servant Quarter', '2 Parking'],
     highlight: 'Ideal for Professionals',
     featured: true,
-    floorPlan: floorPlan3Plus1,
     planIndex: 1,
     altText: 'Ananda Crown Mohali 3+1 BHK Floor Plan 2750 Sq Ft Luxury Apartment',
   },
@@ -45,7 +36,6 @@ const configurations = [
     status: 'AVAILABLE',
     features: ['4 Bedrooms', '4 Bathrooms', 'Private Lounge', 'Italian Kitchen', 'Servant Quarter', '2 Parking'],
     highlight: 'The Pinnacle of Luxury',
-    floorPlan: floorPlan4BHK,
     planIndex: 2,
     altText: 'Ananda Crown Mohali 4 BHK Floor Plan 3250 Sq Ft Premium Apartment',
   },
@@ -57,7 +47,6 @@ const configurations = [
     status: 'AVAILABLE',
     features: ['5 Bedrooms', '5 Bathrooms', 'Family Lounge', 'Premium Kitchen', 'Multiple Balconies', '2 Parking'],
     highlight: 'Ultimate Family Residence',
-    floorPlan: floorPlan5BHK,
     planIndex: 3,
     altText: 'Ananda Crown Mohali 5 BHK Floor Plan 4100 Sq Ft Penthouse Layout',
   },
@@ -68,8 +57,6 @@ const ConfigurationsSection = () => {
   const isInView = useInView(ref, { once: true, margin: '-50px' });
   const [floorPlanModalOpen, setFloorPlanModalOpen] = useState(false);
   const [selectedPlanIndex, setSelectedPlanIndex] = useState(0);
-  const navigate = useNavigate();
-  const location = useLocation();
 
   const phoneNumber = '9779799705';
 

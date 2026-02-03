@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     question: 'What is the payment plan for Ananda Crown Mohali?',
-    answer: 'We offer a flexible payment plan with 25% on RERA Approval and 75% on Construction-Linked or Time-Linked basis. Contact us for personalized payment options.',
+    answer: 'We offer a flexible payment plan with 25% on RERA Approval and 75% on Construction-Linked / Time-Linked basis. Contact us for personalized payment options.',
   },
   {
     question: 'What is the current project status of Ananda Crown?',
@@ -159,11 +159,12 @@ const TrustSection = () => {
             >
               <button
                 onClick={() => toggleFaq(index)}
-                className="flex items-center justify-between w-full p-6 text-left cursor-pointer hover:bg-accent/30 transition-colors"
+                className="flex items-center justify-between w-full p-5 md:p-6 text-left cursor-pointer hover:bg-accent/30 transition-colors"
                 aria-expanded={openFaq === index}
                 aria-controls={`faq-answer-${index}`}
+                type="button"
               >
-                <span className="font-serif text-base md:text-lg pr-4" itemProp="name">{faq.question}</span>
+                <span className="font-serif text-sm md:text-lg pr-4" itemProp="name">{faq.question}</span>
                 <ChevronDown 
                   className={`w-5 h-5 text-primary flex-shrink-0 transition-transform duration-300 ${
                     openFaq === index ? 'rotate-180' : ''
@@ -172,17 +173,15 @@ const TrustSection = () => {
               </button>
               <div
                 id={`faq-answer-${index}`}
-                className={`grid transition-all duration-300 ease-in-out ${
-                  openFaq === index ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  openFaq === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
                 itemScope
                 itemProp="acceptedAnswer"
                 itemType="https://schema.org/Answer"
               >
-                <div className="overflow-hidden">
-                  <div className="px-6 pb-6 text-muted-foreground text-sm md:text-base" itemProp="text">
-                    {faq.answer}
-                  </div>
+                <div className="px-5 md:px-6 pb-5 md:pb-6 text-muted-foreground text-sm md:text-base" itemProp="text">
+                  {faq.answer}
                 </div>
               </div>
             </motion.div>
