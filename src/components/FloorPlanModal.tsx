@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send, ChevronLeft, ChevronRight, ArrowLeft, MapPin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
@@ -9,7 +9,7 @@ interface FloorPlanModalProps {
   initialPlanIndex?: number;
 }
 
-// Floor plans with external URLs as provided
+// Floor plans with external URLs - dynamically scalable
 const floorPlans = [
   {
     type: '3 BHK',
@@ -46,6 +46,7 @@ const sitePlan = {
 
 const FloorPlanModal = ({ isOpen, onClose, initialPlanIndex = 0 }: FloorPlanModalProps) => {
   const { toast } = useToast();
+  const modalRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(initialPlanIndex);
   const [showSitePlan, setShowSitePlan] = useState(false);
   const [formData, setFormData] = useState({
@@ -57,33 +58,44 @@ const FloorPlanModal = ({ isOpen, onClose, initialPlanIndex = 0 }: FloorPlanModa
 
   const phoneNumber = '9779799705';
 
-  // Reset index when modal opens with new initialPlanIndex
+  // Reset state and scroll to top when modal opens
   useEffect(() => {
     if (isOpen) {
       setCurrentIndex(initialPlanIndex);
       setShowSitePlan(false);
-      // Auto-fill flat type based on selected plan
       setFormData(prev => ({
         ...prev,
         flatType: floorPlans[initialPlanIndex]?.type || '3 BHK'
       }));
+      // Scroll modal to top immediately
+      setTimeout(() => {
+        modalRef.current?.scrollTo({ top: 0, behavior: 'instant' });
+      }, 50);
+      // Lock body scroll
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
     }
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [isOpen, initialPlanIndex]);
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? floorPlans.length - 1 : prev - 1));
+    const newIndex = currentIndex === 0 ? floorPlans.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
     setFormData(prev => ({
       ...prev,
-      flatType: floorPlans[currentIndex === 0 ? floorPlans.length - 1 : currentIndex - 1]?.type || ''
+      flatType: floorPlans[newIndex]?.type || ''
     }));
   };
 
   const handleNext = () => {
-    const nextIndex = currentIndex === floorPlans.length - 1 ? 0 : currentIndex + 1;
-    setCurrentIndex(nextIndex);
+    const newIndex = currentIndex === floorPlans.length - 1 ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
     setFormData(prev => ({
       ...prev,
-      flatType: floorPlans[nextIndex]?.type || ''
+      flatType: floorPlans[newIndex]?.type || ''
     }));
   };
 
@@ -121,22 +133,20 @@ const FloorPlanModal = ({ isOpen, onClose, initialPlanIndex = 0 }: FloorPlanModa
     setIsSubmitting(true);
 
     const currentPlan = floorPlans[currentIndex];
-    const message = `Hello, I am interested in Floor Plan.
-
-Name: ${formData.name.trim()}
+    const unitType = formData.flatType || currentPlan.type;
+    
+    // WhatsApp message in EXACT required format
+    const message = `Name: ${formData.name.trim()}
 Phone: ${formData.phone.trim()}
-Unit Type: ${formData.flatType || currentPlan.type}
-
-Request: Interested in Floor Plan
-
-Please share details.`;
+Unit Type: ${unitType}
+Message: Interested in Floor Plan`;
 
     const encodedMessage = encodeURIComponent(message);
     const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
     toast({
-      title: 'Request Submitted!',
-      description: 'Redirecting you to WhatsApp...',
+      title: '✓ Request Submitted!',
+      description: 'Opening WhatsApp now...',
     });
 
     setFormData({ name: '', phone: '', flatType: '' });
@@ -145,7 +155,7 @@ Please share details.`;
       window.open(whatsappLink, '_blank');
       setIsSubmitting(false);
       onClose();
-    }, 500);
+    }, 300);
   };
 
   const handleBackdropClick = (e: React.MouseEvent) => {
@@ -160,202 +170,217 @@ Please share details.`;
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-start justify-center p-2 md:p-4 bg-background/90 backdrop-blur-md overflow-y-auto"
+          className="fixed inset-0 z-50 flex items-start justify-center bg-background/95 backdrop-blur-md"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={handleBackdropClick}
         >
-          <motion.div
-            className="relative w-full max-w-4xl bg-card border border-border rounded-sm shadow-2xl my-4 md:my-8"
-            initial={{ scale: 0.95, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.95, opacity: 0 }}
-            transition={{ duration: 0.2 }}
+          <div
+            ref={modalRef}
+            className="relative w-full h-full overflow-y-auto"
           >
-            {/* Header with Back Button */}
-            <div className="flex items-center justify-between p-3 md:p-5 border-b border-border bg-card/50 sticky top-0 z-10">
-              <div className="flex items-center gap-3">
+            <motion.div
+              className="relative w-full max-w-4xl mx-auto bg-card border border-border rounded-sm shadow-2xl my-2 md:my-4"
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header with Back Button - Sticky */}
+              <div className="flex items-center justify-between p-3 md:p-4 border-b border-border bg-card sticky top-0 z-20">
+                <div className="flex items-center gap-2 md:gap-3">
+                  <button
+                    onClick={onClose}
+                    className="p-2 rounded-sm hover:bg-accent transition-colors flex items-center gap-1.5 text-sm font-medium"
+                    aria-label="Go back"
+                    type="button"
+                  >
+                    <ArrowLeft className="w-5 h-5" />
+                    <span className="hidden sm:inline">Back</span>
+                  </button>
+                  <div>
+                    <h2 className="font-serif text-base md:text-xl text-gradient-gold">
+                      {showSitePlan ? 'Site Plan' : `${currentPlan.type} Floor Plan`}
+                    </h2>
+                    <p className="text-[10px] md:text-xs text-muted-foreground">
+                      {showSitePlan ? 'Ananda Crown Sector 78 Mohali' : `${currentPlan.size} | Ananda Crown`}
+                    </p>
+                  </div>
+                </div>
                 <button
                   onClick={onClose}
-                  className="p-2 rounded-sm hover:bg-accent transition-colors flex items-center gap-2 text-sm"
-                  aria-label="Go back"
+                  className="p-2 rounded-sm hover:bg-accent transition-colors"
+                  aria-label="Close modal"
+                  type="button"
                 >
-                  <ArrowLeft className="w-5 h-5" />
-                  <span className="hidden md:inline">Back</span>
+                  <X className="w-5 h-5" />
                 </button>
-                <div>
-                  <h2 className="font-serif text-lg md:text-2xl text-gradient-gold">
-                    {showSitePlan ? 'Site Plan' : `${currentPlan.type} Floor Plan`}
-                  </h2>
-                  <p className="text-[10px] md:text-sm text-muted-foreground">
-                    {showSitePlan ? 'Ananda Crown Sector 78 Mohali' : `${currentPlan.size} | Ananda Crown Sector 78 Mohali`}
-                  </p>
-                </div>
               </div>
-              <button
-                onClick={onClose}
-                className="p-2 rounded-sm hover:bg-accent transition-colors"
-                aria-label="Close modal"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
 
-            {/* Site Plan Toggle Button */}
-            <div className="flex justify-center py-3 border-b border-border/50 bg-card/30">
-              <button
-                onClick={() => setShowSitePlan(!showSitePlan)}
-                className={`px-4 py-2 text-sm rounded-sm transition-all flex items-center gap-2 ${
-                  showSitePlan
-                    ? 'bg-primary text-primary-foreground'
-                    : 'bg-muted text-muted-foreground hover:bg-primary/20'
-                }`}
-              >
-                <MapPin className="w-4 h-4" />
-                {showSitePlan ? 'View Floor Plans' : 'View Site Plan'}
-              </button>
-            </div>
-
-            {showSitePlan ? (
-              /* Site Plan View */
-              <div className="p-4">
-                <div className="flex items-center justify-center bg-background/50 rounded-sm">
-                  <img
-                    src={sitePlan.image}
-                    alt={sitePlan.altText}
-                    title={sitePlan.altText}
-                    className="max-h-[50vh] md:max-h-[55vh] w-auto object-contain rounded-sm"
-                  />
-                </div>
-              </div>
-            ) : (
-              /* Floor Plan View */
-              <>
-                {/* Floor Plan Image - Visible immediately */}
-                <div className="relative p-3 md:p-4 flex items-center justify-center bg-background/50">
-                  {/* Navigation Arrows */}
-                  <button
-                    onClick={handlePrev}
-                    className="absolute left-1 md:left-4 z-10 p-2 bg-background/80 rounded-full hover:bg-primary/20 transition-colors"
-                    aria-label="Previous floor plan"
-                  >
-                    <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
-                  </button>
-
-                  <img
-                    src={currentPlan.image}
-                    alt={currentPlan.altText}
-                    title={currentPlan.altText}
-                    className="max-h-[40vh] md:max-h-[50vh] w-auto object-contain rounded-sm"
-                  />
-
-                  <button
-                    onClick={handleNext}
-                    className="absolute right-1 md:right-4 z-10 p-2 bg-background/80 rounded-full hover:bg-primary/20 transition-colors"
-                    aria-label="Next floor plan"
-                  >
-                    <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
-                  </button>
-                </div>
-
-                {/* Dots Navigation */}
-                <div className="flex justify-center gap-1.5 md:gap-2 py-2 md:py-3 border-t border-border/50">
-                  {floorPlans.map((plan, index) => (
-                    <button
-                      key={plan.type}
-                      onClick={() => handleSelectPlan(index)}
-                      className={`px-2 md:px-3 py-1 text-[10px] md:text-xs rounded-sm transition-all ${
-                        index === currentIndex
-                          ? 'bg-primary text-primary-foreground'
-                          : 'bg-muted text-muted-foreground hover:bg-primary/20'
-                      }`}
-                    >
-                      {plan.type}
-                    </button>
-                  ))}
-                </div>
-              </>
-            )}
-
-            {/* Lead Capture Form - Always visible below image */}
-            <div className="p-4 md:p-6 border-t border-border bg-card/50">
-              <h3 className="font-serif text-base md:text-lg mb-3 md:mb-4 text-center">
-                Request Details for {showSitePlan ? 'Site Plan' : currentPlan.type}
-              </h3>
-              
-              <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
-                  {/* Name */}
-                  <div>
-                    <label htmlFor="fp-name" className="block text-xs md:text-sm text-muted-foreground mb-1">
-                      Name <span className="text-destructive">*</span>
-                    </label>
-                    <input
-                      id="fp-name"
-                      type="text"
-                      required
-                      maxLength={100}
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-3 py-2.5 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors text-sm"
-                      placeholder="Enter your name"
-                    />
-                  </div>
-
-                  {/* Mobile Number */}
-                  <div>
-                    <label htmlFor="fp-phone" className="block text-xs md:text-sm text-muted-foreground mb-1">
-                      Mobile Number <span className="text-destructive">*</span>
-                    </label>
-                    <input
-                      id="fp-phone"
-                      type="tel"
-                      required
-                      maxLength={15}
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-3 py-2.5 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors text-sm"
-                      placeholder="10-digit mobile"
-                    />
-                  </div>
-
-                  {/* Unit Type - Auto-selected */}
-                  <div>
-                    <label htmlFor="fp-flat" className="block text-xs md:text-sm text-muted-foreground mb-1">
-                      Unit Type <span className="text-destructive">*</span>
-                    </label>
-                    <select
-                      id="fp-flat"
-                      required
-                      value={formData.flatType}
-                      onChange={(e) => setFormData({ ...formData, flatType: e.target.value })}
-                      className="w-full px-3 py-2.5 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors appearance-none text-sm"
-                    >
-                      <option value="3 BHK">3 BHK</option>
-                      <option value="3+1 BHK">3+1 BHK</option>
-                      <option value="4 BHK">4 BHK</option>
-                      <option value="5 BHK">5 BHK</option>
-                    </select>
-                  </div>
-                </div>
-
-                {/* Submit Button */}
+              {/* Site Plan Toggle */}
+              <div className="flex justify-center py-2 border-b border-border/50 bg-card/80">
                 <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="btn-luxury w-full flex items-center justify-center gap-2 py-3 disabled:opacity-50"
+                  onClick={() => setShowSitePlan(!showSitePlan)}
+                  className={`px-3 py-1.5 text-xs md:text-sm rounded-sm transition-all flex items-center gap-1.5 ${
+                    showSitePlan
+                      ? 'bg-primary text-primary-foreground'
+                      : 'bg-muted text-muted-foreground hover:bg-primary/20'
+                  }`}
+                  type="button"
                 >
-                  <Send className="w-4 h-4" />
-                  {isSubmitting ? 'Submitting...' : 'Request Details via WhatsApp'}
+                  <MapPin className="w-3.5 h-3.5" />
+                  {showSitePlan ? 'View Floor Plans' : 'View Site Plan'}
                 </button>
+              </div>
 
-                <p className="text-[9px] md:text-[10px] text-muted-foreground text-center">
-                  By submitting, you agree to our privacy policy. Your information is secure.
-                </p>
-              </form>
-            </div>
-          </motion.div>
+              {showSitePlan ? (
+                /* Site Plan View */
+                <div className="p-3 md:p-4">
+                  <div className="flex items-center justify-center bg-background/50 rounded-sm min-h-[35vh]">
+                    <img
+                      src={sitePlan.image}
+                      alt={sitePlan.altText}
+                      title={sitePlan.altText}
+                      className="max-h-[40vh] md:max-h-[45vh] w-auto object-contain rounded-sm"
+                      loading="eager"
+                    />
+                  </div>
+                </div>
+              ) : (
+                /* Floor Plan View - Image visible immediately */
+                <>
+                  <div className="relative p-2 md:p-3 flex items-center justify-center bg-background/50 min-h-[35vh]">
+                    {/* Navigation Arrows */}
+                    <button
+                      onClick={handlePrev}
+                      className="absolute left-1 md:left-3 z-10 p-1.5 md:p-2 bg-background/90 rounded-full hover:bg-primary/20 transition-colors shadow-md"
+                      aria-label="Previous floor plan"
+                      type="button"
+                    >
+                      <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+                    </button>
+
+                    <img
+                      src={currentPlan.image}
+                      alt={currentPlan.altText}
+                      title={currentPlan.altText}
+                      className="max-h-[35vh] md:max-h-[40vh] w-auto object-contain rounded-sm"
+                      loading="eager"
+                    />
+
+                    <button
+                      onClick={handleNext}
+                      className="absolute right-1 md:right-3 z-10 p-1.5 md:p-2 bg-background/90 rounded-full hover:bg-primary/20 transition-colors shadow-md"
+                      aria-label="Next floor plan"
+                      type="button"
+                    >
+                      <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+                    </button>
+                  </div>
+
+                  {/* Plan Type Selector */}
+                  <div className="flex justify-center gap-1 md:gap-1.5 py-2 border-t border-border/50 bg-card/50">
+                    {floorPlans.map((plan, index) => (
+                      <button
+                        key={plan.type}
+                        onClick={() => handleSelectPlan(index)}
+                        className={`px-2 md:px-3 py-1 text-[10px] md:text-xs rounded-sm transition-all ${
+                          index === currentIndex
+                            ? 'bg-primary text-primary-foreground'
+                            : 'bg-muted text-muted-foreground hover:bg-primary/20'
+                        }`}
+                        type="button"
+                      >
+                        {plan.type}
+                      </button>
+                    ))}
+                  </div>
+                </>
+              )}
+
+              {/* Lead Capture Form - Visible immediately below image */}
+              <div className="p-3 md:p-5 border-t border-border bg-card">
+                <h3 className="font-serif text-sm md:text-base mb-3 text-center">
+                  Request Details for {showSitePlan ? 'Site Plan' : currentPlan.type}
+                </h3>
+                
+                <form onSubmit={handleSubmit} className="space-y-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 md:gap-3">
+                    {/* Name */}
+                    <div>
+                      <label htmlFor="fp-name" className="block text-[10px] md:text-xs text-muted-foreground mb-1">
+                        Name <span className="text-destructive">*</span>
+                      </label>
+                      <input
+                        id="fp-name"
+                        type="text"
+                        required
+                        maxLength={100}
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full px-2.5 py-2 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors text-sm"
+                        placeholder="Your name"
+                        autoComplete="name"
+                      />
+                    </div>
+
+                    {/* Mobile Number */}
+                    <div>
+                      <label htmlFor="fp-phone" className="block text-[10px] md:text-xs text-muted-foreground mb-1">
+                        Mobile <span className="text-destructive">*</span>
+                      </label>
+                      <input
+                        id="fp-phone"
+                        type="tel"
+                        required
+                        maxLength={15}
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        className="w-full px-2.5 py-2 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors text-sm"
+                        placeholder="10-digit mobile"
+                        autoComplete="tel"
+                      />
+                    </div>
+
+                    {/* Unit Type - Auto-selected */}
+                    <div>
+                      <label htmlFor="fp-flat" className="block text-[10px] md:text-xs text-muted-foreground mb-1">
+                        Unit Type <span className="text-destructive">*</span>
+                      </label>
+                      <select
+                        id="fp-flat"
+                        required
+                        value={formData.flatType}
+                        onChange={(e) => setFormData({ ...formData, flatType: e.target.value })}
+                        className="w-full px-2.5 py-2 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors appearance-none text-sm"
+                      >
+                        <option value="3 BHK">3 BHK</option>
+                        <option value="3+1 BHK">3+1 BHK</option>
+                        <option value="4 BHK">4 BHK</option>
+                        <option value="5 BHK">5 BHK</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  {/* Submit Button */}
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="btn-luxury w-full flex items-center justify-center gap-2 py-2.5 disabled:opacity-50 text-sm"
+                  >
+                    <Send className="w-4 h-4" />
+                    {isSubmitting ? 'Submitting...' : 'Request Details via WhatsApp'}
+                  </button>
+
+                  <p className="text-[9px] text-muted-foreground text-center">
+                    By submitting, you agree to our privacy policy.
+                  </p>
+                </form>
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>
