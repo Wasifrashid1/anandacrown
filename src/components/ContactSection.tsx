@@ -57,11 +57,20 @@ const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Validate required fields
-    if (!formData.name.trim() || !formData.phone.trim()) {
+    // Validate required fields - only name and phone are truly required
+    if (!formData.name.trim()) {
       toast({
-        title: 'Please fill required fields',
-        description: 'Name and Phone are required.',
+        title: 'Name is required',
+        description: 'Please enter your full name.',
+        variant: 'destructive',
+      });
+      return;
+    }
+
+    if (!formData.phone.trim()) {
+      toast({
+        title: 'Phone is required',
+        description: 'Please enter your mobile number.',
         variant: 'destructive',
       });
       return;
@@ -81,8 +90,8 @@ const ContactSection = () => {
 
     setIsSubmitting(true);
 
-    // Build WhatsApp message with form data - using specified format
-    const message = `Hello, I want to schedule a site visit.
+    // Build WhatsApp message - clear format for site visit request
+    const message = `Hello, I am requesting a site visit.
 
 Name: ${formData.name.trim()}
 Phone: ${formData.phone.trim()}
@@ -90,26 +99,28 @@ City: ${formData.city.trim() || 'Not specified'}
 Flat Type: ${formData.flatType || 'Not specified'}
 Budget: ${formData.budget || 'Not specified'}
 
-Please share details.`;
+Message: Requesting site visit
+
+Please contact me.`;
 
     const encodedMessage = encodeURIComponent(message);
-    // Direct wa.me link - no API, works everywhere
+    // Direct wa.me link - works on all devices
     const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
-    // Show confirmation
+    // Show confirmation toast
     toast({
-      title: 'Request Submitted!',
-      description: 'Redirecting you to WhatsApp...',
+      title: '✓ Request Submitted!',
+      description: 'Opening WhatsApp now...',
     });
 
-    // Clear form
+    // Clear form immediately
     setFormData({ name: '', phone: '', city: '', flatType: '', budget: '' });
     
-    // Redirect to WhatsApp after brief delay
+    // Open WhatsApp after brief delay for toast visibility
     setTimeout(() => {
       window.open(whatsappLink, '_blank');
       setIsSubmitting(false);
-    }, 500);
+    }, 300);
   };
 
   const directWhatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent('Hello, I am interested in Ananda Crown Mohali. Please share details.')}`;
@@ -230,7 +241,7 @@ Please share details.`;
             <div className="grid grid-cols-3 gap-3 md:gap-4">
               {[
                 { value: '20+', label: 'Years Excellence' },
-                { value: '5000+', label: 'Happy Families' },
+                { value: '📍', label: 'Top-Notch Location' },
                 { value: 'A+', label: 'Rating' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center p-3 md:p-4 glass rounded-sm">
