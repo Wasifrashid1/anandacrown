@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send, ChevronLeft, ChevronRight, ArrowLeft, MapPin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
@@ -46,7 +46,6 @@ const sitePlan = {
 
 const FloorPlanModal = ({ isOpen, onClose, initialPlanIndex = 0 }: FloorPlanModalProps) => {
   const { toast } = useToast();
-  const modalRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(initialPlanIndex);
   const [showSitePlan, setShowSitePlan] = useState(false);
   const [formData, setFormData] = useState({
@@ -58,7 +57,7 @@ const FloorPlanModal = ({ isOpen, onClose, initialPlanIndex = 0 }: FloorPlanModa
 
   const phoneNumber = '9779799705';
 
-  // Reset state and scroll to top when modal opens
+  // Reset state when modal opens and lock body scroll
   useEffect(() => {
     if (isOpen) {
       setCurrentIndex(initialPlanIndex);
@@ -67,10 +66,6 @@ const FloorPlanModal = ({ isOpen, onClose, initialPlanIndex = 0 }: FloorPlanModa
         ...prev,
         flatType: floorPlans[initialPlanIndex]?.type || '3 BHK'
       }));
-      // Scroll modal to top immediately
-      setTimeout(() => {
-        modalRef.current?.scrollTo({ top: 0, behavior: 'instant' });
-      }, 50);
       // Lock body scroll
       document.body.style.overflow = 'hidden';
     } else {
@@ -158,228 +153,181 @@ Message: Interested in Floor Plan`;
     }, 300);
   };
 
-  const handleBackdropClick = (e: React.MouseEvent) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
-
   const currentPlan = floorPlans[currentIndex];
 
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-start justify-center bg-background/95 backdrop-blur-md"
+          className="fixed inset-0 z-[100] bg-background/98 backdrop-blur-md flex flex-col"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          onClick={handleBackdropClick}
         >
-          <div
-            ref={modalRef}
-            className="relative w-full h-full overflow-y-auto"
-          >
-            <motion.div
-              className="relative w-full max-w-4xl mx-auto bg-card border border-border rounded-sm shadow-2xl my-2 md:my-4"
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              onClick={(e) => e.stopPropagation()}
+          {/* Header with Back Button - Fixed at top */}
+          <div className="flex items-center justify-between p-3 md:p-4 border-b border-border bg-card/90 shrink-0">
+            <div className="flex items-center gap-2 md:gap-3">
+              <button
+                onClick={onClose}
+                className="p-2 rounded-sm hover:bg-accent transition-colors flex items-center gap-1.5 text-sm font-medium"
+                aria-label="Go back"
+                type="button"
+              >
+                <ArrowLeft className="w-5 h-5" />
+                <span className="hidden sm:inline">Back</span>
+              </button>
+              <div>
+                <h2 className="font-serif text-base md:text-xl text-gradient-gold">
+                  {showSitePlan ? 'Site Plan' : `${currentPlan.type} Floor Plan`}
+                </h2>
+                <p className="text-[10px] md:text-xs text-muted-foreground">
+                  {showSitePlan ? 'Ananda Crown Sector 78 Mohali' : `${currentPlan.size} | Ananda Crown`}
+                </p>
+              </div>
+            </div>
+            <button
+              onClick={onClose}
+              className="p-2 rounded-sm hover:bg-accent transition-colors"
+              aria-label="Close modal"
+              type="button"
             >
-              {/* Header with Back Button - Sticky */}
-              <div className="flex items-center justify-between p-3 md:p-4 border-b border-border bg-card sticky top-0 z-20">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <button
-                    onClick={onClose}
-                    className="p-2 rounded-sm hover:bg-accent transition-colors flex items-center gap-1.5 text-sm font-medium"
-                    aria-label="Go back"
-                    type="button"
-                  >
-                    <ArrowLeft className="w-5 h-5" />
-                    <span className="hidden sm:inline">Back</span>
-                  </button>
-                  <div>
-                    <h2 className="font-serif text-base md:text-xl text-gradient-gold">
-                      {showSitePlan ? 'Site Plan' : `${currentPlan.type} Floor Plan`}
-                    </h2>
-                    <p className="text-[10px] md:text-xs text-muted-foreground">
-                      {showSitePlan ? 'Ananda Crown Sector 78 Mohali' : `${currentPlan.size} | Ananda Crown`}
-                    </p>
-                  </div>
-                </div>
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+
+          {/* Site Plan Toggle */}
+          <div className="flex justify-center py-2 border-b border-border/50 bg-card/50 shrink-0">
+            <button
+              onClick={() => setShowSitePlan(!showSitePlan)}
+              className={`px-3 py-1.5 text-xs md:text-sm rounded-sm transition-all flex items-center gap-1.5 ${
+                showSitePlan
+                  ? 'bg-primary text-primary-foreground'
+                  : 'bg-muted text-muted-foreground hover:bg-primary/20'
+              }`}
+              type="button"
+            >
+              <MapPin className="w-3.5 h-3.5" />
+              {showSitePlan ? 'View Floor Plans' : 'View Site Plan'}
+            </button>
+          </div>
+
+          {/* Image Container - Fills remaining space, NO SCROLL */}
+          <div className="flex-1 flex items-center justify-center p-2 md:p-4 overflow-hidden relative min-h-0">
+            {showSitePlan ? (
+              <img
+                src={sitePlan.image}
+                alt={sitePlan.altText}
+                title={sitePlan.altText}
+                className="max-w-full max-h-full object-contain"
+                loading="eager"
+              />
+            ) : (
+              <>
+                {/* Navigation Arrows */}
                 <button
-                  onClick={onClose}
-                  className="p-2 rounded-sm hover:bg-accent transition-colors"
-                  aria-label="Close modal"
+                  onClick={handlePrev}
+                  className="absolute left-1 md:left-3 z-10 p-1.5 md:p-2 bg-background/90 rounded-full hover:bg-primary/20 transition-colors shadow-md"
+                  aria-label="Previous floor plan"
                   type="button"
                 >
-                  <X className="w-5 h-5" />
+                  <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
                 </button>
-              </div>
 
-              {/* Site Plan Toggle */}
-              <div className="flex justify-center py-2 border-b border-border/50 bg-card/80">
+                <img
+                  src={currentPlan.image}
+                  alt={currentPlan.altText}
+                  title={currentPlan.altText}
+                  className="max-w-full max-h-full object-contain"
+                  loading="eager"
+                />
+
                 <button
-                  onClick={() => setShowSitePlan(!showSitePlan)}
-                  className={`px-3 py-1.5 text-xs md:text-sm rounded-sm transition-all flex items-center gap-1.5 ${
-                    showSitePlan
+                  onClick={handleNext}
+                  className="absolute right-1 md:right-3 z-10 p-1.5 md:p-2 bg-background/90 rounded-full hover:bg-primary/20 transition-colors shadow-md"
+                  aria-label="Next floor plan"
+                  type="button"
+                >
+                  <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+                </button>
+              </>
+            )}
+          </div>
+
+          {/* Plan Type Selector - Only when not showing site plan */}
+          {!showSitePlan && (
+            <div className="flex justify-center gap-1 md:gap-1.5 py-2 border-t border-border/50 bg-card/50 shrink-0">
+              {floorPlans.map((plan, index) => (
+                <button
+                  key={plan.type}
+                  onClick={() => handleSelectPlan(index)}
+                  className={`px-2 md:px-3 py-1 text-[10px] md:text-xs rounded-sm transition-all ${
+                    index === currentIndex
                       ? 'bg-primary text-primary-foreground'
                       : 'bg-muted text-muted-foreground hover:bg-primary/20'
                   }`}
                   type="button"
                 >
-                  <MapPin className="w-3.5 h-3.5" />
-                  {showSitePlan ? 'View Floor Plans' : 'View Site Plan'}
+                  {plan.type}
                 </button>
+              ))}
+            </div>
+          )}
+
+          {/* Lead Capture Form - Fixed at bottom */}
+          <div className="p-3 md:p-4 border-t border-border bg-card shrink-0">
+            <form onSubmit={handleSubmit} className="max-w-xl mx-auto">
+              <h3 className="font-serif text-sm md:text-base mb-2 text-center">
+                Request Details for {showSitePlan ? 'Site Plan' : currentPlan.type}
+              </h3>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                {/* Name */}
+                <input
+                  type="text"
+                  required
+                  maxLength={100}
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="w-full px-2.5 py-2 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors text-sm"
+                  placeholder="Name *"
+                  autoComplete="name"
+                />
+
+                {/* Mobile Number */}
+                <input
+                  type="tel"
+                  required
+                  maxLength={15}
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  className="w-full px-2.5 py-2 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors text-sm"
+                  placeholder="Mobile *"
+                  autoComplete="tel"
+                />
+
+                {/* Unit Type - Auto-selected */}
+                <select
+                  value={formData.flatType}
+                  onChange={(e) => setFormData({ ...formData, flatType: e.target.value })}
+                  className="w-full px-2.5 py-2 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors appearance-none text-sm"
+                >
+                  <option value="3 BHK">3 BHK</option>
+                  <option value="3+1 BHK">3+1 BHK</option>
+                  <option value="4 BHK">4 BHK</option>
+                  <option value="5 BHK">5 BHK</option>
+                </select>
               </div>
 
-              {showSitePlan ? (
-                /* Site Plan View */
-                <div className="p-3 md:p-4">
-                  <div className="flex items-center justify-center bg-background/50 rounded-sm min-h-[35vh]">
-                    <img
-                      src={sitePlan.image}
-                      alt={sitePlan.altText}
-                      title={sitePlan.altText}
-                      className="max-h-[40vh] md:max-h-[45vh] w-auto object-contain rounded-sm"
-                      loading="eager"
-                    />
-                  </div>
-                </div>
-              ) : (
-                /* Floor Plan View - Image visible immediately */
-                <>
-                  <div className="relative p-2 md:p-3 flex items-center justify-center bg-background/50 min-h-[35vh]">
-                    {/* Navigation Arrows */}
-                    <button
-                      onClick={handlePrev}
-                      className="absolute left-1 md:left-3 z-10 p-1.5 md:p-2 bg-background/90 rounded-full hover:bg-primary/20 transition-colors shadow-md"
-                      aria-label="Previous floor plan"
-                      type="button"
-                    >
-                      <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
-                    </button>
-
-                    <img
-                      src={currentPlan.image}
-                      alt={currentPlan.altText}
-                      title={currentPlan.altText}
-                      className="max-h-[35vh] md:max-h-[40vh] w-auto object-contain rounded-sm"
-                      loading="eager"
-                    />
-
-                    <button
-                      onClick={handleNext}
-                      className="absolute right-1 md:right-3 z-10 p-1.5 md:p-2 bg-background/90 rounded-full hover:bg-primary/20 transition-colors shadow-md"
-                      aria-label="Next floor plan"
-                      type="button"
-                    >
-                      <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
-                    </button>
-                  </div>
-
-                  {/* Plan Type Selector */}
-                  <div className="flex justify-center gap-1 md:gap-1.5 py-2 border-t border-border/50 bg-card/50">
-                    {floorPlans.map((plan, index) => (
-                      <button
-                        key={plan.type}
-                        onClick={() => handleSelectPlan(index)}
-                        className={`px-2 md:px-3 py-1 text-[10px] md:text-xs rounded-sm transition-all ${
-                          index === currentIndex
-                            ? 'bg-primary text-primary-foreground'
-                            : 'bg-muted text-muted-foreground hover:bg-primary/20'
-                        }`}
-                        type="button"
-                      >
-                        {plan.type}
-                      </button>
-                    ))}
-                  </div>
-                </>
-              )}
-
-              {/* Lead Capture Form - Visible immediately below image */}
-              <div className="p-3 md:p-5 border-t border-border bg-card">
-                <h3 className="font-serif text-sm md:text-base mb-3 text-center">
-                  Request Details for {showSitePlan ? 'Site Plan' : currentPlan.type}
-                </h3>
-                
-                <form onSubmit={handleSubmit} className="space-y-3">
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 md:gap-3">
-                    {/* Name */}
-                    <div>
-                      <label htmlFor="fp-name" className="block text-[10px] md:text-xs text-muted-foreground mb-1">
-                        Name <span className="text-destructive">*</span>
-                      </label>
-                      <input
-                        id="fp-name"
-                        type="text"
-                        required
-                        maxLength={100}
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-2.5 py-2 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors text-sm"
-                        placeholder="Your name"
-                        autoComplete="name"
-                      />
-                    </div>
-
-                    {/* Mobile Number */}
-                    <div>
-                      <label htmlFor="fp-phone" className="block text-[10px] md:text-xs text-muted-foreground mb-1">
-                        Mobile <span className="text-destructive">*</span>
-                      </label>
-                      <input
-                        id="fp-phone"
-                        type="tel"
-                        required
-                        maxLength={15}
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-2.5 py-2 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors text-sm"
-                        placeholder="10-digit mobile"
-                        autoComplete="tel"
-                      />
-                    </div>
-
-                    {/* Unit Type - Auto-selected */}
-                    <div>
-                      <label htmlFor="fp-flat" className="block text-[10px] md:text-xs text-muted-foreground mb-1">
-                        Unit Type <span className="text-destructive">*</span>
-                      </label>
-                      <select
-                        id="fp-flat"
-                        required
-                        value={formData.flatType}
-                        onChange={(e) => setFormData({ ...formData, flatType: e.target.value })}
-                        className="w-full px-2.5 py-2 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors appearance-none text-sm"
-                      >
-                        <option value="3 BHK">3 BHK</option>
-                        <option value="3+1 BHK">3+1 BHK</option>
-                        <option value="4 BHK">4 BHK</option>
-                        <option value="5 BHK">5 BHK</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  {/* Submit Button */}
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="btn-luxury w-full flex items-center justify-center gap-2 py-2.5 disabled:opacity-50 text-sm"
-                  >
-                    <Send className="w-4 h-4" />
-                    {isSubmitting ? 'Submitting...' : 'Request Details via WhatsApp'}
-                  </button>
-
-                  <p className="text-[9px] text-muted-foreground text-center">
-                    By submitting, you agree to our privacy policy.
-                  </p>
-                </form>
-              </div>
-            </motion.div>
+              {/* Submit Button */}
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="btn-luxury w-full flex items-center justify-center gap-2 py-2.5 mt-2 disabled:opacity-50 text-sm"
+              >
+                <Send className="w-4 h-4" />
+                {isSubmitting ? 'Submitting...' : 'Request Details via WhatsApp'}
+              </button>
+            </form>
           </div>
         </motion.div>
       )}

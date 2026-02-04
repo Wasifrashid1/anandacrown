@@ -13,10 +13,10 @@ const budgetOptions = [
 ];
 
 const configOptions = [
-  '3 BHK – 2425 sq.ft.',
-  '3+1 BHK – 2750 sq.ft.',
-  '4 BHK – 3250 sq.ft.',
-  '5 BHK – 4100 sq.ft.',
+  '3 BHK',
+  '3+1 BHK',
+  '4+1 BHK',
+  '5+1 BHK',
 ];
 
 const ContactSection = () => {
@@ -90,18 +90,14 @@ const ContactSection = () => {
 
     setIsSubmitting(true);
 
-    // Build WhatsApp message - clear format for site visit request
-    const message = `Hello, I am requesting a site visit.
+    // Build WhatsApp message - EXACT format as specified
+    const message = `New Site Visit Enquiry – Ananda Crown Mohali
 
 Name: ${formData.name.trim()}
-Phone: ${formData.phone.trim()}
+Mobile: ${formData.phone.trim()}
 City: ${formData.city.trim() || 'Not specified'}
-Flat Type: ${formData.flatType || 'Not specified'}
-Budget: ${formData.budget || 'Not specified'}
-
-Message: Requesting site visit
-
-Please contact me.`;
+Interested In: ${formData.flatType || 'Not specified'}
+Budget: ${formData.budget || 'Not specified'}`;
 
     const encodedMessage = encodeURIComponent(message);
     // Direct wa.me link - works on all devices

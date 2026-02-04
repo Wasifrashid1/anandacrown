@@ -11,6 +11,7 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import MobileStickyBar from '@/components/MobileStickyBar';
+import AutoPopupLeadForm from '@/components/AutoPopupLeadForm';
 
 const Index = () => {
   return (
@@ -41,6 +42,9 @@ const Index = () => {
 
       {/* Mobile Sticky CTA Bar */}
       <MobileStickyBar />
+
+      {/* Auto Popup Lead Form - Opens after 4 seconds, once per session */}
+      <AutoPopupLeadForm />
     </div>
   );
 };
