@@ -1,0 +1,14 @@
+{
+  "name": "Ananda Crown Mohali",
+  "short_name": "Ananda Crown",
+  "icons": [
+    {
+      "src": "/favicon.png.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
