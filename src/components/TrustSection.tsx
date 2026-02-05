@@ -198,7 +198,7 @@ const TrustSection = () => {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="px-4 md:px-5 pb-4 md:pb-5 text-muted-foreground text-sm md:text-base">
+                     <div className="px-4 md:px-5 pb-4 md:pb-5 text-foreground/80 text-sm md:text-base leading-relaxed">
                       {faq.answer}
                     </div>
                   </div>
