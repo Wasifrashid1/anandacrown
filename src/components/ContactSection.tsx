@@ -263,7 +263,7 @@ Budget: ${formData.budget || 'Not specified'}`;
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <form ref={formRef} onSubmit={handleSubmit} className="luxury-card p-5 md:p-8">
-              <h3 className="font-serif text-xl md:text-2xl mb-4 md:mb-6">Schedule a Visit</h3>
+               <h3 className="font-serif text-xl md:text-2xl mb-4 md:mb-6 relative z-10">Schedule a Visit</h3>
 
               <div className="grid gap-4 md:grid-cols-2 md:gap-6">
                 {/* Name */}
@@ -278,8 +278,9 @@ Budget: ${formData.budget || 'Not specified'}`;
                     maxLength={100}
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-3 md:px-4 py-2.5 md:py-3 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors text-sm md:text-base"
+                     className="w-full px-3 md:px-4 py-2.5 md:py-3 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors text-sm md:text-base relative z-10"
                     placeholder="Enter your full name"
+                     autoComplete="name"
                   />
                 </div>
 
@@ -295,8 +296,9 @@ Budget: ${formData.budget || 'Not specified'}`;
                     maxLength={15}
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-3 md:px-4 py-2.5 md:py-3 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors text-sm md:text-base"
+                     className="w-full px-3 md:px-4 py-2.5 md:py-3 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors text-sm md:text-base relative z-10"
                     placeholder="Enter 10-digit mobile number"
+                     autoComplete="tel"
                   />
                 </div>
 
@@ -312,8 +314,9 @@ Budget: ${formData.budget || 'Not specified'}`;
                     maxLength={50}
                     value={formData.city}
                     onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                    className="w-full px-3 md:px-4 py-2.5 md:py-3 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors text-sm md:text-base"
+                     className="w-full px-3 md:px-4 py-2.5 md:py-3 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors text-sm md:text-base relative z-10"
                     placeholder="Enter your city"
+                     autoComplete="address-level2"
                   />
                 </div>
 
@@ -327,7 +330,7 @@ Budget: ${formData.budget || 'Not specified'}`;
                     required
                     value={formData.flatType}
                     onChange={(e) => setFormData({ ...formData, flatType: e.target.value })}
-                    className="w-full px-3 md:px-4 py-2.5 md:py-3 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors appearance-none text-sm md:text-base"
+                     className="w-full px-3 md:px-4 py-2.5 md:py-3 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors appearance-none text-sm md:text-base relative z-10 cursor-pointer"
                   >
                     <option value="">Select flat type</option>
                     {configOptions.map((opt) => (
@@ -346,7 +349,7 @@ Budget: ${formData.budget || 'Not specified'}`;
                     required
                     value={formData.budget}
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                    className="w-full px-3 md:px-4 py-2.5 md:py-3 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors appearance-none text-sm md:text-base"
+                     className="w-full px-3 md:px-4 py-2.5 md:py-3 bg-input border border-border rounded-sm focus:border-primary focus:outline-none transition-colors appearance-none text-sm md:text-base relative z-10 cursor-pointer"
                   >
                     <option value="">Select budget</option>
                     {budgetOptions.map((opt) => (
