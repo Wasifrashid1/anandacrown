@@ -4,13 +4,20 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  base: './',  // ← CHANGE THIS FROM '/' TO './'
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src')
     }
   },
+  base: '/', // Keep / if deploying at root
   build: {
-    outDir: 'dist'
+    outDir: 'dist',
+    rollupOptions: {
+      output: {
+        entryFileNames: 'assets/[name].js',
+        chunkFileNames: 'assets/[name].js',
+        assetFileNames: 'assets/[name].[ext]'
+      }
+    }
   }
 })
