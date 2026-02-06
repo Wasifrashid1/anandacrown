@@ -7,8 +7,8 @@ export default defineConfig(({ mode }) => ({
   base: "/anandacrown/",
 
   build: {
-    outDir: "docs",      // ✅ REQUIRED for GitHub Pages
-    emptyOutDir: true
+    outDir: "docs",
+    emptyOutDir: true,
   },
 
   plugins: [
