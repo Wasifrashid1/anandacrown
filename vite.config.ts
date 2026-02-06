@@ -4,11 +4,18 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: "/anandacrown/",   // ✅ VERY IMPORTANT
+  base: "/anandacrown/",
+
+  build: {
+    outDir: "docs",      // ✅ REQUIRED for GitHub Pages
+    emptyOutDir: true
+  },
+
   plugins: [
     react(),
     mode === "development" && componentTagger(),
   ].filter(Boolean),
+
   server: {
     host: "::",
     port: 8080,
@@ -16,6 +23,7 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
+
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
