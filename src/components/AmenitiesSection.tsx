@@ -81,7 +81,7 @@ const AmenitiesSection = () => {
           </h2>
           <div className="gold-line max-w-md mx-auto mb-4 md:mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">
-            Indulge in an exceptional lifestyle with amenities crafted for the finest.
+            Indulge in an exceptional lifestyle with amenities crafted for the finest. <a href="/amenities" className="text-primary hover:underline">View all amenities</a>.
           </p>
         </motion.div>
 

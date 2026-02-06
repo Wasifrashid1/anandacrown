@@ -106,12 +106,12 @@ const AboutSection = () => {
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               Ananda Crown Mohali represents the epitome of refined urban living. 
               Crafted for individuals who value elegance, space, and sophistication, 
-              this landmark development redefines luxury in the Tricity region.
+              this landmark development redefines luxury in the Tricity region. Located in <a href="/location" className="text-primary hover:underline">Sector 78, Mohali</a>.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-10">
               Every residence is a masterpiece—thoughtfully designed layouts, 
-              premium finishes, and world-class amenities converge to create 
-              a living experience unlike any other. This is where your legacy begins.
+              premium finishes, and world-class <a href="/amenities" className="text-primary hover:underline">amenities</a> converge to create 
+              a living experience unlike any other. View our <a href="/floor-plans" className="text-primary hover:underline">floor plans</a> to explore.
             </p>
 
             {/* Features Grid */}
@@ -128,7 +128,7 @@ const AboutSection = () => {
                     <feature.icon className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-serif text-lg mb-1">{feature.title}</h4>
+                    <h3 className="font-serif text-lg mb-1">{feature.title}</h3>
                     <p className="text-sm text-muted-foreground">{feature.description}</p>
                   </div>
                 </motion.div>
