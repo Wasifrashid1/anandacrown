@@ -9,14 +9,14 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src')
     }
   },
-  base: '/', // Keep / if deploying at root
+  base: './', // ✅ Must be './' for Vercel SPA
   build: {
     outDir: 'dist',
     rollupOptions: {
       output: {
-        entryFileNames: 'assets/[name].js',
-        chunkFileNames: 'assets/[name].js',
-        assetFileNames: 'assets/[name].[ext]'
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
       }
     }
   }
