@@ -3,13 +3,14 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const quickLinks = [
   { name: 'Home', href: '/#home' },
-  { name: 'About', href: '/#about' },
+  { name: 'Overview', href: '/overview' },
   { name: 'Residences', href: '/#configurations' },
-  { name: 'Amenities', href: '/#amenities' },
-  { name: 'Gallery', href: '/#gallery' },
-  { name: 'Location', href: '/#location' },
+  { name: 'Amenities', href: '/amenities' },
+  { name: 'Floor Plans', href: '/floor-plans' },
+  { name: 'Location', href: '/location' },
+  { name: 'Pricing', href: '/pricing' },
   { name: 'Blog', href: '/blog' },
-  { name: 'Contact', href: '/#contact' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 const Footer = () => {
@@ -91,7 +92,7 @@ const Footer = () => {
             <ul className="space-y-2 md:space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  {link.href === '/blog' ? (
+                  {link.href.startsWith('/') && !link.href.startsWith('/#') ? (
                     <Link
                       to={link.href}
                       className="text-xs md:text-sm text-muted-foreground hover:text-primary transition-colors"

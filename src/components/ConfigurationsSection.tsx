@@ -88,7 +88,8 @@ const ConfigurationsSection = () => {
           </h2>
           <div className="gold-line max-w-md mx-auto mb-4 md:mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">
-            Each residence is meticulously designed to offer spacious layouts and premium finishes.
+            Each residence is meticulously designed to offer spacious layouts and premium finishes. 
+            Check our <a href="/pricing" className="text-primary hover:underline">pricing</a> and <a href="/floor-plans" className="text-primary hover:underline">floor plans</a> for details.
           </p>
         </motion.div>
 

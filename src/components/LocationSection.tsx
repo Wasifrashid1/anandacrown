@@ -65,7 +65,7 @@ const LocationSection = () => {
           </h2>
           <div className="gold-line max-w-md mx-auto mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Sector 78, Mohali — Perfectly positioned for connectivity, convenience, and an elevated urban lifestyle.
+            Sector 78, Mohali — Perfectly positioned for connectivity, convenience, and an elevated urban lifestyle. <a href="/location" className="text-primary hover:underline">Explore full location details</a>.
           </p>
         </motion.div>
 
