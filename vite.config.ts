@@ -9,7 +9,10 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src')
     }
   },
-  base: './', // ✅ Must be './' for Vercel SPA
+  server: {
+    port: 8080
+  },
+  base: '/',
   build: {
     outDir: 'dist',
     rollupOptions: {
