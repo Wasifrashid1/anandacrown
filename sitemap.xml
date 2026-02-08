@@ -6,22 +6,14 @@
     <changefreq>daily</changefreq>
     <priority>1.00</priority>
   </url>
-
   <url>
     <loc>https://www.anandacrownmohali.com/about.html</loc>
     <lastmod>2026-02-05</lastmod>
     <priority>0.80</priority>
   </url>
-
   <url>
     <loc>https://www.anandacrownmohali.com/amenities.html</loc>
     <lastmod>2026-02-05</lastmod>
     <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://www.anandacrownmohali.com/contact.html</loc>
-    <lastmod>2026-02-05</lastmod>
-    <priority>0.90</priority>
   </url>
 </urlset>
