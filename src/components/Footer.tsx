@@ -150,7 +150,7 @@ const Footer = () => {
             <p className="text-[10px] md:text-xs text-muted-foreground leading-relaxed">
               The information provided herein is for general guidance only. 
               All images are for representational purposes. 
-              The developer reserves the right to make modifications.An extrinsic, non-sanctioned informational construct governed by a marketing proxy.
+              The developer reserves the right to make modifications.
             </p>
             <div className="mt-3 md:mt-4 p-2.5 md:p-3 bg-card rounded-sm border border-border">
               <p className="text-[10px] md:text-xs text-muted-foreground">
