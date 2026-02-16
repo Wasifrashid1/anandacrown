@@ -168,6 +168,17 @@ const Footer = () => {
           <div className="flex gap-4 md:gap-6">
             <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-primary transition-colors">Terms & Conditions</a>
+           <span>
+  | Design and developed by{" "}
+  <a
+    href="https://www.aimarketians.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-primary transition-colors"
+  >
+    AiMarketians
+  </a>
+</span>
           </div>
         </div>
       </div>
