@@ -191,7 +191,14 @@ const Location = () => {
                   </div>
                 </div>
                 <h2 className="font-serif text-2xl md:text-3xl mb-2">Ananda Crown</h2>
-                <p className="text-muted-foreground mb-8">Sector 78, SAS Nagar, Mohali, Punjab 140308</p>
+                <a
+                  href="https://share.google/tUjrMyIS1DGeyTaNz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors inline-flex items-center gap-2 mb-8"
+                >
+                  <span>Sector 78, SAS Nagar, Mohali, Punjab 140308</span>
+                </a>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link to="/#contact" className="btn-luxury">

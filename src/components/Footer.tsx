@@ -134,12 +134,19 @@ const Footer = () => {
                   sales@anandacrown.com
                 </a>
               </li>
-              <li className="flex items-start gap-2 md:gap-3 text-xs md:text-sm text-muted-foreground">
-                <MapPin className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary mt-0.5 flex-shrink-0" />
-                <span>
-                  Sector 78, SAS Nagar,<br />
-                  Mohali, Punjab 140308
-                </span>
+              <li>
+                <a
+                  href="https://share.google/tUjrMyIS1DGeyTaNz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2 md:gap-3 text-xs md:text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <MapPin className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <span>
+                    Sector 78, SAS Nagar,<br />
+                    Mohali, Punjab 140308
+                  </span>
+                </a>
               </li>
             </ul>
           </div>
