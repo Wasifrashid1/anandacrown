@@ -45,10 +45,15 @@ export function getStoredLeads(): LeadEntry[] {
   } catch { return []; }
 }
 
-function appendLead(entry: LeadEntry) {
-  const leads = getStoredLeads();
-  leads.push(entry);
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(leads));
+async function appendLead(entry: LeadEntry) {
+  try {
+    await fetch(import.meta.env.VITE_GOOGLE_SCRIPT_URL, {
+      method: "POST",
+      body: JSON.stringify(entry),
+    });
+  } catch (err) {
+    console.error("Lead save failed", err);
+  }
 }
 
 // ─── Provider ───────────────────────────────────────────────────────────────
@@ -67,7 +72,7 @@ export const LeadCaptureProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   // Validate & auto-save on phone blur
-  const handlePhoneBlur = () => {
+  const handlePhoneBlur = async () => {
     const clean = formData.phone.replace(/\D/g, '').slice(-10);
     const valid = /^[6-9]\d{9}$/.test(clean);
     if (!valid && formData.phone.trim()) {
@@ -76,7 +81,7 @@ export const LeadCaptureProvider = ({ children }: { children: ReactNode }) => {
       setPhoneError('');
       // Auto-save if both fields filled
       if (valid && formData.name.trim() && pendingCTA) {
-        appendLead({
+        await appendLead({
           name: formData.name.trim(),
           phone: clean,
           timestamp: new Date().toISOString(),
