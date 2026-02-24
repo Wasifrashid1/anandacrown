@@ -102,14 +102,9 @@ export const LeadCaptureProvider = ({ children }: { children: ReactNode }) => {
     setIsSubmitting(true);
 
     // Save lead (may duplicate the auto-save – appendLead is idempotent by timestamp)
-    appendLead({
-      name: formData.name.trim(),
-      phone: clean,
-      timestamp: new Date().toISOString(),
-      cta: pendingCTA?.type || 'unknown',
-    });
+  
 
-    // Close modal, then fire original CTA action
+// Close modal, then fire original CTA action
     const action = pendingCTA?.action;
     setIsOpen(false);
     setPendingCTA(null);
