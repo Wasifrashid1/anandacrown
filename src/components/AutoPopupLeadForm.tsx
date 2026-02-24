@@ -64,8 +64,19 @@ const AutoPopupLeadForm = () => {
      setDismissCount(newCount);
      sessionStorage.setItem('ananda-crown-dismiss-count', newCount.toString());
    };
+
+  async function appendLead(entry) {
+  try {
+    await fetch(import.meta.env.VITE_GOOGLE_SCRIPT_URL, {
+      method: "POST",
+      body: JSON.stringify(entry),
+    });
+  } catch (err) {
+    console.error("Lead save failed", err);
+  }
+}
  
-   const handleSubmit = (e: React.FormEvent) => {
+   const handleSubmit = async (e: React.FormEvent) => {
      e.preventDefault();
      
      // Validate required fields
@@ -89,8 +100,24 @@ const AutoPopupLeadForm = () => {
        });
        return;
      }
- 
-     setIsSubmitting(true);
+
+     const data = {
+       name: formData.name.trim(),
+       phone: formData.phone.trim(),
+       timestamp: new Date(),
+       cta: "Lead Form",
+       city: formData.city.trim(),
+       flattype: formData.flatType.trim(),
+       budget: formData.budget.trim(),
+     }
+
+    setIsSubmitting(true);
+
+      try {
+        await appendLead(data);
+      } catch (err) {
+        console.error(err);
+      }
  
      // WhatsApp message format as specified
      const message = `New Site Visit Enquiry – Ananda Crown Mohali
