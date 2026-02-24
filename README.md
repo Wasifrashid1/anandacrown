@@ -1,4 +1,4 @@
-# Ananda Crown Mohali
+# Ananda Crown Mohali.
 
 This repository contains the complete source code for the Mohali Next web project.
 It is a fully independent project with no third-party platform dependency.
@@ -13,7 +13,7 @@ The project is built using modern frontend technologies and is suitable for prod
 - Tailwind CSS
 - shadcn-ui
 
-## Local Development Setup
+## Local Development Setup.
 
 ### Requirements
 - Node.js (v18 or later)
