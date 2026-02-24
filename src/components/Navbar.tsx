@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import LeadFormModal from './LeadFormModal';
+import { useLeadCapture } from '@/contexts/LeadCaptureContext';
 
 const navLinks = [
   { name: 'Home', href: '/#home' },
@@ -21,6 +22,7 @@ const Navbar = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { interceptCTA } = useLeadCapture();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,7 +32,6 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -44,15 +45,11 @@ const Navbar = () => {
 
   const handleNavClick = (href: string) => {
     setIsOpen(false);
-    
-    // Handle hash navigation
     if (href.startsWith('/#')) {
       if (location.pathname === '/') {
-        // Same page, just scroll
         const element = document.querySelector(href.replace('/', ''));
         element?.scrollIntoView({ behavior: 'smooth' });
       } else {
-        // Navigate to home then scroll
         navigate('/');
         setTimeout(() => {
           const element = document.querySelector(href.replace('/', ''));
@@ -64,7 +61,17 @@ const Navbar = () => {
 
   const handleBookVisit = () => {
     setIsOpen(false);
-    setModalOpen(true);
+    interceptCTA('book_visit', () => {
+      setModalOpen(true);
+    });
+  };
+
+  const handleCall = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsOpen(false);
+    interceptCTA('call', () => {
+      window.location.href = 'tel:+919779799705';
+    });
   };
 
   return (
@@ -79,7 +86,7 @@ const Navbar = () => {
       >
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex items-center justify-between">
-            {/* Brand Name - Simple Text */}
+            {/* Brand Name */}
             <Link to="/" className="font-serif text-lg md:text-xl tracking-wider">
               <span className="text-gradient-gold font-medium">ANANDA CROWN</span>
             </Link>
@@ -113,13 +120,13 @@ const Navbar = () => {
 
             {/* CTA - Desktop */}
             <div className="hidden lg:flex items-center gap-4">
-              <a
-                href="tel:+919779799705"
+              <button
+                onClick={handleCall}
                 className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
               >
                 <Phone className="w-4 h-4" />
                 <span className="hidden xl:inline">+91 97797 99705</span>
-              </a>
+              </button>
               <button
                 onClick={handleBookVisit}
                 className="btn-luxury text-xs px-4 xl:px-6 py-2.5 xl:py-3"
@@ -130,12 +137,12 @@ const Navbar = () => {
 
             {/* Mobile CTA + Menu */}
             <div className="flex items-center gap-3 lg:hidden">
-              <a
-                href="tel:+919779799705"
+              <button
+                onClick={handleCall}
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary"
               >
                 <Phone className="w-4 h-4" />
-              </a>
+              </button>
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-foreground p-2 -mr-2"
@@ -151,7 +158,6 @@ const Navbar = () => {
         <AnimatePresence>
           {isOpen && (
             <>
-              {/* Backdrop */}
               <motion.div
                 className="lg:hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-40"
                 initial={{ opacity: 0 }}
@@ -160,7 +166,6 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               />
 
-              {/* Slide-in Menu */}
               <motion.div
                 className="lg:hidden fixed top-0 right-0 bottom-0 w-[280px] max-w-[80vw] bg-background border-l border-border z-50 overflow-y-auto"
                 initial={{ x: '100%' }}
@@ -168,7 +173,6 @@ const Navbar = () => {
                 exit={{ x: '100%' }}
                 transition={{ type: 'tween', duration: 0.3 }}
               >
-                {/* Close button at top */}
                 <div className="flex justify-between items-center p-4 border-b border-border">
                   <span className="font-serif text-lg text-gradient-gold">Menu</span>
                   <button
@@ -180,7 +184,6 @@ const Navbar = () => {
                   </button>
                 </div>
 
-                {/* Nav Links - Vertical List */}
                 <nav className="p-4">
                   <ul className="space-y-1">
                     {navLinks.map((link, index) => (
@@ -211,16 +214,14 @@ const Navbar = () => {
                   </ul>
                 </nav>
 
-                {/* CTA Buttons */}
                 <div className="p-4 border-t border-border space-y-3">
-                  <a
-                    href="tel:+919779799705"
-                    className="flex items-center justify-center gap-2 py-3 border border-primary/50 rounded-sm text-primary"
-                    onClick={() => setIsOpen(false)}
+                  <button
+                    onClick={handleCall}
+                    className="flex items-center justify-center gap-2 py-3 border border-primary/50 rounded-sm text-primary w-full"
                   >
                     <Phone className="w-4 h-4" />
                     <span>+91 97797 99705</span>
-                  </a>
+                  </button>
                   <button
                     onClick={handleBookVisit}
                     className="btn-luxury w-full text-center"
