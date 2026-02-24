@@ -6,7 +6,7 @@ It is a fully independent project with no third-party platform dependency.
 ## Project Overview
 The project is built using modern frontend technologies and is suitable for production deployment on any standard hosting platform.
 
-## Technologies Used
+## Technologies Used.
 - React
 - Vite
 - TypeScript
