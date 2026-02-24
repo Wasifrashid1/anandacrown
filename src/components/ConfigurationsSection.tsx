@@ -3,6 +3,7 @@ import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Maximize, CreditCard, Building2, AlertCircle } from 'lucide-react';
 import FloorPlanModal from './FloorPlanModal';
+import { useLeadCapture } from '@/contexts/LeadCaptureContext';
 
 const configurations = [
   {
@@ -57,6 +58,7 @@ const ConfigurationsSection = () => {
   const isInView = useInView(ref, { once: true, margin: '-50px' });
   const [floorPlanModalOpen, setFloorPlanModalOpen] = useState(false);
   const [selectedPlanIndex, setSelectedPlanIndex] = useState(0);
+  const { interceptCTA } = useLeadCapture();
 
   const phoneNumber = '9779799705';
 
@@ -66,10 +68,12 @@ const ConfigurationsSection = () => {
   };
 
   const handleRequestDetails = (configType: string) => {
-    const message = `Hello, I want to request details for ${configType} at Ananda Crown Mohali. Please share more information.`;
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    window.open(whatsappLink, '_blank');
+    interceptCTA('request_details', () => {
+      const message = `Hello, I want to request details for ${configType} at Ananda Crown Mohali. Please share more information.`;
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+      window.open(whatsappLink, '_blank');
+    });
   };
 
   return (

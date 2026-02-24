@@ -4,6 +4,7 @@ import { useInView } from 'framer-motion';
 import { Phone, Mail, MapPin, Send, Download } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import LeadFormModal from './LeadFormModal';
+import { useLeadCapture } from '@/contexts/LeadCaptureContext';
 
 const budgetOptions = [
   '1 to 2 Crore',
@@ -25,6 +26,7 @@ const ContactSection = () => {
   const isInView = useInView(ref, { once: true, margin: '-50px' });
   const { toast } = useToast();
   const [brochureModalOpen, setBrochureModalOpen] = useState(false);
+  const { interceptCTA } = useLeadCapture();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -157,9 +159,12 @@ Budget: ${formData.budget || 'Not specified'}`;
               <h3 className="font-serif text-xl md:text-2xl mb-4 md:mb-6">Get in Touch</h3>
               
               <div className="space-y-4 md:space-y-6">
-                <a
-                  href="tel:+919779799705"
-                  className="flex items-center gap-3 md:gap-4 group"
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    interceptCTA('call', () => { window.location.href = 'tel:+919779799705'; });
+                  }}
+                  className="flex items-center gap-3 md:gap-4 group text-left"
                 >
                   <div className="w-10 h-10 md:w-12 md:h-12 rounded-sm bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
                     <Phone className="w-4 h-4 md:w-5 md:h-5 text-primary" />
@@ -170,14 +175,15 @@ Budget: ${formData.budget || 'Not specified'}`;
                       +91 97797 99705
                     </p>
                   </div>
-                </a>
+                </button>
 
                 {/* WhatsApp - Direct Link */}
-                <a
-                  href={directWhatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 md:gap-4 group"
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    interceptCTA('whatsapp', () => { window.open(directWhatsappLink, '_blank'); });
+                  }}
+                  className="flex items-center gap-3 md:gap-4 group text-left"
                 >
                   <div className="w-10 h-10 md:w-12 md:h-12 rounded-sm bg-[#25D366]/10 flex items-center justify-center group-hover:bg-[#25D366]/20 transition-colors flex-shrink-0">
                     <svg viewBox="0 0 24 24" className="w-4 h-4 md:w-5 md:h-5 fill-[#25D366]">
@@ -190,7 +196,7 @@ Budget: ${formData.budget || 'Not specified'}`;
                       Chat with us
                     </p>
                   </div>
-                </a>
+                </button>
 
                 <a
                   href="mailto:sales@anandacrown.com"
@@ -225,7 +231,7 @@ Budget: ${formData.budget || 'Not specified'}`;
 
               {/* Download Brochure */}
               <button 
-                onClick={() => setBrochureModalOpen(true)}
+                onClick={() => interceptCTA('download_brochure', () => setBrochureModalOpen(true))}
                 className="btn-luxury-outline w-full flex items-center justify-center gap-2 text-sm py-3"
               >
                 <Download className="w-4 h-4" />
