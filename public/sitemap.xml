@@ -9,18 +9,18 @@
 
   <!-- Primary Pages -->
   <url>
-    <loc>https://anandacrownmohali.com/about</loc>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://anandacrownmohali.com/residency</loc>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
     <loc>https://anandacrownmohali.com/overview</loc>
     <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://anandacrownmohali.com/about-ananda-crown-mohali-owners</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://anandacrownmohali.com/ananda-crown-mohali-reviews</loc>
+    <priority>0.8</priority>
   </url>
 
   <url>
@@ -29,8 +29,8 @@
   </url>
 
   <url>
-    <loc>https://anandacrownmohali.com/gallery</loc>
-    <priority>0.8</priority>
+    <loc>https://anandacrownmohali.com/floor-plans</loc>
+    <priority>0.9</priority>
   </url>
 
   <url>
@@ -44,24 +44,33 @@
   </url>
 
   <url>
-    <loc>https://anandacrownmohali.com/floor-plans</loc>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Blogs -->
-  <url>
-    <loc>https://anandacrownmohali.com/blogs</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Contact -->
-  <url>
     <loc>https://anandacrownmohali.com/contact</loc>
     <priority>0.9</priority>
   </url>
 
+  <!-- Blog -->
   <url>
-    <loc>https://anandacrownmohali.com/contact-details</loc>
+    <loc>https://anandacrownmohali.com/blog</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://anandacrownmohali.com/blog/why-sector-78-is-the-new-luxury-hub-of-mohali</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://anandacrownmohali.com/blog/ananda-crown-vs-other-luxury-projects-in-mohali</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://anandacrownmohali.com/blog/why-3-plus-1-bhk-apartments-are-trending-2026</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://anandacrownmohali.com/blog/buying-luxury-flat-in-mohali-rera-documentation-guide</loc>
     <priority>0.7</priority>
   </url>
 
