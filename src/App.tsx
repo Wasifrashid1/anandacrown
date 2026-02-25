@@ -14,6 +14,8 @@ import Location from "./pages/Location";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import Overview from "./pages/Overview";
+import AboutOwners from "./pages/AboutOwners";
+import Reviews from "./pages/Reviews";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,6 +37,8 @@ const App = () => (
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/overview" element={<Overview />} />
+          <Route path="/about-ananda-crown-mohali-owners" element={<AboutOwners />} />
+          <Route path="/ananda-crown-mohali-reviews" element={<Reviews />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         </LeadCaptureProvider>

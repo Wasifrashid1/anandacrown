@@ -5,6 +5,8 @@ import { useLeadCapture } from '@/contexts/LeadCaptureContext';
 const quickLinks = [
   { name: 'Home', href: '/#home' },
   { name: 'Overview', href: '/overview' },
+  { name: 'About', href: '/about-ananda-crown-mohali-owners' },
+  { name: 'Reviews', href: '/ananda-crown-mohali-reviews' },
   { name: 'Residences', href: '/#configurations' },
   { name: 'Amenities', href: '/amenities' },
   { name: 'Floor Plans', href: '/floor-plans' },
