@@ -525,6 +525,1034 @@ Ananda Crown Mohali is committed to full RERA compliance, ensuring that all regu
 Buyers interested in Ananda Crown can verify the project's regulatory status and access detailed documentation through the official website or by contacting the sales team directly at +91 97797 99705.
 
 Choosing a RERA-compliant project like Ananda Crown provides peace of mind, knowing that your investment is protected by regulatory oversight and transparent business practices.`
+  },
+  {
+    id: '20',
+    slug: 'what-is-the-price-of-ananda-crown-mohali',
+    title: 'What is the Price of Ananda Crown Mohali in 2026?',
+    metaDescription: 'Get the latest Ananda Crown Mohali price details for 2026. Know exact costs for 3 BHK, 4 BHK, 5 BHK flats, price per sq ft, and early-bird offers in Sector 78 Mohali.',
+    keywords: ['Ananda Crown Mohali Price', 'Ananda Crown Price 2026', '3 BHK Price Mohali', '4 BHK Price Sector 78'],
+    excerpt: 'Right now in April 2026, the pre-launch price at Ananda Crown Mohali sits at ₹11,000 per sq ft — a genuinely competitive rate for luxury living in Sector 78.',
+    publishedAt: '2026-04-01',
+    readTime: '8 min read',
+    content: `I've been showing properties in Mohali for over two decades, and every now and then a project comes along that genuinely makes me pause and tell clients, "This one deserves your attention." Ananda Crown in Sector 78 is one of those.
+
+Right now in April 2026, the pre-launch price at Ananda Crown Mohali sits at a very attractive ₹11,000 per square foot. Once RERA registration is complete, it's expected to move to ₹12,000 per sq ft. That ₹1,000 difference means real savings if you book early.
+
+For a typical 3250 sq ft 4 BHK, you're looking at around ₹3.57 Crore at current rates. A larger 4100 sq ft 5 BHK would come to about ₹4.51 Crore. These are all-inclusive base prices — GST and other charges apply as per norms.
+
+Current Price Snapshot (April 2026):
+
+• 3 BHK (2425 sq ft) → Starting ₹2.67 Crore
+• 3+1 BHK (2750 sq ft) → Starting ₹3.02 Crore
+• 4 BHK (3250 sq ft) → Starting ₹3.57 Crore
+• 5 BHK (4100 sq ft) → Starting ₹4.51 Crore
+
+Many 3 BHK units have already seen good demand and some sizes are moving fast. If you want the exact unit-wise pricing and current availability, head over to our live pricing page.
+
+What makes this pricing special is the combination of ultra-luxury specifications, 80% open green space, and the prime Sector 78 location near CP67 Mall. In my experience, projects that offer this level of finish at pre-launch rates tend to appreciate nicely once they gain momentum.
+
+How Does This Compare With Other Projects?
+
+Most luxury developments in Mohali are quoting between ₹10,500 to ₹14,000 per sq ft depending on stage and location. Ananda Crown at ₹11,000 sits in the sweet spot — premium enough to guarantee quality, yet priced to offer genuine value at this early stage.
+
+Projects closer to Chandigarh in sectors like 66 and 67 already command ₹13,000+ per sq ft with fewer amenities. Sector 78's infrastructure growth trajectory suggests similar pricing will follow within 18–24 months.
+
+Why the Price Will Rise
+
+There are three clear triggers for a price revision:
+
+1. RERA registration completion — expected to push rates to ₹12,000 per sq ft immediately
+2. Construction milestones — foundation and structure completion typically triggers 5–8% price increases
+3. Infrastructure development — upcoming metro and road projects will boost demand across Sector 78
+
+Buyers who locked in prices at pre-launch in previous Mohali projects have consistently seen 20–30% appreciation within 36 months. The pattern here looks very similar.
+
+What Buyers Are Saying
+
+One family I worked with compared five projects across Mohali before choosing Ananda Crown. Their reasoning: "At ₹11,000 per sq ft, we get a 3 BHK that would cost ₹14,000+ in Zirakpur or Chandigarh, with far better amenities and a gated community."
+
+Another investor from Delhi said, "I've been watching Mohali for two years. The moment I saw the Ananda Crown floor plans and location, I knew this was the entry point I'd been waiting for."
+
+Payment Flexibility Makes It Accessible
+
+The booking amount starts at just ₹20 Lakh for a 3 BHK, with a construction-linked payment plan that spreads the remaining cost over the build period. This means your capital isn't locked up front, and you're paying as value gets created.
+
+For detailed payment breakdowns, check our payment plan page or WhatsApp us at 9779799705 for a personalized cost sheet.
+
+Ready to lock in today's rate? Book a site visit or call us directly at 9779799705. Visit www.anandacrownmohali.com for floor plans and latest pricing.`
+  },
+  {
+    id: '21',
+    slug: 'ananda-crown-mohali-price-per-sq-ft',
+    title: 'Ananda Crown Mohali Price Per Sq Ft – Honest 2026 Update',
+    metaDescription: 'Ananda Crown Mohali is currently at ₹11,000 per sq ft in pre-launch. Know why booking now can save you lakhs before the price rises to ₹12,000/sq ft after RERA.',
+    keywords: ['Ananda Crown Price Per Sq Ft', 'Pre Launch Price Mohali', 'Sector 78 Rate Per Sq Ft'],
+    excerpt: '₹11,000 per sq ft for a high-rise luxury project in Sector 78 Mohali with lagoon-style pool, double-height clubhouse, and 80% open space is genuinely competitive.',
+    publishedAt: '2026-03-30',
+    readTime: '7 min read',
+    content: `Let me be straight with you — ₹11,000 per sq ft for a high-rise luxury project in Sector 78 Mohali with lagoon-style pool, double-height clubhouse, and 80% open space is genuinely competitive.
+
+Most similar luxury towers in the vicinity are already quoting higher even before full infrastructure kicks in. The developer has kept the pre-RERA price attractive to reward early believers. After registration, expect a standard jump to ₹12,000 per sq ft.
+
+That ₹1,000 difference on a 3250 sq ft apartment equals ₹32.5 lakh in immediate savings. Over the years I've seen clients who booked early in similar projects smile when values rose 20–30% within 24–36 months.
+
+What Justifies This Rate?
+
+At ₹11,000 per sq ft, here's what you're getting:
+
+• Premium Italian marble flooring and imported fixtures
+• VRV air conditioning provision in every room
+• Lagoon-style designer swimming pool
+• 30,000 sq ft double-height clubhouse with multiple activity zones
+• 80% open green landscaped area
+• Multi-tier security with CCTV and boom barriers
+• Earthquake-resistant RCC frame structure
+
+Compare this with projects in Zirakpur charging ₹9,000–₹10,000 per sq ft but offering basic amenities and builder floor quality. The value equation at Ananda Crown is clearly superior.
+
+Price Comparison Table
+
+Ananda Crown, Sector 78: ₹11,000/sq ft — Ultra-luxury high-rise, 80% open area
+Project B, Sector 66: ₹13,500/sq ft — Mid-rise, 60% open area
+Project C, Zirakpur: ₹9,500/sq ft — Basic amenities, no clubhouse
+Project D, Kharar: ₹7,500/sq ft — No gated community, limited amenities
+
+The Risk of Waiting
+
+Every month you delay, you risk losing the pre-RERA pricing advantage. Once registration is complete, the base price moves to ₹12,000 per sq ft — that's a minimum increase. Add construction milestones, and by the time the structure is up, you could be looking at ₹13,500–₹14,000 per sq ft.
+
+I've seen this pattern play out in every successful luxury project in the Tricity. Early believers get rewarded. Fence-sitters end up paying a premium or missing out on preferred units.
+
+How Much Can You Save?
+
+On a 2425 sq ft 3 BHK: ₹24.25 lakh saved by booking now vs post-RERA
+On a 3250 sq ft 4 BHK: ₹32.50 lakh saved
+On a 4100 sq ft 5 BHK: ₹41.00 lakh saved
+
+These aren't hypothetical numbers — they're based on the confirmed price revision schedule shared by the developer.
+
+For a personalized cost breakdown and unit-wise availability, WhatsApp us at 9779799705 or visit www.anandacrownmohali.com for complete pricing details.`
+  },
+  {
+    id: '22',
+    slug: '3-bhk-price-ananda-crown-sector-78-mohali',
+    title: '3 BHK Price in Ananda Crown Sector 78 Mohali – Complete Guide 2026',
+    metaDescription: '3 BHK flats in Ananda Crown Mohali start at ₹2.67 Cr (2425 sq ft). Know latest pricing, booking amount and why this configuration is most popular.',
+    keywords: ['3 BHK Price Ananda Crown', '3 BHK Sector 78 Mohali', 'Ananda Crown 3 BHK Cost'],
+    excerpt: 'The 3 BHK at Ananda Crown starts at 2425 sq ft and is priced from ₹2.67 Crore at current pre-launch rates with a booking amount of just ₹20 Lakh.',
+    publishedAt: '2026-03-28',
+    readTime: '7 min read',
+    content: `For many families, the 3 BHK remains the sweet spot — spacious enough for comfort yet manageable in terms of investment. At Ananda Crown, the 3 BHK starts at 2425 sq ft and is priced from ₹2.67 Crore at current pre-launch rates.
+
+Booking amount is friendly at ₹20 Lakh only. The layout includes three generous bedrooms, modular kitchen, utility balcony, and excellent cross-ventilation.
+
+Why the 3 BHK is the Most Popular Configuration
+
+At Ananda Crown, the 3 BHK accounts for the highest number of inquiries and bookings. Here's why:
+
+• Perfect for nuclear families with 1–2 children
+• Adequate space for a home office or study room
+• Lower entry price compared to 4 and 5 BHK options
+• Strongest rental demand in the luxury segment
+• Easiest to resell when you decide to upgrade
+
+The 2425 sq ft layout isn't your typical compact 3 BHK. It's significantly larger than most 3 BHK apartments in Mohali, which typically range from 1400–1800 sq ft. This extra space is what makes Ananda Crown a luxury proposition.
+
+Layout Benefits
+
+The floor plan has been designed with Vastu compliance and modern living needs in mind:
+
+• Master bedroom with attached bathroom and walk-in wardrobe provision
+• Two additional bedrooms with attached bathrooms
+• Open-plan living and dining area with premium flooring
+• Modular kitchen with utility balcony and service access
+• Spacious balconies overlooking landscaped gardens
+
+To explore the detailed floor plans, visit our floor plans page.
+
+Family Suitability Assessment
+
+If you're a family of 3–5 members, this is the ideal configuration. The three bedrooms allow parents, children, and guests to have private space. The open living area is perfect for family gatherings, while the kitchen layout supports both everyday cooking and entertaining.
+
+For families with work-from-home requirements, one bedroom can easily function as a dedicated home office — something that's become essential post-2020.
+
+EMI and Payment Examples
+
+At the current price of ₹2.67 Crore:
+• Booking amount: ₹20 Lakh
+• 25% on RERA approval (includes booking): ~₹66.75 Lakh
+• Remaining 75%: Construction-linked payments spread over 18–24 months
+
+For a home loan of ₹2.00 Crore at 8.5% interest over 20 years, the estimated EMI comes to approximately ₹1,73,000 per month. Many banks offer pre-approved loans for Ananda Crown with competitive interest rates.
+
+For exact pricing and available units, call us at 9779799705 or visit www.anandacrownmohali.com. Book a site visit to see the model apartment and finalize your preferred unit.`
+  },
+  {
+    id: '23',
+    slug: '4-bhk-price-ananda-crown-mohali',
+    title: '4 BHK Price in Ananda Crown Mohali – Why Families Are Choosing It',
+    metaDescription: '4 BHK apartments in Ananda Crown Mohali from ₹3.57 Cr (3250 sq ft). Discover spacious layouts, private lounge options and limited inventory.',
+    keywords: ['4 BHK Price Ananda Crown', '4 BHK Mohali Luxury', 'Ananda Crown 4 BHK'],
+    excerpt: 'The 4 BHK at Ananda Crown feels like a proper villa in the sky at 3250 sq ft, with private lounge, Italian kitchen, and servant quarters.',
+    publishedAt: '2026-03-26',
+    readTime: '7 min read',
+    content: `The 4 BHK at Ananda Crown feels like a proper villa in the sky. At 3250 sq ft and above, it offers private lounge, Italian kitchen, servant quarter, and two parking slots in many units. Current pricing starts around ₹3.57 Crore.
+
+This isn't just a bigger apartment — it's a fundamentally different living experience. The 4 BHK is designed for families who refuse to compromise on space, privacy, or lifestyle.
+
+Space Utilization That Makes Sense
+
+Every square foot in the 4 BHK has a purpose:
+
+• Four spacious bedrooms, each with attached bathroom
+• Private lounge or family room — separate from the main living area
+• Italian-finish modular kitchen with breakfast counter
+• Servant quarter with independent access and bathroom
+• Multiple balconies with garden and pool views
+• Dedicated storage and utility spaces
+
+The layout eliminates the common complaint with luxury apartments — wasted corridor space. Here, the corridors are minimal, and the living spaces are maximized.
+
+The Status Statement
+
+Let's be honest — a 4 BHK in a premium high-rise in Sector 78 Mohali is more than just a home. It's a statement about where you are in life. Business owners, senior professionals, and NRI families are increasingly choosing 4 BHK configurations because they want their home to reflect their success.
+
+At Ananda Crown, the 4 BHK experience includes exclusive floor placement, premium views, and access to all clubhouse and lifestyle amenities.
+
+Comparison With 3 BHK
+
+While the 3 BHK at ₹2.67 Crore offers excellent value, the 4 BHK at ₹3.57 Crore gives you 825 sq ft of additional space — that's essentially an entire extra apartment's worth of room. Per sq ft, both configurations are priced equally at ₹11,000, so you're not paying a premium for the upgrade.
+
+Investment Perspective
+
+4 BHK luxury apartments typically appreciate faster than smaller configurations because supply is limited and demand comes from high-net-worth buyers who are less price-sensitive. Rental yields for fully furnished 4 BHK units in premium locations can reach 7–9% annually.
+
+Limited inventory remains for the 4 BHK — with only a few units per floor in this configuration, early booking is essential.
+
+Book your site visit today. Call 9779799705 or WhatsApp for immediate assistance. Visit www.anandacrownmohali.com for detailed floor plans and pricing.`
+  },
+  {
+    id: '24',
+    slug: 'is-ananda-crown-mohali-good-investment-2026',
+    title: 'Is Ananda Crown Mohali a Good Investment? My 20-Year Perspective',
+    metaDescription: 'Honest review: Is investing in Ananda Crown Mohali worth it? Expected rental yield, capital appreciation, location growth and expert insights.',
+    keywords: ['Ananda Crown Investment', 'Mohali Property Investment', 'Sector 78 Investment Returns'],
+    excerpt: 'Sector 78 is one of the strongest upcoming corridors in Mohali with expected rental yields of 6–8% and capital appreciation potential of 18–25% in 3 years.',
+    publishedAt: '2026-03-24',
+    readTime: '8 min read',
+    content: `After watching Mohali grow from fields to a modern extension of Chandigarh, I can confidently say Sector 78 is one of the strongest upcoming corridors. Proximity to CP67 Mall, IT hubs, Airport Road, and upcoming infrastructure makes Ananda Crown a solid pick.
+
+Expected rental yields: 6–8% once ready. Capital appreciation potential: 18–25% in 3 years is realistic based on past patterns in similar locations.
+
+The Investment Case — Pros
+
+Let me lay out the factors working in favor of Ananda Crown as an investment:
+
+1. Pre-Launch Pricing Advantage: At ₹11,000 per sq ft, you're entering below what the market will command post-RERA and post-construction. This built-in margin is your first layer of appreciation.
+
+2. Location Growth Trajectory: Sector 78 is surrounded by infrastructure projects — upcoming metro, road widening, commercial development near CP67 Mall, and IT City expansion. Each of these acts as a demand driver.
+
+3. Limited Luxury Supply: Unlike the 2–3 BHK apartment market that's saturated in some Mohali sectors, the ultra-luxury segment (2400–4100 sq ft) has very few competing projects. Limited supply with growing demand means prices rise.
+
+4. Developer Track Record: The Ananda Group has over 20 years of construction experience with 6+ completed projects. This isn't a first-time builder — there's accountability and reputation at stake.
+
+5. Premium Amenities: The 30,000 sq ft clubhouse, lagoon pool, and 80% open space aren't just lifestyle features — they're value multipliers. Properties with these amenities consistently command 15–20% premiums in resale.
+
+The Honest Cons
+
+No investment is without risk, and I'd be doing you a disservice by hiding the downsides:
+
+• RERA registration is still pending — though the payment structure protects your capital
+• Possession is expected in March 2028 — there's a 2-year lock-in before you can use or rent the property
+• Mohali's luxury segment is growing, which means more competition could emerge
+
+Comparison With Other Investment Options
+
+Fixed deposits currently offer 6–7% returns with full tax liability. Mutual funds carry market volatility. Gold has limited upside from current levels.
+
+Real estate in a growing market like Mohali offers both rental income (tax-efficient) and capital appreciation (long-term capital gains benefits). The combination is hard to beat.
+
+My Recommendation
+
+If you have a 3–5 year investment horizon and want exposure to Mohali's growth story, Ananda Crown offers a compelling entry point. The pre-launch pricing, developer credibility, and location fundamentals align well.
+
+For a free investment consultation, call us at 9779799705 or visit www.anandacrownmohali.com for pricing details and floor plans.`
+  },
+  {
+    id: '25',
+    slug: 'ananda-crown-mohali-payment-plan-booking-amount',
+    title: 'Ananda Crown Mohali Payment Plan & Booking Amount – Made Simple',
+    metaDescription: 'Easy payment plan at Ananda Crown Mohali – only 25% on RERA approval (includes booking). 3 BHK booking ₹20 Lakh. Construction-linked plan explained.',
+    keywords: ['Ananda Crown Payment Plan', 'Booking Amount Ananda Crown', 'Construction Linked Payment Mohali'],
+    excerpt: 'The developer has kept it buyer-friendly: 25% on RERA approval including booking amount, and remaining 75% construction-linked.',
+    publishedAt: '2026-03-22',
+    readTime: '7 min read',
+    content: `The developer has kept it buyer-friendly: 25% on RERA approval (which includes your booking amount), and the remaining 75% is construction-linked. This reduces early pressure on your cash flow.
+
+Booking amounts: ₹20 Lakh for 3 BHK, ₹25 Lakh for 4 BHK, ₹40 Lakh for 5 BHK.
+
+Understanding the Payment Structure
+
+The construction-linked payment plan is the most buyer-friendly model in Indian real estate. Here's how it works at Ananda Crown:
+
+Step 1 — Booking: Pay the booking amount (₹20–₹40 Lakh depending on unit size) to reserve your preferred apartment.
+
+Step 2 — On RERA Approval: Pay up to 25% of the total cost (this includes your booking amount). So if you've already paid ₹20 Lakh at booking for a 3 BHK priced at ₹2.67 Crore, you'll pay approximately ₹46.75 Lakh more at this stage.
+
+Step 3 — Construction-Linked Payments: The remaining 75% is spread across construction milestones — foundation, structure, finishing, etc. You pay only when progress happens.
+
+Step 4 — On Possession: Final payment and registration charges at the time of handover.
+
+Payment Schedule Example — 3 BHK (₹2.67 Crore)
+
+• Booking: ₹20,00,000
+• On RERA Approval (total 25%): ₹66,75,000 (includes booking)
+• Slab 1 – Foundation: ₹40,05,000
+• Slab 2 – Structure: ₹40,05,000
+• Slab 3 – Brickwork: ₹26,70,000
+• Slab 4 – Finishing: ₹26,70,000
+• On Possession: ₹26,70,000
+• Total: ₹2,67,00,000
+
+(Note: Exact slab-wise breakup may vary. Above is illustrative.)
+
+Payment Schedule Example — 4 BHK (₹3.57 Crore)
+
+• Booking: ₹25,00,000
+• On RERA Approval (total 25%): ₹89,25,000 (includes booking)
+• Remaining 75%: ₹2,67,75,000 spread across construction milestones
+• Total: ₹3,57,00,000
+
+Why This Works for Buyers
+
+The construction-linked model protects you because your payments are tied to actual progress. If construction slows, your payment obligation doesn't accelerate. This is far superior to time-linked plans where you pay regardless of progress.
+
+For many buyers, this also means you can continue investing your capital elsewhere while the project builds — maximizing your overall returns.
+
+Home Loan Support
+
+Most major banks including SBI, HDFC, ICICI, and PNB offer pre-approved loans for Ananda Crown at competitive interest rates. The loan process can begin as early as the booking stage.
+
+For your personalized payment schedule and unit availability, call us at 9779799705 or visit www.anandacrownmohali.com. We'll walk you through every step.`
+  },
+  {
+    id: '26',
+    slug: 'ananda-crown-mohali-possession-date',
+    title: 'Ananda Crown Mohali Possession Date – What You Should Know',
+    metaDescription: 'Expected possession at Ananda Crown Mohali is March 2028. Know current construction status and why the timeline looks realistic.',
+    keywords: ['Ananda Crown Possession Date', 'Ananda Crown Delivery Timeline', 'Mohali Project Possession'],
+    excerpt: 'Construction is progressing well at Ananda Crown with expected possession in March 2028 — a realistic timeline backed by the developer\'s track record.',
+    publishedAt: '2026-03-20',
+    readTime: '7 min read',
+    content: `Construction is already progressing well. The expected possession date is March 2028. While delays can happen in any project, the Ananda Group has a decent track record of delivering close to committed timelines.
+
+Current Construction Status
+
+As of April 2026, the project has cleared key initial milestones:
+
+• Land development and site preparation — completed
+• Approvals and documentation — in progress (RERA filing underway)
+• Foundation work — commenced
+• Structural planning — finalized with earthquake-resistant RCC frame design
+
+The developer has engaged reputed contractors and material suppliers to ensure quality and timeline adherence. Regular site progress updates are shared with booked buyers.
+
+Why March 2028 Looks Realistic
+
+Several factors support the March 2028 timeline:
+
+1. Developer Experience: Ananda Group has completed 6+ projects in Punjab. Their execution capability is proven across similar project scales.
+
+2. Financial Backing: The project's financial structure is sound, with the construction-linked payment model ensuring steady cash flow for building activities.
+
+3. Single-Phase Development: Unlike multi-phase projects that can stretch timelines, Ananda Crown is planned as a focused development with clear milestones.
+
+4. Regulatory Compliance: The RERA filing process, once complete, will bind the developer to committed timelines with penalties for delays.
+
+Factors That Could Affect Timelines
+
+In the interest of transparency, here are factors that could impact possession:
+
+• Government approval delays — sometimes beyond the developer's control
+• Severe weather events during monsoon season
+• Material supply chain disruptions
+• Force majeure events
+
+However, most reputed developers factor these into their timelines. A 2–3 month variation from the stated date is common in Indian real estate and is generally acceptable.
+
+How to Track Construction Progress
+
+Buyers who have booked units will receive:
+
+• Monthly construction update reports
+• Quarterly site visit invitations
+• Photo and video documentation of progress
+• Direct communication channel with the project team
+
+For non-booked interested buyers, you can request construction updates by WhatsApp at 9779799705 or visit the site in person.
+
+What Happens at Possession?
+
+When the project reaches completion:
+
+1. Occupancy Certificate (OC) is obtained from the authorities
+2. Quality inspection is conducted jointly with the buyer
+3. Final payment and registration formalities are completed
+4. Keys are handed over with all documentation
+
+Ready to be part of this journey? Book your site visit today. Call 9779799705 or visit www.anandacrownmohali.com for complete project details.`
+  },
+  {
+    id: '27',
+    slug: 'how-to-book-flat-in-ananda-crown-mohali',
+    title: 'How to Book a Flat in Ananda Crown Mohali – Easy Step-by-Step Process',
+    metaDescription: 'Complete process to book your flat in Ananda Crown Mohali. Required documents, booking amount, site visit tips and direct contact.',
+    keywords: ['Book Flat Ananda Crown', 'Ananda Crown Booking Process', 'How to Buy Flat Mohali'],
+    excerpt: 'Booking at Ananda Crown is straightforward — visit the site, choose your unit, pay the booking amount, and you\'re on your way to luxury living.',
+    publishedAt: '2026-03-18',
+    readTime: '7 min read',
+    content: `Booking is straightforward. Step 1: Visit the site or connect with us. Step 2: Choose your unit and pay booking amount. Step 3: Sign the application form and submit documents.
+
+But let me walk you through the complete process so there are no surprises.
+
+Complete 10-Step Booking Guide
+
+Step 1 — Research and Shortlist: Visit www.anandacrownmohali.com to explore floor plans, pricing, and amenities. Compare configurations to identify your preferred unit type.
+
+Step 2 — Schedule a Site Visit: Call 9779799705 or WhatsApp us to book a convenient time. Site visits typically take 45–60 minutes and include a project presentation, model apartment walkthrough, and location tour.
+
+Step 3 — Choose Your Configuration: Based on your family size, budget, and preferences, select between 3 BHK (2425 sq ft), 3+1 BHK (2750 sq ft), 4 BHK (3250 sq ft), or 5 BHK (4100 sq ft).
+
+Step 4 — Select Your Unit: Choose your preferred floor, facing, and unit number. Corner units and higher floors typically offer better views and ventilation.
+
+Step 5 — Pay Booking Amount: Secure your unit with the booking payment — ₹20 Lakh for 3 BHK, ₹25 Lakh for 4 BHK, or ₹40 Lakh for 5 BHK. Payment can be made via cheque, RTGS, or bank transfer.
+
+Step 6 — Sign Application Form: Complete the booking application with personal details, nominee information, and payment preferences.
+
+Step 7 — Submit Documents: Provide required identification and address proof documents (listed below).
+
+Step 8 — Receive Confirmation: You'll receive an official booking confirmation letter with unit details, price breakdown, and payment schedule.
+
+Step 9 — Arrange Home Loan (if applicable): Begin the loan process with your preferred bank. Pre-approved loans are available from major banks.
+
+Step 10 — Follow Payment Schedule: Make subsequent payments as per the construction-linked plan.
+
+Documents Required
+
+• PAN Card (mandatory for property transactions)
+• Aadhaar Card or Passport for identity verification
+• Address proof (utility bill, bank statement, or rental agreement)
+• Passport-size photographs (4 copies)
+• Income proof or bank statements (for loan processing)
+• Power of Attorney (if buying through a representative)
+
+Common Mistakes to Avoid
+
+1. Don't delay — popular units and floors get booked quickly
+2. Don't skip the site visit — photos can't replace the real experience
+3. Don't ignore the payment schedule — plan your finances in advance
+4. Don't negotiate without understanding value — compare specifications, not just price
+
+Ready to begin? Call us at 9779799705 for immediate assistance. WhatsApp works 24/7 for your convenience. Visit www.anandacrownmohali.com for complete details.`
+  },
+  {
+    id: '28',
+    slug: 'configurations-in-ananda-crown-mohali',
+    title: 'What Are the Configurations Available in Ananda Crown Mohali?',
+    metaDescription: 'Ananda Crown Mohali offers 3 BHK, 3+1 BHK, 4 BHK and 5 BHK ultra-luxury apartments from 2425 to 4100 sq ft.',
+    keywords: ['Ananda Crown Configurations', 'Ananda Crown BHK Options', '3 BHK 4 BHK 5 BHK Mohali'],
+    excerpt: 'The project focuses on larger, premium homes: 3 BHK (2425 sq ft), 3+1 BHK (2750 sq ft), 4 BHK (3250 sq ft), and 5 BHK (4100 sq ft).',
+    publishedAt: '2026-03-16',
+    readTime: '7 min read',
+    content: `The project focuses on larger, premium homes: 3 BHK (2425 sq ft), 3+1 BHK (2750 sq ft), 4 BHK (3250 sq ft), and 5 BHK (4100 sq ft). Each is designed for maximum light, ventilation and privacy.
+
+Unlike many developers who offer compact 1 and 2 BHK units alongside larger configurations, Ananda Crown has made a deliberate choice — every unit is designed for luxury living. There are no compromises in space.
+
+3 BHK — 2425 sq ft
+
+The entry-level luxury configuration at Ananda Crown is larger than most 4 BHK apartments in regular Mohali projects. Features include:
+
+• Three spacious bedrooms with attached bathrooms
+• Open-concept living and dining area
+• Modular kitchen with utility balcony
+• Multiple balconies for natural light and ventilation
+• Starting price: ₹2.67 Crore
+
+Best suited for: Young families, professionals, and first-time luxury home buyers.
+
+3+1 BHK — 2750 sq ft
+
+The most popular configuration, adding a multipurpose room to the 3 BHK layout:
+
+• All 3 BHK features plus a dedicated extra room
+• Extra room can serve as home office, study, guest room, or prayer room
+• Enhanced privacy with thoughtful room placement
+• Starting price: ₹3.02 Crore
+
+Best suited for: Growing families, work-from-home professionals, and buyers wanting flexibility.
+
+4 BHK — 3250 sq ft
+
+The premium family residence with no compromises:
+
+• Four bedrooms with attached bathrooms
+• Private lounge or family room
+• Italian-finish modular kitchen
+• Servant quarter with independent access
+• Two dedicated parking slots
+• Starting price: ₹3.57 Crore
+
+Best suited for: Business owners, senior executives, NRI families, and multi-generation households.
+
+5 BHK — 4100 sq ft
+
+The crown jewel of the project — true penthouse-level living:
+
+• Five bedrooms for ultimate family accommodation
+• Grand living and entertainment areas
+• Premium finishes throughout
+• Maximum privacy and exclusivity
+• Starting price: ₹4.51 Crore
+
+Best suited for: HNI families, large joint families, and buyers seeking the finest living experience in Mohali.
+
+For detailed floor plans and layout diagrams, visit our floor plans page. To discuss which configuration suits your needs, call us at 9779799705 or visit www.anandacrownmohali.com.`
+  },
+  {
+    id: '29',
+    slug: 'size-of-flats-in-ananda-crown-mohali',
+    title: 'What is the Size of Flats in Ananda Crown Mohali?',
+    metaDescription: 'Know exact flat sizes in Ananda Crown Mohali: 2425 sq ft (3 BHK) to 4100 sq ft (5 BHK). Get super area and usable space details.',
+    keywords: ['Flat Size Ananda Crown', 'Ananda Crown Sq Ft', 'Apartment Size Sector 78 Mohali'],
+    excerpt: 'All units are generously sized for true luxury living — from 2425 sq ft for the 3 BHK up to 4100 sq ft for the grand 5 BHK.',
+    publishedAt: '2026-03-14',
+    readTime: '7 min read',
+    content: `All units are generously sized for true luxury living. Expect super areas ranging from 2425 sq ft for the smallest 3 BHK up to 4100 sq ft for the grand 5 BHK.
+
+These aren't marketing numbers — they represent genuinely spacious layouts where every room feels like it was designed for comfort, not just occupancy.
+
+Size Breakdown by Configuration
+
+• 3 BHK: 2425 sq ft (super area) — approximately 1820 sq ft carpet area
+• 3+1 BHK: 2750 sq ft (super area) — approximately 2060 sq ft carpet area
+• 4 BHK: 3250 sq ft (super area) — approximately 2440 sq ft carpet area
+• 5 BHK: 4100 sq ft (super area) — approximately 3075 sq ft carpet area
+
+(Note: Carpet area is approximately 75% of super area. Exact figures may vary by unit.)
+
+Understanding Super Area vs Carpet Area
+
+Super area (or built-up area) includes your apartment's usable space plus a proportionate share of common areas like lobbies, staircases, and amenity spaces. Carpet area is the actual floor space inside your apartment walls.
+
+At Ananda Crown, the ratio is favorable — approximately 75% efficiency, which is above average for luxury high-rise projects. This means more of what you're paying for translates into livable space.
+
+How Size Translates to Lifestyle
+
+2425 sq ft (3 BHK): Each bedroom comfortably fits a king-size bed with side tables and wardrobe. The living room can accommodate an 8-seater sofa set with a dining table for 6. The kitchen is designed for serious cooking with ample counter and storage space.
+
+2750 sq ft (3+1 BHK): Everything above plus a separate room that can transform based on your life stage — nursery today, study tomorrow, guest room next year.
+
+3250 sq ft (4 BHK): This is where you start feeling the difference between a home and a residence. The private lounge, servant quarter, and generous room sizes create a lifestyle that rivals independent houses.
+
+4100 sq ft (5 BHK): At this size, you're in a league of your own. Multiple living zones, entertainment space, and bedroom sizes that match five-star hotel suites.
+
+Size Comparison With Market
+
+Most 3 BHK apartments in Mohali range from 1400–1800 sq ft. Ananda Crown's 3 BHK at 2425 sq ft is 35–70% larger. This is a significant differentiator that justifies the luxury positioning.
+
+For detailed floor plans showing exact room dimensions, visit our floor plans page. Call 9779799705 or WhatsApp for unit-specific details. Visit www.anandacrownmohali.com for complete project information.`
+  },
+  {
+    id: '30',
+    slug: 'where-is-ananda-crown-mohali-located',
+    title: 'Where is Ananda Crown Mohali Located?',
+    metaDescription: 'Ananda Crown is located in Sector 78 Mohali. Know exact location benefits, connectivity and landmarks nearby.',
+    keywords: ['Ananda Crown Location', 'Sector 78 Mohali Address', 'Ananda Crown Mohali Map'],
+    excerpt: 'Ananda Crown stands in Sector 78, Mohali (SAS Nagar), Punjab — with excellent connectivity to Chandigarh, Airport Road, and IT City.',
+    publishedAt: '2026-03-12',
+    readTime: '7 min read',
+    content: `Ananda Crown stands proudly in Sector 78, Mohali (SAS Nagar), Punjab. It enjoys excellent connectivity to Chandigarh (15–20 mins), Airport Road, IT City, and upcoming metro corridors.
+
+The exact address is Sector 78, SAS Nagar, Mohali, Punjab 140308.
+
+Why Sector 78 is a Premium Address
+
+Sector 78 isn't just another sector in Mohali — it's emerging as the city's most prestigious residential address. Here's what makes the location special:
+
+Strategic Connectivity
+
+• Chandigarh City Center: 15–20 minutes via multiple routes
+• Chandigarh International Airport: 10–15 minutes
+• IT City Mohali: 5–10 minutes
+• CP67 Mall: 5 minutes
+• Industrial Area Phase 8B: 10 minutes
+• Chandigarh Railway Station: 25–30 minutes
+
+The location ensures that daily commutes are short and convenient, whether you're working in IT, business, government, or education sectors.
+
+Neighborhood Quality
+
+Sector 78 features:
+
+• Wide, well-maintained roads with proper drainage
+• Established residential colonies with a settled community feel
+• Parks and green spaces within walking distance
+• Low traffic congestion compared to inner sectors
+• Ongoing infrastructure upgrades
+
+Surrounding Infrastructure
+
+Within a 5 km radius, you'll find:
+
+• Premium shopping at CP67 Mall and Elante Mall (Chandigarh)
+• International schools including Oakridge, Shemrock, and DPS
+• Multi-specialty hospitals including Fortis, Max, and PGIMER
+• Sports facilities and golf courses
+• Banking and commercial establishments
+
+Future Growth Catalysts
+
+The location will further benefit from:
+
+• Proposed Metro connectivity to Chandigarh
+• Airport Road widening and beautification
+• IT City Phase 2 expansion
+• Commercial development along the Airport Road corridor
+
+For a detailed analysis of location advantages, visit our location page.
+
+Ready to visit the site? Call us at 9779799705 for directions and appointment. Visit www.anandacrownmohali.com for maps and project details.`
+  },
+  {
+    id: '31',
+    slug: 'ananda-crown-sector-78-mohali-location-advantages',
+    title: 'Ananda Crown Sector 78 Mohali – Location Advantages You\'ll Love',
+    metaDescription: 'Sector 78 Mohali offers superior connectivity, proximity to CP67 Mall, schools, hospitals and future infrastructure growth.',
+    keywords: ['Sector 78 Location Advantages', 'Mohali Location Benefits', 'Ananda Crown Connectivity'],
+    excerpt: 'Sector 78 is fast becoming Mohali\'s premium residential address — close to CP67 Mall, top schools, hospitals, and with direct access to major roads.',
+    publishedAt: '2026-03-10',
+    readTime: '8 min read',
+    content: `Sector 78 is fast becoming Mohali's premium residential address. Close to CP67 Mall, top schools, hospitals, and with direct access to major roads — daily life becomes convenient and future-proof.
+
+Let me break down each advantage in detail, because location is the one thing you can never change about a property.
+
+Education Hub
+
+Families with school-going children will appreciate the proximity to top educational institutions:
+
+• Oakridge International School: 5 minutes
+• Shemrock Senior Secondary School: 7 minutes
+• DPS Mohali: 10 minutes
+• Chandigarh University: 15 minutes
+• Amity University: 12 minutes
+• PEC (Punjab Engineering College): 20 minutes
+• Punjab University: 25 minutes
+
+From nursery to post-graduation, everything is within reach.
+
+Healthcare Access
+
+Medical emergencies require quick access to quality healthcare:
+
+• Fortis Hospital: 10 minutes
+• Max Super Specialty Hospital: 12 minutes
+• PGIMER Chandigarh: 25 minutes
+• Grecian Hospital: 10 minutes
+• Ivy Hospital: 15 minutes
+
+Having multi-specialty hospitals nearby isn't just a convenience — it's a safety net for your family.
+
+Shopping and Entertainment
+
+• CP67 Mall: 5 minutes — premium shopping, dining, and entertainment
+• Elante Mall: 20 minutes — one of North India's largest malls
+• North Country Mall: 15 minutes
+• Best Price (Walmart): 10 minutes
+• Local markets in Sector 78 and adjoining sectors
+
+Daily essentials are within walking distance, while premium shopping is just a short drive away.
+
+Workplace Connectivity
+
+• IT City Mohali: 5–10 minutes — home to major IT companies
+• Industrial Area Phase 8B: 10 minutes — manufacturing and business hub
+• Chandigarh IT Park: 20 minutes
+• Chandigarh business district: 15–20 minutes
+
+Short commutes mean more time with family and less stress.
+
+Appreciation Potential
+
+Location advantages directly translate into property appreciation. Sectors with strong connectivity, infrastructure, and social amenities consistently outperform peripheral locations.
+
+Sector 78 has already shown 10–15% annual appreciation over the past 3 years, and with upcoming metro and road projects, this trend is expected to continue.
+
+For a complete location analysis, visit our location page. Call 9779799705 or visit www.anandacrownmohali.com for site visit booking.`
+  },
+  {
+    id: '32',
+    slug: 'distance-from-chandigarh-to-ananda-crown-mohali',
+    title: 'How Far is Ananda Crown Mohali from Chandigarh?',
+    metaDescription: 'Ananda Crown Mohali is just 15–20 minutes from Chandigarh. Know best routes, traffic insights and daily commute ease.',
+    keywords: ['Distance Chandigarh to Ananda Crown', 'Mohali Chandigarh Commute', 'Sector 78 Distance'],
+    excerpt: 'The drive from Chandigarh sectors to Ananda Crown takes only 15–20 minutes — with multiple route options and future metro connectivity.',
+    publishedAt: '2026-03-08',
+    readTime: '6 min read',
+    content: `Most residents tell me the drive from Chandigarh sectors takes only 15–20 minutes depending on traffic. The location offers smooth connectivity via multiple routes.
+
+Exact Distances
+
+• From Sector 17 (Chandigarh city center): 14 km — approximately 20 minutes
+• From Sector 35 (commercial hub): 12 km — approximately 18 minutes
+• From IT Park (Chandigarh): 10 km — approximately 15 minutes
+• From Chandigarh Railway Station: 16 km — approximately 25 minutes
+• From ISBT Chandigarh: 15 km — approximately 22 minutes
+• From Chandigarh Airport: 6 km — approximately 10 minutes
+
+Route Options
+
+Route 1 — Via Airport Road (Recommended): The fastest and most scenic route. Take Airport Road from Chandigarh, which directly connects to Sector 78. This route has minimal traffic signals and wide roads.
+
+Route 2 — Via Madhya Marg Extension: From central Chandigarh sectors, take Madhya Marg and connect to the Mohali expressway. Slightly longer but less congested during peak hours.
+
+Route 3 — Via Industrial Area: From Chandigarh's southern sectors, route through Industrial Area Phase 8B to reach Sector 78. Useful if you work in the industrial belt.
+
+Traffic Insights
+
+• Morning rush (8:30–10:00 AM): Add 5–8 minutes to commute times
+• Evening rush (5:30–7:30 PM): Add 8–12 minutes
+• Off-peak hours: Commutes are typically faster than estimated
+• Weekends: Minimal traffic — often under 15 minutes
+
+Future Infrastructure Impact
+
+The proposed Tricity metro will have stations near Sector 78, potentially reducing commute times further and adding a public transport option. Road widening projects on Airport Road and connecting corridors will improve traffic flow.
+
+For many Chandigarh-based families, moving to Sector 78 Mohali means upgrading to a larger luxury home while keeping the same commute time — or even improving it.
+
+Plan your site visit today. Call 9779799705 for directions. Visit www.anandacrownmohali.com for location maps and project details.`
+  },
+  {
+    id: '33',
+    slug: 'nearby-schools-hospitals-malls-ananda-crown-mohali',
+    title: 'Schools, Hospitals & Malls Near Ananda Crown Mohali – Your Daily Conveniences',
+    metaDescription: 'Top schools, hospitals and malls near Ananda Crown Mohali including CP67 Mall, international schools and reputed medical facilities.',
+    keywords: ['Schools Near Ananda Crown', 'Hospitals Near Sector 78', 'Malls Near Ananda Crown Mohali'],
+    excerpt: 'Reputed schools, multi-specialty hospitals, and CP67 Mall are all within a short drive — less time on the road, more time with family.',
+    publishedAt: '2026-03-06',
+    readTime: '7 min read',
+    content: `Families love the fact that reputed schools, multi-specialty hospitals, and CP67 Mall are all within a short drive. This means less time on the road and more time with family.
+
+When choosing a home, especially a luxury home you plan to live in for decades, the surrounding infrastructure matters as much as the apartment itself. Let me walk you through what's near Ananda Crown.
+
+Schools Within 15 Minutes
+
+1. Oakridge International School (5 min) — CBSE, known for holistic education
+2. Shemrock Senior Secondary School (7 min) — Established reputation in Tricity
+3. DPS Mohali (10 min) — Part of the renowned Delhi Public School network
+4. Saupin's School (12 min) — Popular choice for Chandigarh-Mohali families
+5. Learning Paths School (8 min) — International curriculum options
+6. Chandigarh University (15 min) — Higher education and professional courses
+
+Having quality schools nearby reduces daily commute stress for both parents and children. It also adds to the property's rental appeal for families.
+
+Hospitals Within 15 Minutes
+
+1. Fortis Hospital Mohali (10 min) — Multi-specialty with 24/7 emergency
+2. Max Super Specialty Hospital (12 min) — Advanced cardiac and neuro care
+3. Grecian Hospital (10 min) — Comprehensive healthcare services
+4. Ivy Hospital (15 min) — Quality healthcare at competitive rates
+5. PGIMER Chandigarh (25 min) — India's premier medical institution
+
+For families with elderly members, having top hospitals within 10–15 minutes is a critical safety factor.
+
+Shopping & Entertainment
+
+1. CP67 Mall (5 min) — Premium retail, dining, and multiplex
+2. North Country Mall (15 min) — Shopping and entertainment hub
+3. Elante Mall Chandigarh (20 min) — One of North India's largest
+4. Best Price/Walmart (10 min) — Wholesale and retail shopping
+5. Local sector markets — Daily essentials within walking distance
+
+Daily Conveniences
+
+• Banks and ATMs: Multiple banks within 2 km including SBI, HDFC, ICICI
+• Petrol stations: 3 stations within 3 km
+• Restaurants and cafes: Wide variety in CP67 and surrounding areas
+• Gyms and fitness centers: Multiple options within 5 km
+• Religious places: Gurdwaras, temples, and churches within 10 minutes
+
+Why This Matters for Property Value
+
+Properties near established social infrastructure — schools, hospitals, and shopping — consistently show higher appreciation and rental demand. Sector 78's infrastructure maturity gives Ananda Crown a significant advantage over projects in newer, under-developed sectors.
+
+For a detailed location map and site visit, call 9779799705 or visit www.anandacrownmohali.com.`
+  },
+  {
+    id: '34',
+    slug: 'amenities-in-ananda-crown-mohali',
+    title: 'What Amenities Are Available in Ananda Crown Mohali?',
+    metaDescription: 'Ananda Crown Mohali offers world-class amenities including lagoon-style pool, 30,000 sq ft double-height clubhouse, gym, 80% open green space and 24x7 security.',
+    keywords: ['Ananda Crown Amenities', 'Clubhouse Ananda Crown', 'Swimming Pool Sector 78 Mohali'],
+    excerpt: 'Expect a resort-like experience with lagoon-style designer pool, 30,000 sq ft double-height clubhouse, gymnasium, kids\' play areas, and 80% open green space.',
+    publishedAt: '2026-03-04',
+    readTime: '8 min read',
+    content: `This is where Ananda Crown truly shines. Expect a resort-like experience with lagoon-style designer pool, massive double-height clubhouse (30,000 sq ft), gymnasium, kids' play areas, landscaped gardens, and much more.
+
+When I show buyers the amenity plan, most are genuinely surprised. This isn't a token list of facilities — it's a complete lifestyle ecosystem.
+
+The Clubhouse — 30,000 Sq Ft of Lifestyle
+
+The double-height clubhouse at Ananda Crown is one of the largest in any Mohali residential project. It includes:
+
+• Grand entrance lobby with premium finishes
+• Multi-purpose hall for events and celebrations
+• Indoor games zone — billiards, table tennis, chess
+• Dedicated card room and lounge area
+• Library and reading zone
+• Business center with meeting rooms
+• Cafeteria and refreshment area
+
+The clubhouse is designed as the social heart of the community — where families gather, friendships form, and celebrations happen.
+
+Swimming Pool — Lagoon Style
+
+This isn't your standard rectangular pool. The lagoon-style designer pool creates a resort-like atmosphere:
+
+• Temperature-controlled water
+• Children's wading area with safety features
+• Poolside loungers and cabanas
+• Landscaped surroundings for privacy
+
+The pool area alone makes coming home feel like checking into a five-star resort.
+
+Fitness & Sports
+
+• State-of-the-art gymnasium with imported equipment
+• Yoga and meditation zone
+• Jogging track through landscaped gardens
+• Outdoor sports facilities
+• Cycling track
+
+80% Open Green Space
+
+Perhaps the most impressive number — 80% of the total project area is dedicated to open, green, landscaped space. This means:
+
+• Lush gardens visible from every apartment
+• Ample space for children to play safely
+• Clean air circulation throughout the community
+• A sense of openness rarely found in urban projects
+
+Security Infrastructure
+
+• Multi-tier security with controlled access points
+• 24/7 CCTV surveillance across the campus
+• Boom barriers at entry and exit points
+• Trained security personnel round the clock
+• Video door phones in every apartment
+• Fire safety systems as per latest norms
+
+Children's Amenities
+
+• Dedicated kids' play zones with age-appropriate equipment
+• Safe, enclosed play areas within the community
+• Learning and activity spaces in the clubhouse
+
+For a complete amenity walkthrough, visit our amenities page. Book a site visit to experience the lifestyle firsthand — call 9779799705 or visit www.anandacrownmohali.com.`
+  },
+  {
+    id: '35',
+    slug: 'is-ananda-crown-mohali-rera-approved',
+    title: 'Is Ananda Crown Mohali RERA Approved? Current Status Explained',
+    metaDescription: 'Ananda Crown Mohali RERA registration is in progress. Know what this means for buyers and current buyer protections.',
+    keywords: ['Ananda Crown RERA', 'RERA Approved Mohali Projects', 'Ananda Crown Registration Status'],
+    excerpt: 'RERA registration is in progress as of April 2026. The payment plan is structured to protect buyers even at this stage.',
+    publishedAt: '2026-03-02',
+    readTime: '7 min read',
+    content: `As of April 2026, RERA registration is in progress (pending final approval). The payment plan is structured to protect buyers even at this stage. Once registered, full RERA safeguards will apply.
+
+Let me explain what this means for you as a buyer and why it shouldn't be a concern if you understand the process.
+
+What is RERA?
+
+The Real Estate (Regulation and Development) Act was introduced to protect homebuyers and bring transparency to real estate transactions. Under RERA, developers must:
+
+• Register their project before marketing or selling
+• Deposit 70% of collected funds in an escrow account
+• Provide accurate project information including timelines
+• Deliver the project as per committed specifications
+• Face penalties for delays or misrepresentation
+
+In Punjab, RERA registration is managed through the Punjab RERA portal where buyers can verify project status, approvals, and timelines.
+
+Current Status at Ananda Crown
+
+The RERA application for Ananda Crown Mohali has been filed and is under review. This is a normal process that takes time due to documentation verification, approval compilation, and regulatory processing.
+
+Many premium projects in Mohali go through this phase during their early stages. What's important is that the developer has initiated the process proactively.
+
+How Buyers Are Protected During This Phase
+
+Even before RERA registration is complete, Ananda Crown has implemented buyer protection measures:
+
+1. Construction-Linked Payments: You pay only when construction progresses — your money isn't sitting idle with the developer.
+
+2. Proper Documentation: All booking documents, agreements, and receipts are issued as per standard legal requirements.
+
+3. Developer Accountability: Ananda Group's 20+ year reputation and 6+ completed projects provide an additional layer of trust.
+
+4. Transparent Communication: All project details, pricing, and timelines are clearly communicated upfront.
+
+What Changes After RERA Registration?
+
+Once RERA approval is received:
+
+• The project gets an official RERA number for verification
+• 70% of funds are protected in an escrow account
+• Timelines become legally binding with penalty provisions
+• Buyers get access to the RERA grievance mechanism
+• All project details become publicly verifiable
+
+Should You Wait for RERA?
+
+Here's my honest advice: if you wait for RERA approval, you'll pay more. The pre-RERA price of ₹11,000 per sq ft will move to ₹12,000 per sq ft upon registration. On a 3250 sq ft apartment, that's ₹32.5 lakh more.
+
+The construction-linked payment model means your financial exposure is minimal during this period, while the price advantage is significant.
+
+For questions about RERA status and buyer protection, call us at 9779799705 or visit www.anandacrownmohali.com.`
+  },
+  {
+    id: '36',
+    slug: 'floor-plans-ananda-crown-mohali',
+    title: 'Floor Plans of Ananda Crown Mohali – See the Luxury Layouts',
+    metaDescription: 'Explore detailed floor plans of Ananda Crown Mohali. Spacious 3, 4 & 5 BHK layouts designed for maximum light, ventilation and luxury.',
+    keywords: ['Ananda Crown Floor Plans', 'Floor Plan 3 BHK Mohali', '4 BHK Layout Ananda Crown'],
+    excerpt: 'Every floor plan at Ananda Crown has been thoughtfully designed — the 3 BHK offers practical yet spacious living, while 4 & 5 BHK include private lounges.',
+    publishedAt: '2026-02-28',
+    readTime: '7 min read',
+    content: `Every floor plan at Ananda Crown has been thoughtfully designed. The 3 BHK offers practical yet spacious living, while 4 & 5 BHK units include private lounges and servant quarters.
+
+Good floor plans are the difference between a house and a home. At Ananda Crown, the architects have focused on three priorities: natural light, cross-ventilation, and functional space utilization.
+
+3 BHK Floor Plan — 2425 sq ft
+
+The 3 BHK layout prioritizes open living:
+
+• Entrance foyer leading to an expansive living-dining area
+• Three bedrooms positioned for maximum privacy — master bedroom is separated from the other two
+• Master bedroom includes attached bathroom with premium fixtures and walk-in wardrobe provision
+• Kitchen opens to a utility balcony for practical daily use
+• Two additional balconies for natural light and garden views
+• All rooms have cross-ventilation with windows on at least two walls
+
+3+1 BHK Floor Plan — 2750 sq ft
+
+Building on the 3 BHK base, the 3+1 BHK adds:
+
+• A dedicated multipurpose room positioned away from bedrooms for privacy
+• Slightly larger living area to maintain proportional aesthetics
+• Additional storage provisions
+• The extra room includes its own window/balcony access for light and air
+
+4 BHK Floor Plan — 3250 sq ft
+
+The 4 BHK is designed for expansive family living:
+
+• Four bedrooms, each with attached bathroom
+• Separate family lounge — independent from the main living room
+• Italian-finish kitchen with breakfast counter and pantry space
+• Servant quarter with independent entry and bathroom
+• Powder room for guests near the entrance
+• Multiple balconies with varying views — garden, pool, and skyline
+
+5 BHK Floor Plan — 4100 sq ft
+
+The ultimate expression of luxury:
+
+• Five bedrooms — accommodating extended family or dedicated spaces for various uses
+• Grand living and entertainment zone
+• Premium kitchen with separate wet and dry areas
+• Multiple servant/utility areas
+• Study or library provision
+• Wrap-around balconies with panoramic views
+
+Vastu Considerations
+
+All floor plans have been designed with Vastu compliance in mind:
+
+• Kitchen positioned in the southeast
+• Master bedroom in the southwest
+• Prayer/meditation space provisions in the northeast
+• Entrance aligned with auspicious directions where structurally feasible
+
+To download detailed floor plans with exact dimensions, visit our floor plans page or WhatsApp us at 9779799705. Visit www.anandacrownmohali.com for the complete project overview.`
+  },
+  {
+    id: '37',
+    slug: 'who-is-the-builder-of-ananda-crown-mohali',
+    title: 'Who is the Builder of Ananda Crown Mohali?',
+    metaDescription: 'Ananda Crown Mohali is developed by Ananda Group, a reputed developer with 20+ years of experience delivering quality projects in the Tricity region.',
+    keywords: ['Ananda Crown Builder', 'Ananda Group Developer', 'Builder Sector 78 Mohali'],
+    excerpt: 'Ananda Group brings over two decades of real estate expertise — known for timely delivery, quality construction, and customer satisfaction.',
+    publishedAt: '2026-02-26',
+    readTime: '7 min read',
+    content: `Ananda Group brings over two decades of real estate expertise to this project. Known for timely delivery and quality construction in Mohali and surrounding areas, the group focuses on luxury and customer satisfaction.
+
+In real estate, the developer's track record is your best insurance. Let me share what I know about Ananda Group and why their involvement in this project matters.
+
+The Ananda Group Story
+
+Ananda Group was founded with a clear vision: to build homes that families are proud of — not just structures, but living environments that enhance quality of life.
+
+Over 20+ years, the group has:
+
+• Delivered 6+ successful residential projects
+• Built a reputation for structural quality and timely delivery
+• Maintained transparency in all buyer transactions
+• Focused on community-centric development rather than mass housing
+
+The leadership team — Mr. Sahil Aggarwal and Mr. Anuj Bansal — brings complementary expertise. Mr. Aggarwal focuses on vision, design, and market understanding, while Mr. Bansal ensures construction quality, structural integrity, and timeline management.
+
+For more about the founders, visit our about owners page.
+
+Track Record and Past Projects
+
+Ananda Group's portfolio includes:
+
+• Multiple residential communities in Bathinda with hundreds of satisfied families
+• Projects ranging from premium plotted developments to apartment complexes
+• Consistent delivery within or near committed timelines
+• Zero legal disputes or major buyer complaints in public records
+
+The group's experience in Bathinda laid the foundation for their Mohali expansion. Having proven their capability in smaller markets, they're now applying the same discipline and quality standards to a larger, more competitive market.
+
+Why This Matters for Ananda Crown
+
+A developer's past performance is the strongest predictor of future delivery. Here's what Ananda Group's track record means for Ananda Crown buyers:
+
+1. Construction Quality: Earthquake-resistant RCC frame structure, premium materials, and attention to detail in finishing — consistent with their past projects.
+
+2. Timeline Reliability: The March 2028 possession date is backed by a developer who understands execution and has delivered on commitments before.
+
+3. Transparency: From pricing to payment schedules to construction updates, Ananda Group maintains open communication with buyers.
+
+4. After-Sales Support: Post-possession support and community management are integral to their development philosophy.
+
+How to Verify
+
+Buyers can verify Ananda Group's credentials through:
+
+• RERA portal (once registration is complete)
+• Physical visit to completed projects in Bathinda
+• Direct discussion with existing homeowners
+• Company registration and compliance documents
+
+Independent Due Diligence
+
+I always recommend buyers do their own verification. Visit the site, meet the team, check construction quality firsthand, and speak with existing buyers if possible. A reputed developer will welcome this scrutiny.
+
+For a detailed discussion about Ananda Group and to schedule a site visit, call 9779799705 or visit www.anandacrownmohali.com.`
   }
 ];
 
