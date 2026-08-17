@@ -16,6 +16,8 @@ import Contact from "./pages/Contact";
 import Overview from "./pages/Overview";
 import AboutOwners from "./pages/AboutOwners";
 import Reviews from "./pages/Reviews";
+import ReraCompliance from "./pages/ReraCompliance";
+import ReraNumber from "./pages/ReraNumber";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,6 +41,8 @@ const App = () => (
           <Route path="/overview" element={<Overview />} />
           <Route path="/about-ananda-crown-mohali-owners" element={<AboutOwners />} />
           <Route path="/ananda-crown-mohali-reviews" element={<Reviews />} />
+          <Route path="/ananda-crown-rera" element={<ReraCompliance />} />
+          <Route path="/ananda-crown-rera-number" element={<ReraNumber />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         </LeadCaptureProvider>
