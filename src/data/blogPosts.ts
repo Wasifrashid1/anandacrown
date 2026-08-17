@@ -1,3 +1,5 @@
+import { reraBlogPosts } from './blogPostsRera';
+
 export interface BlogPost {
   id: string;
   slug: string;
@@ -10,7 +12,7 @@ export interface BlogPost {
   readTime: string;
 }
 
-export const blogPosts: BlogPost[] = [
+const corePosts: BlogPost[] = [
   {
     id: '1',
     slug: 'why-ananda-crown-mohali-most-demanded-luxury-address',
@@ -1555,6 +1557,8 @@ I always recommend buyers do their own verification. Visit the site, meet the te
 For a detailed discussion about Ananda Group and to schedule a site visit, call 9779799705 or visit www.anandacrownmohali.com.`
   }
 ];
+
+export const blogPosts: BlogPost[] = [...reraBlogPosts, ...corePosts];
 
 export const getBlogBySlug = (slug: string): BlogPost | undefined => {
   return blogPosts.find(post => post.slug === slug);
