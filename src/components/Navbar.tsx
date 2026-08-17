@@ -12,6 +12,7 @@ const navLinks = [
   { name: 'Amenities', href: '/#amenities' },
   { name: 'Gallery', href: '/#gallery' },
   { name: 'Location', href: '/#location' },
+  { name: 'RERA', href: '/ananda-crown-rera' },
   { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '/#contact' },
 ];
@@ -94,7 +95,7 @@ const Navbar = () => {
             {/* Desktop Nav */}
             <div className="hidden lg:flex items-center gap-6 xl:gap-8">
               {navLinks.map((link) => (
-                link.href === '/blog' ? (
+                link.href.startsWith('/blog') || link.href.startsWith('/ananda-crown') ? (
                   <Link
                     key={link.name}
                     to={link.href}
@@ -193,7 +194,7 @@ const Navbar = () => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.05 }}
                       >
-                        {link.href === '/blog' ? (
+                        {link.href.startsWith('/blog') || link.href.startsWith('/ananda-crown') ? (
                           <Link
                             to={link.href}
                             className="block py-3 px-4 text-base font-medium text-foreground hover:text-primary hover:bg-primary/5 rounded-sm transition-colors"

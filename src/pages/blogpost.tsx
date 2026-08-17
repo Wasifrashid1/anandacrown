@@ -6,6 +6,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import MobileStickyBar from '@/components/MobileStickyBar';
+import ArticleContent from '@/components/ArticleContent';
 import { Helmet } from 'react-helmet-async';
 
 const BlogPost = () => {
@@ -30,20 +31,41 @@ const BlogPost = () => {
     }, 100);
   };
 
-  const faqSchema = {
+  const siteUrl = 'https://anandacrownmohali.com';
+  const postUrl = `${siteUrl}/blog/${post.slug}`;
+
+  const blogPostingSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     "headline": post.title,
     "description": post.metaDescription,
+    "keywords": post.keywords.join(', '),
     "datePublished": post.publishedAt,
+    "dateModified": post.publishedAt,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": postUrl
+    },
+    "url": postUrl,
     "author": {
       "@type": "Organization",
       "name": "Ananda Crown Mohali"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Ananda Crown Mohali"
+      "name": "Ananda Crown Mohali",
+      "url": siteUrl
     }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": `${siteUrl}/` },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${siteUrl}/blog` },
+      { "@type": "ListItem", "position": 3, "name": post.title, "item": postUrl }
+    ]
   };
 
   return (
@@ -52,8 +74,9 @@ const BlogPost = () => {
         <title>{post.title} | Ananda Crown Mohali</title>
         <meta name="description" content={post.metaDescription} />
         <meta name="keywords" content={post.keywords.join(', ')} />
-        <link rel="canonical" href={`/blog/${post.slug}`} />
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        <link rel="canonical" href={postUrl} />
+        <script type="application/ld+json">{JSON.stringify(blogPostingSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
 
       <div className="min-h-screen bg-background text-foreground">
@@ -119,11 +142,7 @@ const BlogPost = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
             >
-              {post.content.split('\n\n').map((paragraph, index) => (
-                <p key={index} className="text-base md:text-lg text-foreground/90 leading-relaxed mb-4">
-                  {paragraph}
-                </p>
-              ))}
+              <ArticleContent content={post.content} />
             </motion.div>
 
             {/* CTA */}

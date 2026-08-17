@@ -147,6 +147,58 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- RERA -->
+  <url>
+    <loc>https://anandacrownmohali.com/ananda-crown-rera</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://anandacrownmohali.com/ananda-crown-rera-number</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- RERA & Buyer Intent Blogs -->
+  <url>
+    <loc>https://anandacrownmohali.com/blog/is-ananda-crown-rera-registered</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://anandacrownmohali.com/blog/how-to-verify-rera-number-punjab</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://anandacrownmohali.com/blog/why-rera-matters-buying-flat-mohali</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://anandacrownmohali.com/blog/3-vs-4-vs-5-bhk-ananda-crown</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://anandacrownmohali.com/blog/home-loan-emi-guide-ananda-crown</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://anandacrownmohali.com/blog/sector-78-mohali-connectivity-lifestyle</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://anandacrownmohali.com/blog/ready-to-move-vs-under-construction</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://anandacrownmohali.com/blog/investment-potential-sector-78-mohali</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://anandacrownmohali.com/blog/step-by-step-booking-guide-ananda-crown</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://anandacrownmohali.com/blog/luxury-amenities-checklist-mohali-highrises</loc>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Legal -->
   <url>
     <loc>https://anandacrownmohali.com/privacy-policy</loc>
