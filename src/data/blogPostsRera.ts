@@ -1,6 +1,6 @@
 import type { BlogPost } from './blogPosts';
 
-export const reraBlogPosts: Omit<BlogPost, 'author'>[] = [
+export const reraBlogPosts: BlogPost[] = [
   {
     id: 'r1',
     slug: 'is-ananda-crown-rera-registered',

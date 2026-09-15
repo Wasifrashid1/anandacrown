@@ -10,8 +10,9 @@ export interface BlogPost {
   excerpt: string;
   publishedAt: string;
   readTime: string;
-  author: string;
+  author?: string;
 }
+
 
 export const AUTHOR_NAME = 'Wasif Rashid';
 export const AUTHOR_PROFILE_URL = 'https://www.aimarketians.com/founder';
