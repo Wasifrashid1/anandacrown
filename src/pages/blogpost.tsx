@@ -1,7 +1,8 @@
 import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, ArrowLeft } from 'lucide-react';
-import { getBlogBySlug, blogPosts } from '@/data/blogPosts';
+import { Calendar, Clock, ArrowLeft, User } from 'lucide-react';
+import { getBlogBySlug, blogPosts, AUTHOR_NAME, AUTHOR_PROFILE_URL, AUTHOR_LINK_TITLE } from '@/data/blogPosts';
+
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
@@ -48,9 +49,16 @@ const BlogPost = () => {
     },
     "url": postUrl,
     "author": {
-      "@type": "Organization",
-      "name": "Ananda Crown Mohali"
+      "@type": "Person",
+      "name": AUTHOR_NAME,
+      "jobTitle": "Founder & CEO",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "AiMarketians"
+      },
+      "url": AUTHOR_PROFILE_URL
     },
+
     "publisher": {
       "@type": "Organization",
       "name": "Ananda Crown Mohali",
