@@ -49,7 +49,7 @@ const Blog = () => {
                 onClick={() => handleReadMore(post.slug)}
               >
                 <div className="block p-5 md:p-6">
-                  <div className="flex items-center gap-4 text-xs text-muted-foreground mb-3">
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground mb-3">
                     <span className="flex items-center gap-1">
                       <Calendar className="w-3.5 h-3.5" />
                       {new Date(post.publishedAt).toLocaleDateString('en-IN', { 
@@ -62,7 +62,22 @@ const Blog = () => {
                       <Clock className="w-3.5 h-3.5" />
                       {post.readTime}
                     </span>
+                    <span className="flex items-center gap-1">
+                      <User className="w-3.5 h-3.5" />
+                      By{' '}
+                      <a
+                        href={AUTHOR_PROFILE_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title={AUTHOR_LINK_TITLE}
+                        className="text-primary hover:underline transition-colors"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        {AUTHOR_NAME}
+                      </a>
+                    </span>
                   </div>
+
                   
                   <h2 className="font-serif text-lg md:text-xl mb-3 group-hover:text-primary transition-colors line-clamp-2">
                     {post.title}
