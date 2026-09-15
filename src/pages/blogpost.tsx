@@ -109,7 +109,7 @@ const BlogPost = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mb-4">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground mb-4">
                 <span className="flex items-center gap-1">
                   <Calendar className="w-3.5 h-3.5" />
                   {new Date(post.publishedAt).toLocaleDateString('en-IN', { 
@@ -122,7 +122,21 @@ const BlogPost = () => {
                   <Clock className="w-3.5 h-3.5" />
                   {post.readTime}
                 </span>
+                <span className="flex items-center gap-1">
+                  <User className="w-3.5 h-3.5" />
+                  By{' '}
+                  <a
+                    href={AUTHOR_PROFILE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={AUTHOR_LINK_TITLE}
+                    className="text-primary hover:underline transition-colors"
+                  >
+                    {AUTHOR_NAME}
+                  </a>
+                </span>
               </div>
+
               
               <h1 className="font-serif text-2xl md:text-4xl lg:text-5xl mb-4 leading-tight">
                 {post.title}
