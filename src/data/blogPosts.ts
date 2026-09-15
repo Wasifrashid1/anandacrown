@@ -10,7 +10,14 @@ export interface BlogPost {
   excerpt: string;
   publishedAt: string;
   readTime: string;
+  author?: string;
 }
+
+
+export const AUTHOR_NAME = 'Wasif Rashid';
+export const AUTHOR_PROFILE_URL = 'https://www.aimarketians.com/founder';
+export const AUTHOR_LINK_TITLE = 'Wasif Rashid – Founder & CEO | AiMarketians';
+
 
 const corePosts: BlogPost[] = [
   {
@@ -1558,7 +1565,11 @@ For a detailed discussion about Ananda Group and to schedule a site visit, call 
   }
 ];
 
-export const blogPosts: BlogPost[] = [...reraBlogPosts, ...corePosts];
+export const blogPosts: BlogPost[] = [...reraBlogPosts, ...corePosts].map(post => ({
+  ...post,
+  author: AUTHOR_NAME,
+}));
+
 
 export const getBlogBySlug = (slug: string): BlogPost | undefined => {
   return blogPosts.find(post => post.slug === slug);

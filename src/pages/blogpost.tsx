@@ -1,7 +1,8 @@
 import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, ArrowLeft } from 'lucide-react';
-import { getBlogBySlug, blogPosts } from '@/data/blogPosts';
+import { Calendar, Clock, ArrowLeft, User } from 'lucide-react';
+import { getBlogBySlug, blogPosts, AUTHOR_NAME, AUTHOR_PROFILE_URL, AUTHOR_LINK_TITLE } from '@/data/blogPosts';
+
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
@@ -48,9 +49,16 @@ const BlogPost = () => {
     },
     "url": postUrl,
     "author": {
-      "@type": "Organization",
-      "name": "Ananda Crown Mohali"
+      "@type": "Person",
+      "name": AUTHOR_NAME,
+      "jobTitle": "Founder & CEO",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "AiMarketians"
+      },
+      "url": AUTHOR_PROFILE_URL
     },
+
     "publisher": {
       "@type": "Organization",
       "name": "Ananda Crown Mohali",
@@ -101,7 +109,7 @@ const BlogPost = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mb-4">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground mb-4">
                 <span className="flex items-center gap-1">
                   <Calendar className="w-3.5 h-3.5" />
                   {new Date(post.publishedAt).toLocaleDateString('en-IN', { 
@@ -114,7 +122,21 @@ const BlogPost = () => {
                   <Clock className="w-3.5 h-3.5" />
                   {post.readTime}
                 </span>
+                <span className="flex items-center gap-1">
+                  <User className="w-3.5 h-3.5" />
+                  By{' '}
+                  <a
+                    href={AUTHOR_PROFILE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={AUTHOR_LINK_TITLE}
+                    className="text-primary hover:underline transition-colors"
+                  >
+                    {AUTHOR_NAME}
+                  </a>
+                </span>
               </div>
+
               
               <h1 className="font-serif text-2xl md:text-4xl lg:text-5xl mb-4 leading-tight">
                 {post.title}
