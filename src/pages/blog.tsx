@@ -1,7 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, ArrowRight } from 'lucide-react';
-import { blogPosts } from '@/data/blogPosts';
+import { Calendar, Clock, ArrowRight, User } from 'lucide-react';
+import { blogPosts, AUTHOR_NAME, AUTHOR_PROFILE_URL, AUTHOR_LINK_TITLE } from '@/data/blogPosts';
+
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
