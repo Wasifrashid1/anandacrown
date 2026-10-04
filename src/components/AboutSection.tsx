@@ -77,7 +77,10 @@ const AboutSection = () => {
                 src={interiorImage}
                 alt="Luxury Interior"
                 className="w-full h-[500px] object-cover"
+                loading="lazy"
+                decoding="async"
               />
+
               <div className="absolute inset-0 border border-primary/20" />
               
               {/* Gold Frame Corners */}

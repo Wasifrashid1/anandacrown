@@ -117,7 +117,10 @@ const Overview = () => {
                   src={heroImage}
                   alt="Ananda Crown Mohali Exterior View Sector 78"
                   className="w-full h-[300px] md:h-[500px] object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
+
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
                   <p className="text-2xl md:text-4xl font-serif text-gradient-gold font-bold">20+</p>
@@ -142,7 +145,10 @@ const Overview = () => {
                       src={interiorImage}
                       alt="Ananda Crown Mohali Luxury Interior Living Room"
                       className="w-full h-[400px] object-cover"
+                      loading="lazy"
+                      decoding="async"
                     />
+
                     <div className="absolute inset-0 border border-primary/20" />
                     <div className="absolute top-4 left-4 w-16 h-16 border-t-2 border-l-2 border-primary" />
                     <div className="absolute bottom-4 right-4 w-16 h-16 border-b-2 border-r-2 border-primary" />
